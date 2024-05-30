@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 //=============Authentication==================================================
-const AdminUser = new mongoose.Schema(
+const UserRegistration = new mongoose.Schema(
     {
         UserName: {
+            type: String,
+            required: true,
+        },
+        MobileNo: {
             type: String,
             required: true,
             index: true,
@@ -11,12 +15,12 @@ const AdminUser = new mongoose.Schema(
         Password: {
             type: String,
             required: true,
-            index: true,
+            
         },     
     }
 )
-const AdminUserauth =new  mongoose.model('AdminUserauth', AdminUser);
+const UserRegistrations =new  mongoose.model('UserRegistrations', UserRegistration);
 
 /*=============Export the model==============*/
 
-module.exports={AdminUserauth}
+module.exports={UserRegistrations}

@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB,{
     console.log("not connected",error);
 });
 
-const AuthRouter= require("./routes/AuthRouter");
+const AuthRouter= require("./Router/AuthRouter");
 app.use("/",AuthRouter);
 
 
