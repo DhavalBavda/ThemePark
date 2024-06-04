@@ -1,10 +1,10 @@
 # WaterPark:
-1. Parking booking
-2. Tickit book (According to packege)
-3. Ride listing and feedbake
-4. food manue
-5. Ride rider counter
-6. Emplyee Attendance / Salary slip
+1. Booking Tickets (Parking Slots,Food Combos,etc)
+2. Ride listing and feedback
+3. Ride rider counter
+4. Navigation
+5. Payment Gateways
+6. Contact
 7. Registration / Login
 8. Photos, videos
 9. Event cal.
