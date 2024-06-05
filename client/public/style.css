@@ -11,11 +11,11 @@ body {
 }
 
 #box1 {
-  width: 530px;
+  width: 630px;
   height: 100vh;
   background-image: url('../images/BWAmu.png');
   position: absolute;
-  bottom: -100%;
+  bottom: 0;
   left: 30%;
   animation: anim 2s forwards, anim2 3s forwards 3s;
   background-size: cover;
