@@ -5,14 +5,14 @@ body {
 
 #main {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   overflow: hidden;
 }
 
 #box1 {
   width: 530px;
-  height: 625px;
+  height: 100vh;
   background-image: url('/WaterPark/client/images/BWAmu.png');
   position: absolute;
   bottom: -100%;
@@ -25,7 +25,7 @@ body {
   content: '';
   position: absolute;
   width: 530px;
-  height: 625px;
+  height: 100vh;
   background-image: url('/WaterPark/client/images/colorAmu.png');
   left: 0px;
   z-index: -1;
