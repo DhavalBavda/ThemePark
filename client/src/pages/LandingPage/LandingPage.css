@@ -12,7 +12,7 @@ body {
   
   #box1 {
     width: 530px;
-    height: 625px;
+    height: 100vh;
     background-image: url('../../../images/BWAmu.png');
     position: absolute;
     bottom: -100%;
@@ -25,7 +25,7 @@ body {
     content: '';
     position: absolute;
     width: 530px;
-    height: 625px;
+    height: 100vh;
     background-image: url('../../../images/colorAmu.png');
     left: 0px;
     z-index: -1;
