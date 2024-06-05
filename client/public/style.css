@@ -24,10 +24,10 @@ body {
 #box1:after {
   content: '';
   position: absolute;
-  width: 530px;
-  height: 100vh;
+  width: 630px;
+  height: 100%;
   background-image: url('./../images/colorAmu.png');
-  left: 0px;
+  left: -120px;
   z-index: -1;
   background-size: cover;
 }
