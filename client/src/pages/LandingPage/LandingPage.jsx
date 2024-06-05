@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../../public/hDpDnxlYwo.json";
+import HomePage from '../HomePage/HomePage'
 
 const LandingPage = () => {
   return (
@@ -35,13 +36,13 @@ const LandingPage = () => {
           <div id="menu">
             <ul className="nav">
               <li className="nav-item">
-                <a className="nav-link" href="home.html">HOME</a>
+                <a className="nav-link" href="/Home">HOME</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="services.html">SERVICES</a>
+                <a className="nav-link" href="/Services">SERVICES</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about.html">ABOUT</a>
+                <a className="nav-link" href="/About">ABOUT</a>
               </li>
             </ul>
           </div>
