@@ -6,11 +6,16 @@ import './LandingPage.css'
 import 'jquery/dist/jquery.min.js';
 import 'popper.js/dist/umd/popper.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "../../../public/hDpDnxlYwo.json";
 
 const LandingPage = () => {
   return (
     <div id="main">
+      <div className="background-container">
+        <Lottie animationData={groovyWalkAnimation} loop={true} />
+      </div>
       <div id="box1"></div>
 
       <div id="box2">
@@ -24,6 +29,7 @@ const LandingPage = () => {
         <div id="container">
           <div id="logo">
             <img src="" alt="Amusement_image" />
+
           </div>
 
           <div id="menu">
