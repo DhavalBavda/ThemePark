@@ -13,7 +13,7 @@ body {
   #box1 {
     width: 530px;
     height: 625px;
-    background-image: url('/WaterPark/client/images/BWAmu.png');
+    background-image: url('../../assets/BWAmu.png');
     position: absolute;
     bottom: -100%;
     left: 30%;
@@ -26,7 +26,7 @@ body {
     position: absolute;
     width: 530px;
     height: 625px;
-    background-image: url('/WaterPark/client/images/colorAmu.png');
+    background-image: url('../../assets/colorAmu.png');
     left: 0px;
     z-index: -1;
     background-size: cover;
