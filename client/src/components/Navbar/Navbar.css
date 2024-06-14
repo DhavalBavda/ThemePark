@@ -1,0 +1,62 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 120px;
+    color: azure;
+
+}
+.nav-logo{
+    font-family: Outfit;
+    font-size: 42px;
+    font-weight: 500;
+    color: orangered;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 18px;
+    gap: 50px;
+    cursor: pointer;
+}
+
+.nav-menu li button:hover {
+    background-color:lightblue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-button {
+    background-color: rgb(255, 112, 60);
+    color: #ffffff7a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 60px;
+  }
+  
+  .nav-button:hover {
+    background-color:orange;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .nav-button span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .nav-button:hover span {
+    font-size: 20px;
+  }
+
+/* .nav-contact{
+    border-radius: 50px ;
+    padding: 10px 38px;
+    background: rgb(66, 119, 139);
+    color:whitesmoke;
+} */
+  
