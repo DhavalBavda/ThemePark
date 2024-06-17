@@ -6,7 +6,7 @@ import Home from './components/pages/Home';
 
 function App ()  {
   return (
-    <>
+    <div>
     <Router>
     <Navbar />
 
@@ -15,7 +15,7 @@ function App ()  {
     </Routes>
 
     </Router>
-    </>
+    </div>
   )
 }
 export default App;
