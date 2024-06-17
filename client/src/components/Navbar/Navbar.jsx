@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
+import Logo from '/image/Logo.png'
 
 function Navbar() {
 
@@ -11,7 +12,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='nav-logo'>
           <Link to='/' className='navbar-brand'>
-            <img src="image/logo.png" alt="logo"></img>
+            <img src={Logo} alt="logo"></img>
             <h1>Amusment Park</h1>
           </Link>
         </div>

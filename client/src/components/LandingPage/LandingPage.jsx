@@ -3,6 +3,7 @@ import './LandingPage.css'
 import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
+import Card from '../Card/Card';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -11,6 +12,7 @@ const LandingPage = () => {
     <div>
       <Navbar/>
       <Home/>
+      <Card/>
       <Footer/>
     </div>
 
