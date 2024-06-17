@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
 import menuicon from "../../../public/image/menu-icon.png"
+import Logo from "../../../public/image/logo.png"
 
 function Navbar() {
 
@@ -12,7 +13,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='nav-logo'>
           <Link to='/' className='navbar-brand'>
-            <img src={menuicon} alt="logo"></img>
+            <img src={Logo} alt="logo"></img>
             <h1>Amusment Park</h1>
           </Link>
         </div>
