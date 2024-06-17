@@ -7,6 +7,7 @@ import th2 from '../../assets/images/th2.jpg'
 import th3 from '../../assets/images/th3.jpg'
 import th4 from '../../assets/images/th4.png'
 
+
 const Home = () => {
   return (
     <>
