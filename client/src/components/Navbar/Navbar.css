@@ -1,62 +1,72 @@
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px 120px;
-    color: azure;
-
-}
-.nav-logo{
-    font-family: Outfit;
-    font-size: 42px;
-    font-weight: 500;
-    color: orangered;
-}
-
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    font-size: 18px;
-    gap: 50px;
-    cursor: pointer;
+.navbar {
+  background: linear-gradient(90deg, white 0%, rgb(111, 181, 204) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 999;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
-.nav-menu li button:hover {
-    background-color:lightblue;
-    color: #fff;
-    cursor: pointer;
-  }
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
 
-  .nav-button {
-    background-color: rgb(255, 112, 60);
-    color: #ffffff7a;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 60px;
-  }
-  
-  .nav-button:hover {
-    background-color:orange;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .nav-button span {
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .nav-button:hover span {
-    font-size: 20px;
-  }
+.navbar-toggler {
+  margin-right: 20px;
+}
 
-/* .nav-contact{
-    border-radius: 50px ;
-    padding: 10px 38px;
-    background: rgb(66, 119, 139);
-    color:whitesmoke;
-} */
-  
+.navbar-toggler-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  justify-content: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #333;
+}
+
+.btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.navbar-collapse{
+  margin-left: 285px;
+}

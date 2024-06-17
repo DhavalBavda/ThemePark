@@ -1,40 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import LandingPage from './components/LandingPage/LandingPage';
+import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/Home';
 
-const App = () => {
-  let heroData = [
-    { text1: "Welcome To", text2: "Theme Park" },
-    { text1: "Enjoy the Rides", text2: "And Services" },
-    { text1: "Be Safe", text2: "Be Kind" },
-  ];
-
-  const [heroCount, setHeroCount] = useState(0);
-
-  useEffect(() => {
-    setInterval(() => {
-      setHeroCount((count) => {
-        return count === 2 ? 0 : count + 1;
-      });
-    }, 5000);
- 
-
-  // return () => {
-  //   clearInterval(intervalId);
-  // };
-}, []);
-
+function App ()  {
   return (
-    <div>
-      <LandingPage heroCount={heroCount} />
-      <Navbar />
-      <Hero
-        heroData={heroData[heroCount]}
-        heroCount={heroCount}
-        setHeroCount={setHeroCount} />
-    </div>
-  );
-};
+    <>
+    <Router>
+    <Navbar />
 
+    <Routes>
+      <Route path='/' element={<Home />}/>
+    </Routes>
+
+    </Router>
+    </>
+  )
+};
 export default App;
