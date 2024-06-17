@@ -26,6 +26,7 @@ const App = () => {
 }, []);
 
   return (
+<<<<<<< Updated upstream
     <div>
       <LandingPage heroCount={heroCount} />
       <Navbar />
@@ -34,6 +35,14 @@ const App = () => {
         heroCount={heroCount}
         setHeroCount={setHeroCount} />
     </div>
+=======
+    <Routes>
+      <Route path='/' element={<LandingPage />} />  
+      <Route path='/Home' element={<HomePage/>}/>
+      <Route path='/Services' element={<Services/>}/>
+      <Route path='/About' element={<About/>}/>
+    </Routes>
+>>>>>>> Stashed changes
   );
 };
 
