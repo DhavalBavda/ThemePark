@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
-import logo from '../../../public/image/Logo.png'
 
 function Navbar() {
 
@@ -12,7 +11,8 @@ function Navbar() {
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <div className='container-fluid'>
           <Link to='/' className='navbar-brand'>
-            <img src={logo} alt="logo" className='logostyle'></img>
+            <img src="image/logo.png" alt="logo" className='logostyle'></img>
+            <h1>Amusment Park</h1>
           </Link>
           <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
