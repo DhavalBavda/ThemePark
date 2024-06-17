@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
+import menuicon from "../../../public/image/menu-icon.png"
 
 function Navbar() {
 
@@ -18,31 +19,23 @@ function Navbar() {
         <div className="nav-content">
           <ul>
             <li>
-              Home
-              {/* <Link to="/" className='nav-linktag'>Home</Link> */}
-              
+              <Link to="/" className='nav-linktag'>Home</Link>
             </li>
-            
             <li>
-              About
-              {/* <Link to="/about" className='nav-linktag'>About</Link> */}
-              </li>
+              <Link to="/about" className='nav-linktag'>About</Link>
+            </li>
             <li>
-              Services
-              {/* <Link to="/services" className='nav-linktag'>Services</Link> */}
-              </li>
+              <Link to="/services" className='nav-linktag'>Services</Link>
+            </li>
             <li>
-              Contact
-              {/* <Link to="/contact" className='nav-linktag'>Contact</Link> */}
-              </li>
+              <Link to="/contact" className='nav-linktag'>Contact</Link>
+            </li>
+            <li className='nav-linktag-btn'>
+              <Link to="/contact" className='nav-linktag'>Sign Up</Link>
+            </li>
           </ul>
-          
-            <button>Sign Up</button>
-          
         </div>
-
-
-
+        <div className="icon"><img src={menuicon} alt="" /></div>
       </nav>
     </div>
     // <div>

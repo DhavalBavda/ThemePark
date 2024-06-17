@@ -115,6 +115,11 @@ font-weight: 600;
 .navbar-brand h1 {
   margin: 0;
   font-weight: bold;
+  color: #333;
+}
+
+.icon{
+  display: none;
 }
 
 .nav-content {
@@ -128,17 +133,52 @@ font-weight: 600;
   margin: 0;
   padding: 0;
   display: flex;
+  /* flex-direction: column; */
   list-style: none;
   gap: 24px;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-.nav-content button {
-  padding: 0 10px;
+.nav-linktag{
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-linktag:hover{
+  color: #fff;
+  padding: 1px 10px;
   border-radius: 5px;
   font-size: 1.5rem;
   background-color: #333;
-  color: #fff;
-  font-weight: 500;
+}
+
+@media (max-width: 1000px){
+  .icon{
+    border-radius: 5px;
+    background-color: rgb(105, 158, 176);
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-content ul{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #ffffff78;
+    right: 11px;
+    top: 80px;
+    gap: 0;
+  }
+
+  .nav-content li{
+    padding: 5px 5px;
+    /* border: 1px solid; */
+    width: 120px;
+    text-align: right;
+  }
+  .nav-linktag{
+    /* padding: 5px 5px; */
+  }
 }
