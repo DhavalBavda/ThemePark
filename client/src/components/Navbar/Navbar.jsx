@@ -7,7 +7,7 @@ import './Navbar.css';
 function Navbar() {
 
   return (
-    <>
+    <div>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <div className='container-fluid'>
           <Link to='/' className='navbar-brand'>
@@ -41,7 +41,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }
 
