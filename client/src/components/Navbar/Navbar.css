@@ -17,7 +17,7 @@
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .navbar-toggler {
@@ -69,4 +69,8 @@
 
 .navbar-collapse{
   margin-left: 285px;
+}
+
+.nav-logo{
+  margin-top: 40px;
 }
