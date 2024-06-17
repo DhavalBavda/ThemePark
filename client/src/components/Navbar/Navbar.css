@@ -70,7 +70,8 @@
 .navbar-collapse{
   margin-left: 285px;
 }
-
-.nav-logo{
-  margin-top: 40px;
+#logostyle{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
