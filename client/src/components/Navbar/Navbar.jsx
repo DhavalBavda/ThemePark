@@ -8,6 +8,8 @@ import Logo from "../../../public/image/logo.png"
 
 function Navbar() {
 
+  
+
   return (
     <div>
       <nav className='navbar'>
