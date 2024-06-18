@@ -7,9 +7,6 @@ import menuicon from "/image/menu-icon.png"
 import Logo from "/image/Logo.png"
 
 function Navbar() {
-
-  
-
   return (
     <div>
       <nav className='navbar'>
