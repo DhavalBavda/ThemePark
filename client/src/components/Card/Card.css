@@ -21,3 +21,11 @@
 #water-park{
     height: 300px;
 }
+
+.card-heading{
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-variant: small-caps;
+    color: black;
+}
