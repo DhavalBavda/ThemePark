@@ -9,35 +9,61 @@ import Logo from "/image/Logo.png"
 function Navbar() {
   return (
     <div>
-      <nav className='navbar'>
-        <div className='nav-logo'>
-          <Link to='/' className='navbar-brand'>
+        <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <Link to="/" className="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src={Logo} alt="logo"></img>
-            <h1>Amusment Park</h1>
-          </Link>
+            <h2 className="m-0 ">Amusment Park</h2>
+        </Link>
+        <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <div className="navbar-nav ms-auto p-4 p-lg-0">
+                <Link to ="/" className="nav-item nav-link active">Home</Link>
+                <Link to ="/about" className="nav-item nav-link">About</Link>
+                <Link to ="/services" className="nav-item nav-link">Services</Link>
+                <Link to ="/contact" class="nav-item nav-link">Contact</Link>
+                <div className="d-flex">
+                  <Link to="/signUp" className="btn btn-primary bg-blue">Sign Up</Link>
+                </div>
+            </div>
+
+            
         </div>
-        <div className="nav-content">
-          <ul>
-            <li>
-              <Link to="/" className='nav-linktag'>Home</Link>
-            </li>
-            <li>
-              <Link to="/about" className='nav-linktag'>About</Link>
-            </li>
-            <li>
-              <Link to="/services" className='nav-linktag'>Services</Link>
-            </li>
-            <li>
-              <Link to="/contact" className='nav-linktag'>Contact</Link>
-            </li>
-            <li className='nav-linktag-btn'>
-              <Link to="/contact" className='nav-linktag'>Sign Up</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="icon"><img src={menuicon} alt="" /></div>
-      </nav>
+    </nav>
     </div>
+
+
+    // <div>
+    //   <nav className='navbar'>
+    //     <div className='nav-logo'>
+    //       <Link to='/' className='navbar-brand'>
+    //         <img src={Logo} alt="logo"></img>
+    //         <h1>Amusment Park</h1>
+    //       </Link>
+    //     </div>
+    //     <div className="nav-content">
+    //       <ul>
+    //         <li>
+    //           <Link to="/" className='nav-linktag'>Home</Link>
+    //         </li>
+    //         <li>
+    //           <Link to="/about" className='nav-linktag'>About</Link>
+    //         </li>
+    //         <li>
+    //           <Link to="/services" className='nav-linktag'>Services</Link>
+    //         </li>
+    //         <li>
+    //           <Link to="/contact" className='nav-linktag'>Contact</Link>
+    //         </li>
+    //         <li className='nav-linktag-btn'>
+    //           <Link to="/contact" className='nav-linktag'>Sign Up</Link>
+    //         </li>
+    //       </ul>
+    //     </div>
+    //     <div className="icon"><img src={menuicon} alt="" /></div>
+    //   </nav>
+    // </div>
     // <div>
     //   <nav className='navbar navbar-expand-lg navbar-light bg-light'>
     //     <div className='container-fluid'>
