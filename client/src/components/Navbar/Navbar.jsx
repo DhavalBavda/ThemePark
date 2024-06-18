@@ -3,34 +3,32 @@ import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
-import menuicon from "/image/menu-icon.png"
+// import menuicon from "/image/menu-icon.png"
 import Logo from "/image/Logo.png"
 
 function Navbar() {
   return (
     <div>
-        <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <Link to="/" className="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src={Logo} alt="logo"></img>
-            <h2 className="m-0 ">Amusment Park</h2>
+          <img src={Logo} alt="logo" id="park-logo"></img>
+          <h2 className="m-0 " id="park-name">Amusment Park</h2>
         </Link>
-        <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span className="navbar-toggler-icon"></span>
+        <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" id="toggle-btn-small">
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-            <div className="navbar-nav ms-auto p-4 p-lg-0">
-                <Link to ="/" className="nav-item nav-link active">Home</Link>
-                <Link to ="/about" className="nav-item nav-link">About</Link>
-                <Link to ="/services" className="nav-item nav-link">Services</Link>
-                <Link to ="/contact" class="nav-item nav-link">Contact</Link>
-                <div className="d-flex">
-                  <Link to="/signUp" className="btn btn-primary bg-blue">Sign Up</Link>
-                </div>
+          <div className="navbar-nav ms-auto p-4 p-lg-0">
+            <Link to="/" className="nav-item nav-link active">Home</Link>
+            <Link to="/about" className="nav-item nav-link">About</Link>
+            <Link to="/services" className="nav-item nav-link">Services</Link>
+            <Link to="/contact" class="nav-item nav-link">Contact</Link>
+            <div className="d-flex">
+              <Link to="/signUp" className="btn btn-primary bg-blue">Sign Up</Link>
             </div>
-
-            
+          </div>
         </div>
-    </nav>
+      </nav>
     </div>
 
 
