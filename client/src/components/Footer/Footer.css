@@ -1,4 +1,4 @@
-.footer-container{
+.footer-container {
     background-color: black;
     padding: 4rem 0 2rem 0;
     display: flex;
@@ -7,7 +7,7 @@
     align-self: center;
 }
 
-.footer-send{
+.footer-send {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,22 +18,22 @@
     color: white;
 }
 
-.footer-send > p {
+.footer-send>p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
-.footer-send-heading{
+.footer-send-heading {
     margin-bottom: 24px;
     font-size: 24px;
 }
 
-.footer-send-text{
+.footer-send-text {
     margin-bottom: 24px;
     font-size: 20px;
 }
 
-.footer-input{
+.footer-input {
     padding: 8px 20px;
     border-radius: 2px;
     margin-right: 10px;
@@ -44,7 +44,7 @@
     border: 1px solid white;
 }
 
-.footer-link{
+/* .footer-link{
     width:100%;
     max-width: 1000px;
     display: flex;
@@ -94,4 +94,34 @@
 .footer-input::placeholder{
     color: #b1b1b1;
 }
+ */
 
+.footer-link {
+    margin-bottom: 20px;
+}
+
+.footer-link-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-link-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link-items h2 {
+    margin-right: 20px;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #f39c12;
+}
