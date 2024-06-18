@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import About from "./components/About/About"
 import Services from "./components/Services/Services"
 import Contact from "./components/Contact/Contact"
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Services />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/signup' />
+          <Route path='/signup' element={<SignUp />}/>
         </Routes>
 
       </Router>
