@@ -161,13 +161,21 @@ font-weight: 600;
     width: 40px;
     height: 40px;
   }
+  #navbarCollapse{
+    background: linear-gradient(
+    90deg,
+    rgb(228, 255, 255) 7%,
+    rgb(121, 197, 222) 100%
+  );
+    
+  }
 
   .nav-content ul{
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: relative;
     background-color: #ffffff78;
-    right: 11px;
+    right: 0;
     top: 80px;
     gap: 0;
   }
@@ -178,4 +186,6 @@ font-weight: 600;
     width: 120px;
     text-align: right;
   }
+
+  
 }
