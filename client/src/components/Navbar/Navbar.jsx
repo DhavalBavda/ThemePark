@@ -2,14 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-//import './Navbar.css';
-import menuicon from "../../../public/image/menu-icon.png"
-import Logo from "/image/logo.png"
+import './Navbar.css';
+import menuicon from "/image/menu-icon.png"
+import Logo from "/image/Logo.png"
 
 function Navbar() {
-
-  
-
   return (
     <div>
         <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
