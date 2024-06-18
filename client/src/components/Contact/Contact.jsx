@@ -7,7 +7,7 @@ function Contact () {
   return (
     <div>
       <Navbar/>
-      <div className="contact-page-area section-gap">
+      {/* <div className="contact-page-area section-gap">
         <div className="contact-container">
           <div className="row">
             <div className='col-lg-4 d-flex flex-column address-wrap'>
@@ -25,7 +25,7 @@ function Contact () {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
     
   )
