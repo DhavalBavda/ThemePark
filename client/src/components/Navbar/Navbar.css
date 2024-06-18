@@ -118,7 +118,7 @@ font-weight: 600;
   color: #333;
 }
 
-.icon{
+.icon {
   display: none;
 }
 
@@ -140,12 +140,12 @@ font-weight: 600;
   font-size: 1.5rem;
 }
 
-.nav-linktag{
+.nav-linktag {
   text-decoration: none;
   color: #333;
 }
 
-.nav-linktag:hover{
+.nav-linktag:hover {
   color: #fff;
   padding: 1px 10px;
   border-radius: 5px;
@@ -153,24 +153,23 @@ font-weight: 600;
   background-color: #333;
 }
 
-@media (max-width: 1000px){
-  .icon{
+@media (max-width: 1000px) {
+  .icon {
     border-radius: 5px;
     background-color: rgb(105, 158, 176);
     display: flex;
     width: 40px;
     height: 40px;
   }
-  #navbarCollapse{
+  #navbarCollapse {
     background: linear-gradient(
-    90deg,
-    rgb(228, 255, 255) 7%,
-    rgb(121, 197, 222) 100%
-  );
-    
+      90deg,
+      rgb(228, 255, 255) 7%,
+      rgb(121, 197, 222) 100%
+    );
   }
 
-  .nav-content ul{
+  .nav-content ul {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -180,12 +179,24 @@ font-weight: 600;
     gap: 0;
   }
 
-  .nav-content li{
+  .nav-content li {
     padding: 5px 5px;
     /* border: 1px solid; */
     width: 120px;
     text-align: right;
   }
+}
 
-  
+@media (max-width: 400px) {
+  #toggle-btn-small {
+    padding: 4px;
+  }
+
+  #park-logo {
+    height: 40px;
+    width: 40px;
+  }
+  #park-name {
+    font-size: large;
+  }
 }
