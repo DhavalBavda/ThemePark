@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
 import menuicon from "../../../public/image/menu-icon.png"
-import Logo from "/image/logo.png"
+import Logo from "/image/Logo.png"
 
 function Navbar() {
 
