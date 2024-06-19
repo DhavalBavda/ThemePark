@@ -82,9 +82,9 @@ font-weight: 600;
 } */
 
 .navbar {
-  position: fixed; /* Fixes the navbar to the top */
+  position: fixed; 
   top: 0;
-  width: 100%; /* Ensures the navbar spans the full width of the viewport */
+  width: 100%; 
   z-index: 1000;
   background: linear-gradient(
     90deg,
@@ -115,9 +115,7 @@ font-weight: 600;
 }
 
 
-#try{
-  gap: 14px;
-}
+
 
 #navbarCollapse{
   padding-right: 24px;
