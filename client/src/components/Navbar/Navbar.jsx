@@ -8,7 +8,7 @@ import Logo from "/image/Logo.png"
 
 function Navbar() {
   return (
-    <div>
+    <div className='navbar-collapse' >
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <Link to="/" className="navbar-brand d-flex align-items-center px-4 px-lg-5">
           <img src={Logo} alt="logo" id="park-logo"></img>
@@ -17,8 +17,8 @@ function Navbar() {
         <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" id="toggle-btn-small">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-          <div className="navbar-nav ms-auto p-4 p-lg-0" >
+        <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse" >
+          <div className="navbar-nav ms-auto p-4 p-lg-0" id='navbar-scroll'>
             <Link to="/" className="nav-item nav-link active">Home</Link>
             <Link to="/about" className="nav-item nav-link">About</Link>
             <Link to="/services" className="nav-item nav-link">Services</Link>

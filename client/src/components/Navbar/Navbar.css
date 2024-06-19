@@ -81,7 +81,7 @@ font-weight: 600;
   height: 80px;
 } */
 
-.navbar {
+/* .navbar {
   position: fixed; 
   top: 0;
   width: 100%; 
@@ -101,6 +101,24 @@ font-weight: 600;
 
 #navbar-logo-info{
   margin: 0;
+}
+
+.navbar-scroll{
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+  background: linear-gradient(
+    90deg,
+    rgb(228, 255, 255) 7%,
+    rgb(121, 197, 222) 100%
+  );
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding: 0 10px;
+  align-items: center;
 }
 
 .navbar-brand img {
@@ -123,7 +141,10 @@ font-weight: 600;
 
 .nav-item{
   font-size: 24px;
+  background:  rgb(167, 218, 235) 
 }
+
+
 
 
 @media (max-width: 1220px) {
@@ -139,7 +160,7 @@ font-weight: 600;
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #ffffff78;
+    background-color: #e4181878;
     right: 0;
     top: 80px;
     gap: 0;
@@ -147,7 +168,6 @@ font-weight: 600;
 
   .nav-content li {
     padding: 5px 5px;
-    /* border: 1px solid; */
     width: 120px;
     text-align: right;
   }
@@ -165,4 +185,204 @@ font-weight: 600;
   #park-name {
     font-size: large;
   }
+} */
+
+/* .navbar {
+  background: linear-gradient(90deg, white 0%, rgb(111, 181, 204) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 999;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand h1{
+font-weight: 600;
+}
+
+.navbar-toggler {
+  margin-right: 20px;
+}
+
+.navbar-toggler-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  justify-content: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #333;
+}
+
+.btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.navbar-collapse{
+  margin-left: 285px;
+}
+
+.logostyle{
+  width: 80px;
+  height: 80px;
+} */
+
+.navbar {
+  position: fixed; /* Fixes the navbar to the top */
+  top: 0;
+  width: 100%; /* Ensures the navbar spans the full width of the viewport */
+  z-index: 1000;
+  background: linear-gradient(
+    90deg,
+    rgb(228, 255, 255) 7%,
+    rgb(121, 197, 222) 100%
+  );
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+  height: 80px;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-brand img {
+  width: 80px;
+  height: 80px;
+}
+
+.navbar-brand h1 {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon{
+  display: none;
+}
+
+.nav-content {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-content ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+  list-style: none;
+  gap: 24px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#navbarCollapse{
+font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-variant: small-caps;
+  color: whitesmoke
+}
+
+.nav-linktag{
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-linktag:hover{
+  color: #fff;
+  padding: 1px 10px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: #333;
+}
+
+@media (max-width: 1000px){
+  .icon{
+    border-radius: 5px;
+    background-color: rgb(105, 158, 176);
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-content ul{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #ffffff78;
+    right: 11px;
+    top: 80px;
+    gap: 0;
+  }
+
+  #navbarCollapse{
+    background: linear-gradient(
+    90deg,
+    rgb(228, 255, 255) 7%,
+    rgb(121, 197, 222) 100%
+  );
+  }
+ 
+
+  .nav-content li{
+    padding: 5px 5px;
+    /* border: 1px solid; */
+    width: 120px;
+    text-align: right;
+  }
+}
+
+
