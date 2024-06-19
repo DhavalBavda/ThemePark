@@ -40,13 +40,13 @@ const Home = () => {
               <p>Have a Safe Rides</p>
             </div>
           </div>
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
             <img src={th4} className="d-block w-100" alt="Forth slide" />
             <div className="carousel-caption d-none d-md-block">
               <h5>Slide 4</h5>
               <p>Slide 4 description</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>

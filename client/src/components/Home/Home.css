@@ -42,5 +42,5 @@
   }
 
   .carousel-item.active {
-    animation: slideInLeft ease-in-out 0.8s forwards; /* Adjust animation name, easing, duration as desired */
+    animation: slideInRight ease-in-out 0.8s forwards;
   }
