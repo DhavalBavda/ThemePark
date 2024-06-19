@@ -6,7 +6,7 @@ import th1 from '../../assets/images/th1.jpg'
 import th2 from '../../assets/images/th2.jpg'
 import th3 from '../../assets/images/th3.jpg'
 import th4 from '../../assets/images/th4.png'
-
+import 'animate.css/animate.min.css';
 
 const Home = () => {
   return (
@@ -36,8 +36,8 @@ const Home = () => {
           <div className="carousel-item">
             <img src={th3} className="d-block w-100" alt="Third slide" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Slide 3</h5>
-              <p>Slide 3 description</p>
+              <h5>Enjoy the park</h5>
+              <p>Have a Safe Rides</p>
             </div>
           </div>
           <div className="carousel-item">

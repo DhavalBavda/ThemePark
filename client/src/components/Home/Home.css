@@ -1,3 +1,4 @@
+
 .carousel {
     margin-top: 80px;
     margin-bottom: 50px;
@@ -9,6 +10,7 @@
   
   .carousel-item {
     height: 100%;
+    opacity: 0;
   }
   
   .carousel-item img {
@@ -37,4 +39,8 @@
     font-size: 35px;
     color: white;
     font-style:inherit;
+  }
+
+  .carousel-item.active {
+    animation: slideInLeft ease-in-out 0.8s forwards; /* Adjust animation name, easing, duration as desired */
   }

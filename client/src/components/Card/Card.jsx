@@ -88,23 +88,23 @@ const Card = () => {
 
 const testimonials = [
   {
-      name: 'Maria Kate',
-      profession: 'Photographer',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque.',
+      name: 'Cus-1',
+      profession: 'what is more attractive',
+      text: 'cus1 reviews ',
       image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp',
       rating: 4.5,
   },
   {
-      name: 'John Doe',
-      profession: 'Web Developer',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis.',
+      name: 'Cus-2',
+      profession: 'what liked about park',
+      text:'cus 2 review',
       image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp',
       rating: 4.0,
   },
   {
-      name: 'Anna Deynah',
-      profession: 'UX Designer',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque.',
+      name: 'cus 3',
+      profession: 'liked about park ',
+      text: 'cus-3 review',
       image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp',
       rating: 4.5,
   },
@@ -123,6 +123,7 @@ const Carousel = () => {
 
   return (
       <div className="carousel-wrapper">
+        <div className='carousel-text-heading'>Customers Feedbacks </div>
           <div className="carousel">
               {testimonials.map((testimonial, index) => (
                   <div className={`carousel-item ${index === currentIndex ? 'active' : ''}`} key={index}>
