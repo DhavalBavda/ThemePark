@@ -23,9 +23,9 @@ function Navbar() {
             <Link to="/about" className="nav-item nav-link">About</Link>
             <Link to="/services" className="nav-item nav-link">Services</Link>
             <Link to="/contact" class="nav-item nav-link">Contact</Link>
-            <div className="d-flex">
-              <Link to="/signUp" className="btn btn-primary bg-blue">Sign Up</Link>
-            </div>
+            {/* <div className="d-flex"> */}
+            <Link to="/signUp" className="nav-item nav-link">Sign Up</Link>
+            {/* </div> */}
           </div>
         </div>
       </nav>
