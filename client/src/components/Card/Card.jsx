@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Card.css'
 import fairSwing_card from '/image/fairSwing_card.jpg'
 import Rollercoster_card from '/image/Rollercoster_card.webp'
@@ -6,6 +6,7 @@ import bumpercar_card from '/image/bumpercar_card.jpg'
 import droptower_card from '/image/droptower_card.jpg'
 import ferriswheel_card from '/image/ferriswheel_card.jpg'
 import waterpark_card from '/image/waterpark_card.jpg'
+import './Carousel.css'
 
 const Card = () => {
   return (
@@ -85,4 +86,82 @@ const Card = () => {
   )
 }
 
-export default Card
+const testimonials = [
+  {
+      name: 'Maria Kate',
+      profession: 'Photographer',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque.',
+      image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp',
+      rating: 4.5,
+  },
+  {
+      name: 'John Doe',
+      profession: 'Web Developer',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis.',
+      image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp',
+      rating: 4.0,
+  },
+  {
+      name: 'Anna Deynah',
+      profession: 'UX Designer',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit doloremque.',
+      image: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp',
+      rating: 4.5,
+  },
+];
+
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+      setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  return (
+      <div className="carousel-wrapper">
+          <div className="carousel">
+              {testimonials.map((testimonial, index) => (
+                  <div className={`carousel-item ${index === currentIndex ? 'active' : ''}`} key={index}>
+                      <img className="avatar" src={testimonial.image} alt="avatar" />
+                      <div className="carousel-content">
+                          <h5 className="name">{testimonial.name}</h5>
+                          <p className="profession">{testimonial.profession}</p>
+                          <p className="text">
+                              <span className="quote">“</span>
+                              {testimonial.text}
+                              <span className="quote">”</span>
+                          </p>
+                          <div className="stars">
+                              {[...Array(5)].map((_, i) => (
+                                  <span key={i} className={i < testimonial.rating ? 'star filled' : 'star'}>&#9733;</span>
+                              ))}
+                          </div>
+                      </div>
+                  </div>
+              ))}
+          </div>
+          <button className="control-prev" onClick={handlePrev}>
+              &#9664;
+          </button>
+          <button className="control-next" onClick={handleNext}>
+              &#9654;
+          </button>
+      </div>
+  );
+};
+
+const FooterApp = () => {
+  return (
+      <div>
+          <Card />
+          <Carousel />
+          
+      </div>
+  );
+};
+
+export default FooterApp;

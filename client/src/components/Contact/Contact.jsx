@@ -3,7 +3,7 @@ import './Contact.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Navbar from '../Navbar/Navbar';
-
+import Footer from '../Footer/Footer';
 function Contact() {
 
 
@@ -161,7 +161,7 @@ function Contact() {
                   </svg>
                 </div>
                 <div className="contact-details">
-                  <h5>00 (958) 9865 562</h5>
+                  <h5>(+91) 1234567890</h5>
                   <p>Mon to Sat 9am to 5pm</p>
                 </div>
               </div>
@@ -181,7 +181,7 @@ function Contact() {
                   </svg>
                 </div>
                 <div className="contact-details">
-                  <h5>info@ajwawaterpark.com</h5>
+                  <h5>info@example.com</h5>
                   <p>Send us your query anytime!</p>
                 </div>
               </div>
@@ -237,6 +237,7 @@ function Contact() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
 
   )
