@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { default: Payment } = require('../../client/src/components/Payment/Payment');
 const ObjectId = mongoose.Types.ObjectId
 
 //=============UserRegistration==================================================
@@ -43,14 +42,15 @@ const UserRegistration = new mongoose.Schema(
         },
         Claimed: {
             type: String,
-            default:false,   
+            required: true,   
         },
         Date: {
             type: String,
             required: true,   
         },
-        timestamps:true 
-    }
+       
+    },
+    { timestamps: true }
 )
 const UserRegistrations =new  mongoose.model('UserRegistrations', UserRegistration);
 
@@ -65,8 +65,8 @@ const Package = new mongoose.Schema(
             type: String,
             required: true,
         },
-        timestamps:true 
-    }
+    },
+    { timestamps: true }
 )
 const Packages =new  mongoose.model('Packages', Package);
 
@@ -89,8 +89,8 @@ const Ride = new mongoose.Schema(
             type: String,
             required: true,
         },
-        timestamps:true 
-    }
+    },
+    { timestamps: true }
 )
 const Rides =new  mongoose.model('Rides', Ride);
 
@@ -109,8 +109,8 @@ const RidesFeedBack = new mongoose.Schema(
             type: String,
             required: true,
         },
-        timestamps:true 
-    }
+    },
+    { timestamps: true }
 )
 const RidesFeedBacks =new  mongoose.model('RidesFeedBacks', RidesFeedBack);
 
@@ -125,8 +125,8 @@ const FeedBack = new mongoose.Schema(
             type: String,
             required: true,
         },
-        timestamps:true 
-    }
+    },
+    { timestamps: true }
 )
 const FeedBacks =new  mongoose.model('FeedBacks', FeedBack);
 
@@ -141,8 +141,8 @@ const FoodMenu = new mongoose.Schema(
             type: String,
             required: true,
         },
-        timestamps:true 
-    }
+    },
+    { timestamps: true }
 )
 const FoodMenus =new  mongoose.model('FoodMenus', FoodMenu);
 
