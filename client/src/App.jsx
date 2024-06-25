@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
 import Payment from './components/Payment/Payment';
-import Form from './components/Form/Form';
+import Booking from './components/Booking/Booking';
+
 function App ()  {
   return (
     <div>
@@ -14,7 +15,7 @@ function App ()  {
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
       <Route path='/Payment' element={<Payment/>}/>
-      <Route path='/BookTicket' element={<Form/>}/>
+      <Route path='/BookTicket' element={<Booking/>}/>
 
 
     </Routes>

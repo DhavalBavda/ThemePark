@@ -29,8 +29,9 @@ router.post("/ShowuserTicket/:id", async (req, res) => {
 //---------------New Ticket Book----------------------------------
 router.post('/UserRegistraion', async (req, res) => {
     try {
-        const { CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date } = req.body
-        const newuser = new UserRegistrations({ CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date })
+        console.log(req.body);
+        const { CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date,Claimed } = req.body
+        const newuser = new UserRegistrations({ CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson,Claimed, TotalPayment, Date })
         newuser.save()
         res.send('Registration Done...')
     } catch (error) {

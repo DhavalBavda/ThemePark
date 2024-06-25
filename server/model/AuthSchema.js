@@ -21,8 +21,7 @@ const UserRegistration = new mongoose.Schema(
             required: true,   
         },
         PaymentStatus : {
-            type: String,
-            required: true,   
+            type: String,  
         },
         NumberOfMember: {
             type: String,
