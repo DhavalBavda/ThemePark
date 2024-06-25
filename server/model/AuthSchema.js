@@ -21,6 +21,10 @@ const UserRegistration = new mongoose.Schema(
             type: String,
             required: true,   
         },
+        PaymentStatus : {
+            type: String,
+            required: true,   
+        },
         NumberOfMember: {
             type: String,
             required: true,   
@@ -38,7 +42,7 @@ const UserRegistration = new mongoose.Schema(
             required: true,   
         },
         Claimed: {
-            type: Boolean,
+            type: String,
             default:false,   
         },
         Date: {
@@ -54,6 +58,10 @@ const UserRegistrations =new  mongoose.model('UserRegistrations', UserRegistrati
 const Package = new mongoose.Schema(
     {
         PackageName: {
+            type: String,
+            required: true,
+        },
+        Price: {
             type: String,
             required: true,
         },
@@ -122,6 +130,22 @@ const FeedBack = new mongoose.Schema(
 )
 const FeedBacks =new  mongoose.model('FeedBacks', FeedBack);
 
+//=============Food Menu==================================================
+const FoodMenu = new mongoose.Schema(
+    {
+        FoodName: {
+            type: String,
+            required: true,
+        },
+        Price: {
+            type: String,
+            required: true,
+        },
+        timestamps:true 
+    }
+)
+const FoodMenus =new  mongoose.model('FoodMenus', FoodMenu);
+
 /*=============Export the model==============*/
 
-module.exports={UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks}
+module.exports={UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks,FoodMenus}

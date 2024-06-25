@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 require('dotenv').config();
 const router = express.Router();
-const { UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks } = require('../model/AuthSchema');
+const { UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks,FoodMenus } = require('../model/AuthSchema');
 const { default: mongoose } = require('mongoose');
 
 router.get("/ShowAllTickets", async (req, res) => {
@@ -15,11 +15,22 @@ router.get("/ShowAllTickets", async (req, res) => {
     }
 })
 
+router.post("/ShowuserTicket/:id", async (req, res) => {
+    try {
+        const userid=req.params.id()
+        const userTicket = await UserRegistrations.findById(userid);
+        res.status(200).json(userTicket);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: error })
+    }
+})
+
 //---------------New Ticket Book----------------------------------
 router.post('/UserRegistraion', async (req, res) => {
     try {
-        const { CustomerName, MobileNo, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date } = req.body
-        const newuser = new UserRegistrations({ CustomerName, MobileNo, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date })
+        const { CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date } = req.body
+        const newuser = new UserRegistrations({ CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date })
         newuser.save()
         res.send('Registration Done...')
     } catch (error) {
@@ -68,8 +79,8 @@ router.get("/ShowPackage", async (req, res) => {
 //---------------New Package Add----------------------------------
 router.post('/AddPackage', async (req, res) => {
     try {
-        const { PackageName } = req.body
-        const NewPackage = new Packages({PackageName })
+        const { PackageName,Price } = req.body
+        const NewPackage = new Packages({PackageName,Price })
         NewPackage.save()
         res.status(200),send('NewPackage Added...')
     } catch (error) {
@@ -197,6 +208,54 @@ router.post('/AddFeedBack', async (req, res) => {
         res.status(200),send('New FeedBack Added...')
     } catch (error) {
         console.log(error);
+        res.status(500).send(error)
+    }
+})
+
+
+//==================FoodMenu==================================================================================================
+
+
+router.get("/ShowFoodMenu", async (req, res) => {
+    try {
+        const AllFoodMenu = await FoodMenus.find();
+        res.status(200).json(AllFoodMenu);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: error })
+    }
+})
+//---------------New FoodMenu Add----------------------------------
+router.post('/AddFoodMenu', async (req, res) => {
+    try {
+        const { PackageName,Price } = req.body
+        const NewFoodMenu = new FoodMenus({PackageName,Price })
+        NewFoodMenu.save()
+        res.status(200),send('NewFoodMenu Added...')
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error)
+    }
+})
+//---------------Edit FoodMenu----------------------------------
+router.put('/EditFoodMenu/:id', async (req, res) => {
+    try {
+        FoodMenuId = req.params.Id
+        const {FoodMenuName} =req.body
+        const EditFoodMenu = await FoodMenus.findByIdAndUpdate(PackageId, { FoodName,Price })
+        res.status(200).send('FoodMenu Edited...').json(EditFoodMenu)
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error)
+    }
+})
+//---------------FoodMenu Delete----------------------------------
+router.delete('/FoodMenuDelete/:id', async (req, res) => {
+    try {
+        FoodMenuId = req.params.Id
+        const FoodMenusDelete = await FoodMenus.findByIdAndDelete(FoodMenuId)
+        res.status(200).send('FoodMenu Deleted').json(FoodMenusDelete)
+    } catch (error) {
         res.status(500).send(error)
     }
 })
