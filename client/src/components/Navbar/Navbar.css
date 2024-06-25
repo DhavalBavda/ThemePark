@@ -81,10 +81,10 @@ font-weight: 600;
   height: 80px;
 } */
 
-.navbar {
-  position: fixed; /* Fixes the navbar to the top */
+/* .navbar {
+  position: fixed; 
   top: 0;
-  width: 100%; /* Ensures the navbar spans the full width of the viewport */
+  width: 100%; 
   z-index: 1000;
   background: linear-gradient(
     90deg,
@@ -133,7 +133,7 @@ font-weight: 600;
   margin: 0;
   padding: 0;
   display: flex;
-  /* flex-direction: column; */
+
   list-style: none;
   gap: 24px;
   font-weight: bold;
@@ -174,8 +174,62 @@ font-weight: 600;
 
   .nav-content li{
     padding: 5px 5px;
-    /* border: 1px solid; */
     width: 120px;
     text-align: right;
   }
+} */
+
+/*** Navbar Start ***/
+.nav-bar {
+  background: var(--bs-light);
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
+
+.navbar .navbar-nav .nav-link {
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 17px;
+  transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: var(--bs-primary);
+}
+
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@media (min-width: 1200px) {
+  .navbar .nav-item .dropdown-menu {
+      display: block;
+      visibility: hidden;
+      top: 100%;
+      transform: rotateX(-75deg);
+      transform-origin: 0% 0%;
+      transition: .5s;
+      opacity: 0;
+  }
+  
+  .navbar .nav-item:hover .dropdown-menu {
+      transform: rotateX(0deg);
+      visibility: visible;
+      opacity: 1;
+  }
+}
+
+.dropdown .dropdown-menu a:hover {
+  background: var(--bs-primary);
+  color: var(--bs-white);
+}
+
+#searchModal .modal-content {
+  background-color: rgba(255, 255, 255, .95);
+}
+/*** Navbar End ***/
