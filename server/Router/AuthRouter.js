@@ -120,7 +120,7 @@ router.delete('/PackageDelete/:id', async (req, res) => {
 router.get("/ShowRide", async (req, res) => {
     try {
         const allRides = await Rides.find().populate('Packageid', 'PackageName'); // Populate Packageid with PackageName
-        res.status(200).json(AllRide);
+        res.status(200).json(allRides);
     } catch (error) {
         console.log(error);
         res.status(500).json({ error: error })
