@@ -115,7 +115,7 @@ const Navbar1 = () => {
                     <Navbar.Collapse id="navbarCollapse">
                         <Nav className="mx-auto">
                             <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
-                            <Nav.Link as={Link} to="/about" className={isActive('/about')}>About</Nav.Link>
+                            <Nav.Link as={Link} to="/ride" className={isActive('/ride')}>Rides</Nav.Link>
                             <Nav.Link as={Link} to="/services" className={isActive('/services')}>Services</Nav.Link>
                             <Nav.Link as={Link} to="/events" className={isActive('/events')}>Events</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
