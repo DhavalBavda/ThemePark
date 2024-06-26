@@ -101,7 +101,7 @@ const Navbar1 = () => {
             <Container>
                 <Navbar expand="lg" className="py-4">
                     <Navbar.Brand as={Link} to="/">
-                        <h1 className="text-primary fw-bold mb-0">Cater<span className="text-dark">Serv</span></h1>
+                        <h1 className="text-primary fw-bold mb-0">Amusment<span className="text-dark">Park</span></h1>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarCollapse">
                         {/* <span className="fa fa-bars text-primary"></span> */}
