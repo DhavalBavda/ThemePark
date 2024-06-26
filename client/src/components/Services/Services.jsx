@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 
 
 
+
 const Services = ({showNavbar = true , showFooter = true}) => {
   const services = [
     { icon: 'fa-wheelchair', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s' },
@@ -50,7 +51,6 @@ const Services = ({showNavbar = true , showFooter = true}) => {
           </div>
         </div>
       </div>
-      {showFooter && <Footer/>}
     </div>
 
   );
