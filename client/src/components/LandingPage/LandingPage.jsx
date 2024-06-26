@@ -26,16 +26,15 @@ import React from 'react'
 import Navbar1 from '../Navbar/Navbar'
 import Hero from '../Hero/Hero'
 import Services from '../Services/Services'
+import About from '../About/About'
 
 const LandingPage = () => {
   return (
-  
-  <>
-      <Navbar1/>
-      <Hero/>
-      <Services/>
-
-
+    <>
+      <Navbar1 />
+      <Hero />
+      <About showNavbar={false}/>
+      <Services />
     </>
   )
 }
