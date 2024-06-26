@@ -18,7 +18,7 @@ import counterUp from 'counterup2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import teamimage from '../../assets/images/teamimage.jpg';
+import teamimage from '../../assets/images/teamimage.jpg'
 
 const About = ({ showNavbar = true }) => {
     const countersRef = useRef([]);
@@ -165,6 +165,8 @@ const About = ({ showNavbar = true }) => {
                 </div>
             </div>
             {/* Fact end */}
+
+            <RidesAttract/>
 
             {/* Team Members start */}
             {showNavbar && (
