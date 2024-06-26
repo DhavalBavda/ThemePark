@@ -37,9 +37,9 @@ import React from 'react'
 import Navbar1 from '../Navbar/Navbar'
 
 
-const Contact = ({showNavbar = true}) => {
+const Contact = ({ showNavbar = true }) => {
 
-  
+
 
   return (
     <div>
@@ -76,8 +76,8 @@ const Contact = ({showNavbar = true}) => {
                     <i className="fas fa-envelope fa-2x text-primary me-4"></i>
                     <div>
                       <h4>Mail Us</h4>
-                      <p className="mb-2">info@amusmentpark.com</p>
-                      <p className="mb-0">support@amusmentpark.com</p>
+                      <p className="mb-2">info@ajwawaterpark.com</p>
+                      <p className="mb-0">support@ajwawaterpark.com</p>
                     </div>
                   </div>
                   <div className="d-inline-flex w-100 border border-primary p-4 rounded">
