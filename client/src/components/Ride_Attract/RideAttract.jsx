@@ -16,8 +16,10 @@ import '../../../public/image/Rides_Image/Lazy_river_ride.jpeg'
 import '../../../public/image/Rides_Image/Wavepool_ride.jpeg'
 import '../../../public/image/Rides_Image/Pendulum_ride.jpeg'
 import '../../../public/image/Rides_Image/Splash_ride.jpeg'
+import Navbar1 from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
-const RidesAttract = () => {
+const RidesAttract = ({ showNavbar = true , showFooter = true}) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedRide, setSelectedRide] = useState(null);
     const Ridess = [
@@ -41,6 +43,8 @@ const RidesAttract = () => {
 
     return (
         <div>
+            {showNavbar && <Navbar1 />}
+
             <div className="container-fluid service py-6">
                 <div className="container">
                     <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
@@ -105,6 +109,8 @@ const RidesAttract = () => {
                     </div>
                 </div>
             )}
+
+            {showFooter && <Footer />}
         </div>
     );
 };

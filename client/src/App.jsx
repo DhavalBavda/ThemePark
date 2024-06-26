@@ -8,7 +8,6 @@ import Booking from './components/Booking/Booking';
 import Ticket from './components/Ticket/Ticket';
 import RidePackage from './components/RidePackage/RidePackage';
 import Rides from './components/Rides/Rides';
-import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Services from './components/Services/Services';
 import Event from './components/Event/Event';
