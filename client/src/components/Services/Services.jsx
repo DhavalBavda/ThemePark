@@ -6,7 +6,7 @@ import '../../../public/lib/animate/animate.min.css'
 import '../../../public/lib/lightbox/css/lightbox.min.css'
 import '../../../public/lib/owlcarousel/owl.carousel.min.css'
 import Navbar1 from '../Navbar/Navbar';
-import Testimonial from '../Testinomial/Testinomial';
+
 
 
 
