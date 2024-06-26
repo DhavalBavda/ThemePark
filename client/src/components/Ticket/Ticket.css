@@ -1,4 +1,4 @@
-body {
+/* body {
     background: url('../../../public/image/Rollercoster_card.webp') no-repeat center center fixed;
     background-size: cover;
     height: 100%;
@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 .ticket {
     background: rgba(255, 255, 255, 0.9);

@@ -26,7 +26,7 @@ const Booking = () => {
         e.preventDefault();
         const bookingData = { PaymentStatus, Date, Claimed, TotalPayment, TicketPerPerson, TransactionID, NumberOfMember, CustomerName, MobileNo, Email, Packages };
         
-        axios.post('http://localhost:4500/UserRegistraion', bookingData)
+        axios.post('http://localhost:4500/UserRegistraion', PaymentStatus, Date, Claimed, TotalPayment, TicketPerPerson, TransactionID, NumberOfMember, CustomerName, MobileNo, Email, Packages)
             .then(result => {
                 console.log(result);
                 navigate('/Ticket', { state: bookingData });

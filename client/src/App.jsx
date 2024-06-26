@@ -7,6 +7,8 @@ import LandingPage from './components/LandingPage/LandingPage';
 import Payment from './components/Payment/Payment';
 import Booking from './components/Booking/Booking';
 import Ticket from './components/Ticket/Ticket';
+import RidePackage from './components/RidePackage/RidePackage';
+import Rides from './components/Rides/Rides';
 
 function App ()  {
   return (
@@ -18,9 +20,8 @@ function App ()  {
       <Route path='/Payment' element={<Payment/>}/>
       <Route path='/BookTicket' element={<Booking/>}/>
       <Route path='/Ticket' element={<Ticket/>}/>
-
-
-
+      <Route path='/RidePackage' element={<RidePackage/>}/>
+      <Route path='/Rides' element={<Rides/>}/>
     </Routes>
 
     </Router>

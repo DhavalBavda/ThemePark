@@ -33,7 +33,7 @@ router.post('/UserRegistraion', async (req, res) => {
         const { CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date,Claimed } = req.body
         const newuser = new UserRegistrations({ CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson,Claimed, TotalPayment, Date })
         newuser.save()
-        res.send('Registration Done...')
+        res.json('newuser')
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -45,7 +45,7 @@ router.put('/TicketClaimed/:id', async (req, res) => {
     try {
         TicketId = req.params.Id
         const Claimeduser = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: True })
-        res.status(200).send('Claimed...').json(Claimeduser)
+        res.status(200).json(Claimeduser)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -57,7 +57,7 @@ router.delete('/TicketCancelation/:id', async (req, res) => {
     try {
         TicketId = req.params.Id
         const TicketCancel = await UserRegistrations.findByIdAndDelete(TicketId)
-        res.status(200).send('Ticket Canceled').json(TicketCancel)
+        res.status(200).json(TicketCancel)
     } catch (error) {
         res.status(500).send(error)
     }
@@ -83,7 +83,7 @@ router.post('/AddPackage', async (req, res) => {
         const { PackageName,Price } = req.body
         const NewPackage = new Packages({PackageName,Price })
         NewPackage.save()
-        res.status(200),send('NewPackage Added...')
+        res.status(200).sendDate('NewPackage Added...')
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -92,10 +92,10 @@ router.post('/AddPackage', async (req, res) => {
 //---------------Edit Package----------------------------------
 router.put('/EditPackage/:id', async (req, res) => {
     try {
-        PackageId = req.params.Id
-        const {PackageName} =req.body
-        const EditPackage = await Packages.findByIdAndUpdate(PackageId, { PackageName })
-        res.status(200).send('Package Edited...').json(EditPackage)
+        PackageId = req.params.id
+        const {PackageName,Price} =req.body
+        const EditPackage = await Packages.findByIdAndUpdate(PackageId, { PackageName,Price })
+        res.status(200).json(EditPackage)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -106,7 +106,7 @@ router.delete('/PackageDelete/:id', async (req, res) => {
     try {
         PackageId = req.params.Id
         const PackagesDelete = await Packages.findByIdAndDelete(PackageId)
-        res.status(200).send('Package Deleted').json(PackagesDelete)
+        res.status(200).json(PackagesDelete)
     } catch (error) {
         res.status(500).send(error)
     }
@@ -119,7 +119,7 @@ router.delete('/PackageDelete/:id', async (req, res) => {
 
 router.get("/ShowRide", async (req, res) => {
     try {
-        const AllRide = await Rides.find();
+        const allRides = await Rides.find().populate('Packageid', 'PackageName'); // Populate Packageid with PackageName
         res.status(200).json(AllRide);
     } catch (error) {
         console.log(error);
@@ -132,7 +132,7 @@ router.post('/AddRide', async (req, res) => {
         const { Packageid,RideName,RideImage,RideDescription } = req.body
         const NewRide = new Rides({Packageid,RideName,RideImage,RideDescription })
         NewRide.save()
-        res.status(200),send('New Ride Added...')
+        res.status(200).json(NewRide)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -144,7 +144,7 @@ router.put('/EditRide/:id', async (req, res) => {
         RideId = req.params.Id
         const {RideName} =req.body
         const EditRide = await Rides.findByIdAndUpdate(RideId, { RideName })
-        res.status(200).send('Ride Edited...').json(EditRide)
+        res.status(200).json(EditRide)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -155,7 +155,7 @@ router.delete('/RideDelete/:id', async (req, res) => {
     try {
         RideId = req.params.Id
         const RideDelete = await Rides.findByIdAndDelete(RideId)
-        res.status(200).send('Ride Deleted').json(RideDelete)
+        res.status(200).json(RideDelete)
     } catch (error) {
         res.status(500).send(error)
     }
@@ -181,7 +181,7 @@ router.post('/AddRideFeedBack', async (req, res) => {
         const { Rideid,UserName,FeedBack } = req.body
         const NewRideFeedBack = new RidesFeedBacks({Rideid,UserName,FeedBack })
         NewRideFeedBack.save()
-        res.status(200),send('New RideFeedBack Added...')
+        res.status(200).json(NewRideFeedBack)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -206,7 +206,7 @@ router.post('/AddFeedBack', async (req, res) => {
         const { UserName,FeedBack } = req.body
         const NewFeedBack = new FeedBacks({UserName,FeedBack })
         NewFeedBack.save()
-        res.status(200),send('New FeedBack Added...')
+        res.status(200).json(NewFeedBack)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -232,7 +232,7 @@ router.post('/AddFoodMenu', async (req, res) => {
         const { PackageName,Price } = req.body
         const NewFoodMenu = new FoodMenus({PackageName,Price })
         NewFoodMenu.save()
-        res.status(200),send('NewFoodMenu Added...')
+        res.status(200).json(NewFoodMenu)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -244,7 +244,7 @@ router.put('/EditFoodMenu/:id', async (req, res) => {
         FoodMenuId = req.params.Id
         const {FoodMenuName} =req.body
         const EditFoodMenu = await FoodMenus.findByIdAndUpdate(PackageId, { FoodName,Price })
-        res.status(200).send('FoodMenu Edited...').json(EditFoodMenu)
+        res.status(200).json(EditFoodMenu)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
@@ -255,7 +255,7 @@ router.delete('/FoodMenuDelete/:id', async (req, res) => {
     try {
         FoodMenuId = req.params.Id
         const FoodMenusDelete = await FoodMenus.findByIdAndDelete(FoodMenuId)
-        res.status(200).send('FoodMenu Deleted').json(FoodMenusDelete)
+        res.status(200).json(FoodMenusDelete)
     } catch (error) {
         res.status(500).send(error)
     }
