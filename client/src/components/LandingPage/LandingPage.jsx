@@ -24,12 +24,19 @@
 
 import React from 'react'
 import Navbar1 from '../Navbar/Navbar'
+import Hero from '../Hero/Hero'
+import Services from '../Services/Services'
 
 const LandingPage = () => {
   return (
-    <div>
+  
+  <>
       <Navbar1/>
-    </div>
+      <Hero/>
+      <Services/>
+
+
+    </>
   )
 }
 

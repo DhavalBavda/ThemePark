@@ -11,6 +11,7 @@ import RidePackage from './components/RidePackage/RidePackage';
 import Rides from './components/Rides/Rides';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Services from './components/Services/Services';
 
 function App ()  {
   return (
@@ -26,6 +27,7 @@ function App ()  {
       <Route path='/Rides' element={<Rides/>}/>
       <Route path='/About' element={<About/>}/>
       <Route path='/Contact' element={<Contact/>}/>
+      <Route path='/Services' element={<Services/>}/>
     </Routes>
 
     </Router>
