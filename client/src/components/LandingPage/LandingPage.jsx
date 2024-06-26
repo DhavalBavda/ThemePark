@@ -29,6 +29,7 @@ import Services from '../Services/Services'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
+import RidesAttract from '../Ride_Attract/RideAttract'
 
 const LandingPage = () => {
   return (
@@ -38,6 +39,7 @@ const LandingPage = () => {
       <About showNavbar={false}/>
       <Services showNavbar={false} showFooter ={false}/>
       <Contact showNavbar={false}/>
+      <RidesAttract/>
       <Footer/>
     </>
   )
