@@ -5,6 +5,7 @@ import '../../../public/lib/animate/animate.css'
 import '../../../public/lib/animate/animate.min.css'
 import '../../../public/lib/lightbox/css/lightbox.min.css'
 import '../../../public/lib/owlcarousel/owl.carousel.min.css'
+import Testimonial from '../Testinomial/Testinomial';
 
 
 
@@ -22,6 +23,7 @@ const Services = () => {
   ];
 
   return (
+    <>
     <div className="container-fluid service py-6">
       <div className="container">
         <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
@@ -46,6 +48,8 @@ const Services = () => {
         </div>
       </div>
     </div>
+    <Testimonial/>
+    </>
   );
 };
 
