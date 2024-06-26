@@ -8,13 +8,13 @@ import Booking from './components/Booking/Booking';
 import Ticket from './components/Ticket/Ticket';
 import RidePackage from './components/RidePackage/RidePackage';
 import Rides from './components/Rides/Rides';
-import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Services from './components/Services/Services';
 import Event from './components/Event/Event';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AdminPanel from './components/AdminPanel/AdminPanel'
+import RidesAttract from './components/Ride_Attract/RideAttract';
 
 function App() {
   return (
@@ -37,10 +37,10 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/BookTicket' element={<Booking />} />
           <Route path='/Ticket' element={<Ticket />} />
-          <Route path='/ride' element={<About />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
+          <Route path='/ride' element={<RidesAttract/>} />
         </Routes>
 
       </Router>
