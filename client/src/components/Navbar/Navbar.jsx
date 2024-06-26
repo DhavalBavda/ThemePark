@@ -8,7 +8,7 @@
 
 // function Navbar() {
 
-  
+
 
 //   return (
 //     <div>
@@ -83,7 +83,7 @@
 // export default Navbar
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, Button, Container, Modal, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import '../style.css';
@@ -95,6 +95,11 @@ const Navbar1 = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    // ===================================script to make active class==============
+    const location = useLocation();
+    const isActive = (path) => location.pathname === path ? 'nav-item nav-link active' : 'nav-item nav-link';
+
 
     return (
         <div className="container-fluid nav-bar">
@@ -109,11 +114,11 @@ const Navbar1 = () => {
                     </Navbar.Toggle>
                     <Navbar.Collapse id="navbarCollapse">
                         <Nav className="mx-auto">
-                            <Nav.Link as={Link} to="/" className="nav-item nav-link active">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/about" className="nav-item nav-link">About</Nav.Link>
-                            <Nav.Link as={Link} to="/service" className="nav-item nav-link">Services</Nav.Link>
-                            <Nav.Link as={Link} to="/event" className="nav-item nav-link">Events</Nav.Link>
-                            <Nav.Link as={Link} to="/contact" className="nav-item nav-link">Contact</Nav.Link>
+                            <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
+                            <Nav.Link as={Link} to="/about" className={isActive('/about')}>About</Nav.Link>
+                            <Nav.Link as={Link} to="/service" className={isActive('/services')}>Services</Nav.Link>
+                            <Nav.Link as={Link} to="/event" className={isActive('/events')}>Events</Nav.Link>
+                            <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
                         </Nav>
                         <Button variant="primary" className="py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</Button>
                     </Navbar.Collapse>
