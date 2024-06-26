@@ -51,6 +51,7 @@ const Services = ({showNavbar = true , showFooter = true}) => {
           </div>
         </div>
       </div>
+      {showFooter && <Footer/>}
     </div>
 
   );
