@@ -9,6 +9,7 @@ import Booking from './components/Booking/Booking';
 import Ticket from './components/Ticket/Ticket';
 import RidePackage from './components/RidePackage/RidePackage';
 import Rides from './components/Rides/Rides';
+import About from './components/About/About'
 
 function App ()  {
   return (
@@ -22,6 +23,7 @@ function App ()  {
       <Route path='/Ticket' element={<Ticket/>}/>
       <Route path='/RidePackage' element={<RidePackage/>}/>
       <Route path='/Rides' element={<Rides/>}/>
+      <Route path='/About' element={<About/>}/>
     </Routes>
 
     </Router>
