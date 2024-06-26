@@ -38,8 +38,8 @@ const LandingPage = () => {
       <Hero />
       <About showNavbar={false}/>
       <Services showNavbar={false} showFooter ={false}/>
-      <Contact showNavbar={false}/>
       <RidesAttract/>
+      <Contact showNavbar={false}/>
       <Footer/>
     </>
   )
