@@ -7,6 +7,11 @@ const path = require('path')
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser')
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+// const User = require('./models/User');
+
 
 //============================================================
 app.use(bodyParser.json());
@@ -27,7 +32,33 @@ mongoose.connect(process.env.MONGODB,{
 });
 
 const AuthRouter= require("./Router/AuthRouter");
+const { AdminUsers } = require('./model/AuthSchema');
 app.use("/",AuthRouter);
+
+
+
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const user = await AdminUsers.findOne({ username });
+    console.log("sfs")
+    if (!user) return res.status(400).send('Invalid credentials');
+
+    if (user){
+        console.log("accepted")
+    }
+
+    // const isMatch = await bcrypt.compare(password, user.password);
+    // if (!isMatch) return res.status(400).send('Invalid credentials');
+
+    // const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+
+    const token = jwt.sign({ username : user.Username }, process.env.JWT_SECRET);
+    console.log(token)
+    res.json({token});
+});
+
+
+
 
 
 //==================server=========================

@@ -33,13 +33,61 @@
 
 // export default Contact
 
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
 import Navbar1 from '../Navbar/Navbar'
+import WOW from 'wow.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import teamimage from '../../assets/images/teamimage.jpg'
 
 
 const Contact = ({ showNavbar = true }) => {
 
+  const countersRef = useRef([]);
+  useEffect(() => {
+    countersRef.current.forEach(counter => {
+      counterUp(counter, {
+        duration: 2000,
+        delay: 10,
+      });
+    });
 
+    new WOW().init();
+  }, []);
+
+  const teamMembers = [
+    {
+      name: "Harsh Ajay",
+      position: "Decoration Chef",
+      imgSrc: teamimage,
+      delay: "0.1s"
+    },
+    {
+      name: "Dhaval S Bavda",
+      position: "Executive Chef",
+      imgSrc: teamimage,
+      delay: "0.3s"
+    },
+    {
+      name: "Aagam Shah",
+      position: "Kitchen Porter",
+      imgSrc: teamimage,
+      delay: "0.5s"
+    },
+    {
+      name: "Laxit Khanpara",
+      position: "Head Chef",
+      imgSrc: teamimage,
+      delay: "0.7s"
+    },
+    {
+      name: "Rutvik Padhara",
+      position: "Head Chef",
+      imgSrc: teamimage,
+      delay: "0.7s"
+    },
+  ];
 
   return (
     <div>
@@ -94,6 +142,44 @@ const Contact = ({ showNavbar = true }) => {
           </div>
         </div>
       </div>
+
+      {/* Team Members start */}
+      {showNavbar && <div className="container-fluid team py-6">
+        <div className="container">
+          <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
+            <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
+            <h1 className="display-5 mb-5">We have experienced chef Team</h1>
+          </div>
+          <div className="row g-4">
+            {teamMembers.map((member, index) => (
+              <div key={index} className={`col-lg-3 col-md-6 wow bounceInUp`} data-wow-delay={member.delay}>
+                <div className="team-item rounded">
+                  <img className="img-fluid rounded-top" src={member.imgSrc} alt={member.name} />
+                  <div className="team-content text-center py-3 bg-dark rounded-bottom">
+                    <h4 className="text-primary">{member.name}</h4>
+                    <p className="text-white mb-0">{member.position}</p>
+                  </div>
+                  <div className="team-icon d-flex flex-column justify-content-center m-4">
+                    <a className="share btn btn-primary btn-md-square rounded-circle mb-2" href="#">
+                      <FontAwesomeIcon icon={faShareAlt} />
+                    </a>
+                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
+                      <FontAwesomeIcon icon={faFacebookF} />
+                    </a>
+                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </a>
+                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>}
+      {/* Team Members end */}
     </div>
   )
 }

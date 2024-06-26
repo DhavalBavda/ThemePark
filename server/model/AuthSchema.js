@@ -1,6 +1,21 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId
 
+
+//=============AdminUser==================================================
+const AdminUser = new mongoose.Schema({
+    Username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    Password: {
+        type: String,
+        required: true
+    }
+})
+const AdminUsers = new mongoose.model('AdminUsers',AdminUser)
+
 //=============UserRegistration==================================================
 const UserRegistration = new mongoose.Schema(
     {
@@ -147,4 +162,4 @@ const FoodMenus =new  mongoose.model('FoodMenus', FoodMenu);
 
 /*=============Export the model==============*/
 
-module.exports={UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks,FoodMenus}
+module.exports={AdminUsers,UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks,FoodMenus}
