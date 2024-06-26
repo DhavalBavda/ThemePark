@@ -27,6 +27,7 @@ import Navbar1 from '../Navbar/Navbar'
 import Hero from '../Hero/Hero'
 import Services from '../Services/Services'
 import About from '../About/About'
+import Contact from '../Contact/Contact'
 
 const LandingPage = () => {
   return (
@@ -34,7 +35,8 @@ const LandingPage = () => {
       <Navbar1 />
       <Hero />
       <About showNavbar={false}/>
-      <Services />
+      <Services showNavbar={false}/>
+      <Contact showNavbar={false}/>
     </>
   )
 }

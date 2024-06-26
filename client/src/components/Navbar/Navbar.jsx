@@ -116,7 +116,7 @@ const Navbar1 = () => {
                         <Nav className="mx-auto">
                             <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
                             <Nav.Link as={Link} to="/about" className={isActive('/about')}>About</Nav.Link>
-                            <Nav.Link as={Link} to="/service" className={isActive('/services')}>Services</Nav.Link>
+                            <Nav.Link as={Link} to="/services" className={isActive('/services')}>Services</Nav.Link>
                             <Nav.Link as={Link} to="/event" className={isActive('/events')}>Events</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
                         </Nav>

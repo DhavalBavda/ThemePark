@@ -37,13 +37,13 @@ import React from 'react'
 import Navbar1 from '../Navbar/Navbar'
 
 
-const Contact = () => {
+const Contact = ({showNavbar = true}) => {
 
   
 
   return (
     <div>
-      <Navbar1 />
+      {showNavbar && <Navbar1 />}
       <div className="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
         <div className="container">
           <div className="p-5 bg-light rounded contact-form">
@@ -94,9 +94,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      
-
     </div>
   )
 }
