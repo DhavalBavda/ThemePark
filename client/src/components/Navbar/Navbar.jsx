@@ -93,8 +93,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Navbar1 = () => {
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     // ===================================script to make active class==============
     const location = useLocation();
@@ -117,7 +117,7 @@ const Navbar1 = () => {
                             <Nav.Link as={Link} to="/" className={isActive('/')}>Home</Nav.Link>
                             <Nav.Link as={Link} to="/about" className={isActive('/about')}>About</Nav.Link>
                             <Nav.Link as={Link} to="/services" className={isActive('/services')}>Services</Nav.Link>
-                            <Nav.Link as={Link} to="/event" className={isActive('/events')}>Events</Nav.Link>
+                            <Nav.Link as={Link} to="/events" className={isActive('/events')}>Events</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
                         </Nav>
                         <Button variant="primary" className="py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</Button>

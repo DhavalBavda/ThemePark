@@ -6,10 +6,11 @@ import '../../../public/lib/animate/animate.min.css'
 import '../../../public/lib/lightbox/css/lightbox.min.css'
 import '../../../public/lib/owlcarousel/owl.carousel.min.css'
 import Navbar1 from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 
 
-const Services = ({showNavbar = true}) => {
+const Services = ({showNavbar = true , showFooter = true}) => {
   const services = [
     { icon: 'fa-wheelchair', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s' },
     { icon: 'fa-utensils', title: 'Venue Bookings', para: 'Unlock the thrills on the Active Events', delay: '0.7s' },
@@ -49,6 +50,7 @@ const Services = ({showNavbar = true}) => {
           </div>
         </div>
       </div>
+      {showFooter && <Footer/>}
     </div>
 
   );
