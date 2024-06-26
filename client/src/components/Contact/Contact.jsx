@@ -37,13 +37,13 @@ import React from 'react'
 import Navbar1 from '../Navbar/Navbar'
 
 
-const Contact = () => {
+const Contact = ({ showNavbar = true }) => {
 
-  
+
 
   return (
     <div>
-      <Navbar1 />
+      {showNavbar && <Navbar1 />}
       <div className="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
         <div className="container">
           <div className="p-5 bg-light rounded contact-form">
@@ -76,8 +76,8 @@ const Contact = () => {
                     <i className="fas fa-envelope fa-2x text-primary me-4"></i>
                     <div>
                       <h4>Mail Us</h4>
-                      <p className="mb-2">info@amusmentpark.com</p>
-                      <p className="mb-0">support@amusmentpark.com</p>
+                      <p className="mb-2">info@ajwawaterpark.com</p>
+                      <p className="mb-0">support@ajwawaterpark.com</p>
                     </div>
                   </div>
                   <div className="d-inline-flex w-100 border border-primary p-4 rounded">
@@ -94,9 +94,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      
-
     </div>
   )
 }

@@ -21,7 +21,7 @@ import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import teamimage from '../../assets/images/teamimage.jpg'
 
-const About = () => {
+const About = ({showNavbar = true}) => {
 
     const countersRef = useRef([]);
     const [videoSrc, setVideoSrc] = useState('');
@@ -79,7 +79,8 @@ const About = () => {
 
     return (
         <div>
-            <Navbar1 />
+            {showNavbar && <Navbar1 />}
+
             <div className="container-fluid py-6">
                 <Container>
                     <Row className="g-5 align-items-center">
@@ -169,7 +170,7 @@ const About = () => {
             {/* Fact end */}
 
             {/* Team Members start */}
-            <div className="container-fluid team py-6">
+            {showNavbar && <div className="container-fluid team py-6">
                 <div className="container">
                     <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
                         <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
@@ -203,7 +204,7 @@ const About = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div>}
             {/* Team Members end */}
 
         </div>

@@ -5,25 +5,25 @@ import '../../../public/lib/animate/animate.css'
 import '../../../public/lib/animate/animate.min.css'
 import '../../../public/lib/lightbox/css/lightbox.min.css'
 import '../../../public/lib/owlcarousel/owl.carousel.min.css'
+import Navbar1 from '../Navbar/Navbar';
 import Testimonial from '../Testinomial/Testinomial';
 
 
 
-const Services = () => {
+const Services = ({showNavbar = true}) => {
   const services = [
-    { icon: 'fa-wheelchair', title: 'Ticket Booking',para:'plan your adventure online and Enjoy', delay: '0.5s' },
-    { icon: 'fa-utensils', title: 'Venue Bookings',para:'Unlock the thrills on the Active Events', delay: '0.7s' },
-    { icon: 'fa-cheese', title: 'Food Menu',para:'Tasty meals that give you energy for the rides.', delay: '0.1s' },
-    { icon: 'fa-pizza-slice', title: 'Silver Package',para:'Get more thrills with our premium package', delay: '0.3s' },
-    { icon: 'fa-hotdog', title: 'Gold Package',para:'Treat yourself to the best of the best.', delay: '0.5s' },
-    { icon: 'fa-hamburger', title: 'Platinum Package',para:'Experience the park like a true VIP.', delay: '0.7s' },
-    { icon: 'fa-wine-glass-alt', title: 'Family Package',para:'Make memories together with our family deal', delay: '0.1s' },
-    { icon: 'fa-walking', title: 'Student Package',para:'Discounted tickets to keep the adventure alive', delay: '0.3s' },
-   
+    { icon: 'fa-wheelchair', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s' },
+    { icon: 'fa-utensils', title: 'Venue Bookings', para: 'Unlock the thrills on the Active Events', delay: '0.7s' },
+    { icon: 'fa-cheese', title: 'Food Menu', para: 'Tasty meals that give you energy for the rides.', delay: '0.1s' },
+    { icon: 'fa-pizza-slice', title: 'Silver Package', para: 'Get more thrills with our premium package', delay: '0.3s' },
+    { icon: 'fa-hotdog', title: 'Gold Package', para: 'Treat yourself to the best of the best.', delay: '0.5s' },
+    { icon: 'fa-hamburger', title: 'Platinum Package', para: 'Experience the park like a true VIP.', delay: '0.7s' },
+    { icon: 'fa-wine-glass-alt', title: 'Family Package', para: 'Make memories together with our family deal', delay: '0.1s' },
+    { icon: 'fa-walking', title: 'Student Package', para: 'Discounted tickets to keep the adventure alive', delay: '0.3s' },
+
   ];
 
   return (
-    <>
     <div className="container-fluid service py-6">
       <div className="container">
         <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
@@ -48,8 +48,6 @@ const Services = () => {
         </div>
       </div>
     </div>
-    <Testimonial/>
-    </>
   );
 };
 
