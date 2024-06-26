@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import '../style.css'
-import '../../../public/css/bootstrap.min.css'
-import '../../../public/lib/animate/animate.css'
-import '../../../public/lib/animate/animate.min.css'
-import '../../../public/lib/lightbox/css/lightbox.min.css'
-import '../../../public/lib/owlcarousel/owl.carousel.min.css'
+import { Link, Element, animateScroll as scroll } from 'react-scroll';
+import '../style.css';
+import '../../../public/css/bootstrap.min.css';
+import '../../../public/lib/animate/animate.css';
+import '../../../public/lib/animate/animate.min.css';
+import '../../../public/lib/lightbox/css/lightbox.min.css';
+import '../../../public/lib/owlcarousel/owl.carousel.min.css';
 import Navbar1 from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import Menu from '../Menu/Menu';
 
 const Services = ({ showNavbar = true, showFooter = true }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const [showMenu, setShowMenu] = useState(false);
 
   const services = [
     { icon: 'fa-ticket-alt', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s', description: 'Book your tickets in advance to skip the lines and enjoy more time on the rides.' },
@@ -25,7 +28,14 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
 
   const toggleModal = (service) => {
     setSelectedService(service);
-    setShowModal(!showModal);
+    if (service.title === 'Food Menu') {
+      setShowMenu(true);
+      setShowModal(false);
+      scroll.scrollToBottom();
+    } else {
+      setShowModal(true);
+      setShowMenu(false);
+    }
   };
 
   return (
@@ -55,16 +65,16 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
           </div>
         </div>
       </div>
-      {showFooter && <Footer />}
 
-      {/* Modal */}
+      {showFooter && showMenu && <Menu />}
+
       {showModal && (
         <div className="modal fade show" tabIndex="-1" role="dialog" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">{selectedService?.title}</h5>
-                <button type="button" className="close" onClick={toggleModal}>
+                <button type="button" className="close" onClick={() => setShowModal(false)}>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -73,7 +83,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
                 <p>{selectedService?.description}</p>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={toggleModal}>
+                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>
                   Close
                 </button>
               </div>
@@ -81,6 +91,8 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
           </div>
         </div>
       )}
+
+      {showFooter && <Footer />}
     </div>
   );
 };
