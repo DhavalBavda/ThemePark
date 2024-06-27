@@ -36,11 +36,11 @@ function App() {
           {/* <ProtectedRoute path='/Rides' element={<Rides />} /> */}
           <Route path='/Rides' element={<ProtectedRoute component={Rides} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={Sidebar} />} />
+          <Route path='/Sidebar' element={<ProtectedRoute component={Sidebar} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={ClimedTicket} />} />
+          <Route path='/ClimedTicket' element={<ProtectedRoute component={ClimedTicket} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={Dashboard} />} />
+          <Route path='/Dashboard' element={<ProtectedRoute component={Dashboard} />} />
 
 
           <Route path='/' element={<LandingPage />} />
