@@ -168,7 +168,7 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
 
     const handleWriteReview = (ride) => {
         navigate(`/rideform/${ride.title.toLowerCase().replace(/\s/g, '-')}`);
-      };
+    };
 
     return (
         <div>
@@ -243,25 +243,25 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                                     </div>
                                 ))}
                             </div>
-        <button className="btn btn-primary px-4 py-2 rounded-pill" onClick={() => handleWriteReview(attraction)}>
-    Write a Review
-  </button>
+                            <button className="btn btn-primary px-4 py-2 rounded-pill">
+                                Write a Review
+                            </button>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={toggleModal}>
                                     Close
                                 </button>
                             </div>
                         </div>
-      
+
                     </div>
                 </div>
             )}
 
-{/* {selectedRide && (
+            {/* {selectedRide && (
         <RideForm ride={selectedRide} onSubmit={() => setSelectedRide(null)} />
       )} */}
 
-{/* {selectedRide && (
+            {/* {selectedRide && (
   <RideForm ride={selectedRide} Ridess={Ridess} onSubmit={() => setSelectedRide(null)} />
 )} */}
 
