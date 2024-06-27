@@ -75,6 +75,8 @@ const Rides = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('RideName', RideName);
+        formData.append('Para', Para);
+        formData.append('Rating', Rating);
         formData.append('Packageid', Packageid);
         formData.append('RideDescription', RideDescription);
         formData.append('Price', Price);
@@ -167,7 +169,13 @@ const Rides = () => {
                                                 <label>Ride Name</label>
                                                 <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setRideName(e.target.value)} />
                                             </div>
-                                            
+                                            <div className="col-lg-6 col-md-6">
+                                                <label>Ride Para</label>
+                                                <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setPara(e.target.value)} />
+                                            </div><div className="col-lg-6 col-md-6">
+                                                <label>Ride Rating</label>
+                                                <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setRating(e.target.value)} />
+                                            </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Ride Description</label>
                                                 <input type="text" className="form-control border-primary p-2" placeholder="Lovely Ride" onChange={(e) => setRideDescription(e.target.value)} />
@@ -207,6 +215,14 @@ const Rides = () => {
                                     <div className="col-lg-6 col-md-6">
                                         <label>Ride Name</label>
                                         <input type="text" className="form-control border-primary p-2" value={RideName} onChange={(e) => setRideName(e.target.value)} />
+                                    </div>
+                                    <div className="col-lg-6 col-md-6">
+                                        <label>Ride Para</label>
+                                        <input type="text" className="form-control border-primary p-2" value={Para} onChange={(e) => setRideName(e.target.value)} />
+                                    </div>
+                                    <div className="col-lg-6 col-md-6">
+                                        <label>Ride Rating</label>
+                                        <input type="text" className="form-control border-primary p-2" value={Rating} onChange={(e) => setRideName(e.target.value)} />
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <label>Ride Description</label>
