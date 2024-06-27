@@ -14,7 +14,9 @@ const AdmimLogin = () => {
         try {
             console.log("asckn")
             const response = await axios.post('http://localhost:4500/login', { Username, Password });
-            console.log("Login response:", response.data)
+            
+            // console.log("Login response:", response.data)
+
             localStorage.setItem('token', response.data.token);
 
             navigate('/Dashboard');

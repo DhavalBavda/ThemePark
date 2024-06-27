@@ -31,7 +31,6 @@ function App() {
           {/* <ProtectedRoute path='/Rides' element={<Rides />} /> */}
           <Route path='/Rides' element={<ProtectedRoute component={Rides} />} />
 
-
           <Route path='/ClimedTicket' element={<ProtectedRoute component={ClimedTicket} />} />
 
           <Route path='/Dashboard' element={<ProtectedRoute component={Dashboard} />} />

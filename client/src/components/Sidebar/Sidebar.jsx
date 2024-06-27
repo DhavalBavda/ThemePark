@@ -12,7 +12,8 @@ const Sidebar = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        Cookies.remove('token');
+        localStorage.removeItem('token');
+        // Cookies.remove('token');
         navigate('/AdminLogin')
     };
 
