@@ -10,9 +10,6 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// const User = require('./models/User');
-
-
 
 app.use(express.static(path.join(__dirname, "public")));
 //============================================================

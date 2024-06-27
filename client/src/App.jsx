@@ -36,6 +36,12 @@ function App() {
           {/* <ProtectedRoute path='/Rides' element={<Rides />} /> */}
           <Route path='/Rides' element={<ProtectedRoute component={Rides} />} />
 
+          <Route path='/Rides' element={<ProtectedRoute component={Sidebar} />} />
+
+          <Route path='/Rides' element={<ProtectedRoute component={ClimedTicket} />} />
+
+          <Route path='/Rides' element={<ProtectedRoute component={Dashboard} />} />
+
 
           <Route path='/' element={<LandingPage />} />
           <Route path='/BookTicket' element={<Booking />} />
@@ -43,23 +49,10 @@ function App() {
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
-          <Route path='/ride' element={<RidesAttract/>} />
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/BookTicket' element={<Booking />} />
-          <Route path='/Ticket' element={<Ticket />} />
-          <Route path='/RidePackage' element={<RidePackage />} />
-          <Route path='/Rides' element={<Rides />} />
-          <Route path='/Contact' element={<Contact />} />
-          <Route path='/Services' element={<Services />} />
-          <Route path='/Events' element={<Event />} />
-          <Route path='/Sidebar' element={<Sidebar />} />
-          <Route path='/Dashboard' element={<Dashboard />} />
-          <Route path='/ClimedTicket' element={<ClimedTicket />} />
-
-        </Routes>
-
-      </Router>
-    </div>
+          <Route path='/ride' element={<RidesAttract />} />
+        </Routes >
+      </Router >
+    </div >
   )
 }
 export default App;
