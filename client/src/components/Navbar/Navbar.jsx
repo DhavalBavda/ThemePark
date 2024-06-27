@@ -4,7 +4,7 @@
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 // import './Navbar.css';
 // import menuicon from "../../../public/image/menu-icon.png"
-// import Logo from "../../../public/image/Logo.png"
+import Logo from "../../../public/image/Logo.png"
 
 // function Navbar() {
 
@@ -102,11 +102,13 @@ const Navbar1 = () => {
 
 
     return (
-        
+
         <div className="container-fluid nav-bar">
             <Container>
                 <Navbar expand="lg" className="py-4">
+                <img src={Logo} className="img-fluid rounded-end" style={{ objectFit: 'cover', height:'50px', width:'50px'}} alt="logo"></img>
                     <Navbar.Brand as={Link} to="/">
+                        
                         <h1 className="text-primary fw-bold mb-0">Amusment<span className="text-dark">Park</span></h1>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarCollapse">
