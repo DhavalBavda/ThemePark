@@ -33,7 +33,7 @@ const Event = ({showNavbar = true}) => {
           <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
             Latest Events
           </small>
-          <h1 className="display-5 mb-5">Our Social & Professional Events Gallery</h1>
+          <h1 className="display-5 mb-5">Our Events Gallery</h1>
         </div>
         <div className="tab-class text-center">
           <ul className="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
