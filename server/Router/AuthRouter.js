@@ -150,7 +150,7 @@ router.post('/AddRide',upload.single('RideImage'), async (req, res) => {
         const { Packageid,RideName,RideDescription,Para,Rating } = req.body
         console.log(req.body);
         console.log(req.file);
-        const NewRide = new Rides({Packageid,RideName,RideImage: `http://localhost:4500/upload/${req.file.filename}`,RideDescription,Para,Rating })
+        const NewRide = new Rides({Packageid,RideName,RideImage: `upload/${req.file.filename}`,RideDescription,Para,Rating })
         NewRide.save()
         res.status(200).json(NewRide)
     } catch (error) {

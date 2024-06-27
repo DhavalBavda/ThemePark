@@ -34,6 +34,9 @@ const Rides = () => {
         formData.append('RideName', RideName);
         formData.append('Packageid', Packageid);
         formData.append('RideImage', RideImage);
+        formData.append('Para', Para);
+        formData.append('Rating', Rating);
+
         formData.append('RideDescription', RideDescription);
 
         axios.post('http://localhost:4500/AddRide', formData, {
@@ -132,7 +135,7 @@ const Rides = () => {
                                             {Ride.map((ride, index) => (
                                                 <tr key={ride._id}>
                                                     <td>{index + 1}</td>
-                                                    <td><img src={ride.RideImage} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
+                                                    <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{ride.RideName}</td>
                                                     <td>{ride.Packageid.PackageName}</td>
                                                     <td>{ride.rating}</td>
