@@ -2,7 +2,8 @@ import Navbar1 from '../Navbar/Navbar'
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import '../style.css'; // Assuming you create a CSS file for event styling
+import Footer from '../Footer/Footer';
+ 
 
 const EventItem = ({ src, category, lightbox }) => (
   <div className="col-md-6 col-lg-3">
@@ -61,14 +62,14 @@ const Event = ({showNavbar = true}) => {
           <div className="tab-content">
             <div id="tab-1" className="tab-pane fade show p-0 active">
               <div className="row g-4">
-                <EventItem src="img/event-1.jpg" category="Wedding" lightbox="event-1" />
-                <EventItem src="img/event-2.jpg" category="Corporate" lightbox="event-2" />
-                <EventItem src="img/event-3.jpg" category="Wedding" lightbox="event-3" />
-                <EventItem src="img/event-4.jpg" category="Buffet" lightbox="event-4" />
-                <EventItem src="img/event-5.jpg" category="Cocktail" lightbox="event-5" />
-                <EventItem src="img/event-6.jpg" category="Wedding" lightbox="event-6" />
-                <EventItem src="img/event-7.jpg" category="Buffet" lightbox="event-7" />
-                <EventItem src="img/event-8.jpg" category="Corporate" lightbox="event-8" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-1" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Corporate" lightbox="event-2" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-3" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Buffet" lightbox="event-4" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Cocktail" lightbox="event-5" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-6" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Buffet" lightbox="event-7" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Corporate" lightbox="event-8" />
               </div>
             </div>
             <div id="tab-2" className="tab-pane fade show p-0">
@@ -99,6 +100,7 @@ const Event = ({showNavbar = true}) => {
         </div>
       </div>
     </div>
+    <Footer/>
     </div>
     
   )
