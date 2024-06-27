@@ -59,31 +59,31 @@ const Contact = ({ showNavbar = true }) => {
   const teamMembers = [
     {
       name: "Harsh Ajay",
-      position: "Decoration Chef",
+      position: "Frontend Developer",
       imgSrc: teamimage,
       delay: "0.1s"
     },
     {
       name: "Dhaval S Bavda",
-      position: "Executive Chef",
+      position: "Backend Developer",
       imgSrc: teamimage,
       delay: "0.3s"
     },
     {
       name: "Aagam Shah",
-      position: "Kitchen Porter",
+      position: "Frontend Developer",
       imgSrc: teamimage,
       delay: "0.5s"
     },
     {
       name: "Laxit Khanpara",
-      position: "Head Chef",
+      position: "Backend Developer",
       imgSrc: teamimage,
       delay: "0.7s"
     },
     {
       name: "Rutvik Padhara",
-      position: "Head Chef",
+      position: "ML Expert",
       imgSrc: teamimage,
       delay: "0.7s"
     },
@@ -148,7 +148,7 @@ const Contact = ({ showNavbar = true }) => {
         <div className="container">
           <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
             <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
-            <h1 className="display-5 mb-5">We have experienced chef Team</h1>
+            <h1 className="display-5 mb-5">Our Tech Team</h1>
           </div>
           <div className="row g-4">
             {teamMembers.map((member, index) => (
