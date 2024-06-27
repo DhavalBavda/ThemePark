@@ -13,7 +13,6 @@ const Sidebar = () => {
 
     const logout = () => {
         localStorage.removeItem('token');
-        // Cookies.remove('token');
         navigate('/AdminLogin')
     };
 
