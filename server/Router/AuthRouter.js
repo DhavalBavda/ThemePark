@@ -150,7 +150,7 @@ router.post('/AddRide',upload.single('RideImage'), async (req, res) => {
         const { Packageid,RideName,RideDescription,Para,Rating } = req.body
         console.log(req.body);
         console.log(req.file);
-        const NewRide = new Rides({Packageid,RideName,RideImage: req.file.filename,RideDescription,Para,Rating })
+        const NewRide = new Rides({Packageid,RideName,RideImage: `http://localhost:4500/upload/${req.file.filename}`,RideDescription,Para,Rating })
         NewRide.save()
         res.status(200).json(NewRide)
     } catch (error) {
@@ -173,7 +173,8 @@ router.put('/EditRide/:id',upload.single('RideImage'), async (req, res) => {
 //---------------Ride Delete----------------------------------
 router.delete('/RideDelete/:id', async (req, res) => {
     try {
-        RideId = req.params.Id
+        RideId = req.params.id
+        console.log(RideId);
         const RideDelete = await Rides.findByIdAndDelete(RideId)
         res.status(200).json(RideDelete)
     } catch (error) {

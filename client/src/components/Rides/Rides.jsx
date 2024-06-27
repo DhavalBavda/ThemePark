@@ -34,8 +34,6 @@ const Rides = () => {
         formData.append('RideName', RideName);
         formData.append('Packageid', Packageid);
         formData.append('RideImage', RideImage);
-        formData.append('Patra', Para);
-        formData.append('Rating', Rating);
         formData.append('RideDescription', RideDescription);
 
         axios.post('http://localhost:4500/AddRide', formData, {
@@ -81,6 +79,7 @@ const Rides = () => {
         formData.append('Rating', Rating);
         formData.append('Packageid', Packageid);
         formData.append('RideDescription', RideDescription);
+        formData.append('Price', Price);
 
         axios.put(`http://localhost:4500/EditRide/${selectedRide._id}`, formData)
             .then(result => {
@@ -93,7 +92,16 @@ const Rides = () => {
             })
             .catch(err => console.log(err));
     };
+    const handleDelete = (ticketId) => {
+        try {
+            axios.delete(`http://localhost:4500/RideDelete/${ticketId}`);
+            setRide(prevRides => prevRides.filter(ride => ride._id !== ticketId));
 
+        } catch (error) {
+            console.error('Error claiming ticket:', error);
+        }
+
+    }
     return (
         <>
             <div className="row">
@@ -124,7 +132,7 @@ const Rides = () => {
                                             {Ride.map((ride, index) => (
                                                 <tr key={ride._id}>
                                                     <td>{index + 1}</td>
-                                                    <td><img src={`http://localhost:4500/upload/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
+                                                    <td><img src={ride.RideImage} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{ride.RideName}</td>
                                                     <td>{ride.Packageid.PackageName}</td>
                                                     <td>{ride.rating}</td>
@@ -134,9 +142,12 @@ const Rides = () => {
                                                         </Button>
                                                     </td>
                                                     <td>
-                                                        <Link to={`/PackageDelete/${ride._id}`} className='btn btn-danger'>
+                                               
+                                                        <Button
+                                                            onClick={() => handleDelete(ride._id)}
+                                                            className='btn btn-danger'>
                                                             Delete
-                                                        </Link>
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             ))}
