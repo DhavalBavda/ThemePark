@@ -29,6 +29,9 @@ const RidePackage = () => {
             .then(result => {
                 console.log(result);
                 navigate('/Ticket', { state: RidePackageData });
+                setPackages([...Packages, result.data]);
+                setPackageName('');
+                setPrice('');
             })
             .catch(err => console.log(err));
     };
@@ -65,11 +68,11 @@ const RidePackage = () => {
 
     return (
         <div >
-        
+
             <div className="row">
-            <Navbar1/>
+                <Navbar1 />
                 <div className="col-2">
-             
+
                     <Sidebar />
                 </div>
                 <div className="col-10">

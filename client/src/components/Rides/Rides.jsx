@@ -138,7 +138,7 @@ const Rides = () => {
                                                     <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{ride.RideName}</td>
                                                     <td>{ride.Packageid.PackageName}</td>
-                                                    <td>{ride.rating}</td>
+                                                    <td>{ride.Rating}</td>
                                                     <td>
                                                         <Button variant="success" onClick={() => handleShow(ride)}>
                                                             Edit

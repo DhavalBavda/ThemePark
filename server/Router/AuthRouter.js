@@ -100,7 +100,7 @@ router.post('/AddPackage', async (req, res) => {
         const { PackageName,Price } = req.body
         const NewPackage = new Packages({PackageName,Price })
         NewPackage.save()
-        res.status(200).sendDate('NewPackage Added...')
+        res.status(200).json(NewPackage)
     } catch (error) {
         console.log(error);
         res.status(500).send(error)
