@@ -146,10 +146,10 @@ router.get("/ShowRide", async (req, res) => {
 //---------------New Ride Add----------------------------------
 router.post('/AddRide',upload.single('RideImage'), async (req, res) => {
     try {
-        const { Packageid,RideName,RideDescription } = req.body
+        const { Packageid,RideName,RideDescription,Para,Rating } = req.body
         console.log(req.body);
         console.log(req.file);
-        const NewRide = new Rides({Packageid,RideName,RideImage: req.file.filename,RideDescription })
+        const NewRide = new Rides({Packageid,RideName,RideImage: req.file.filename,RideDescription,Para,Rating })
         NewRide.save()
         res.status(200).json(NewRide)
     } catch (error) {

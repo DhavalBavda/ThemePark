@@ -14,7 +14,7 @@ const AdmimLogin = () => {
         try {
             console.log("asckn")
             const response = await axios.post('http://localhost:4500/login', { Username, Password });
-            console.log("Login response:",response.data)
+            console.log("Login response:", response.data)
             localStorage.setItem('token', response.data.token);
 
             navigate('/admin');
@@ -24,30 +24,38 @@ const AdmimLogin = () => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <div>
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        value={Username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+        <div className='container'>
+            <div className="row g-0 mt-5 align-content-center">
+                <div className="col-6">
+                    <div className="border-bottom border-top border-primary bg-light py-5 px-4">
+                        <div className="text-center">
+                            <h1 className="display-5 mb-5">Admine Login</h1>
+                        </div>
+                        <form onSubmit={handleLogin}>
+                            <div>
+                                <label>Username:</label>
+                                <input className='form-control border-primary p-2'
+                                    type="text"
+                                    value={Username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input className='form-control border-primary p-2'
+                                    type="password"
+                                    value={Password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            {error && <p style={{ color: 'red' }}>{error}</p>}
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={Password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                <button type="submit">Login</button>
-            </form>
+            </div>
         </div>
     );
 };

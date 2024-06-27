@@ -11,10 +11,8 @@ import Services from './components/Services/Services';
 import Event from './components/Event/Event';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-import AdminPanel from './components/AdminPanel/AdminPanel'
+// import AdminPanel from './components/AdminPanel/AdminPanel'
 import RidesAttract from './components/Ride_Attract/RideAttract';
-
-import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
 
@@ -28,7 +26,7 @@ function App() {
           <Route path='/AdminLogin' element={<AdminLogin />} />
 
           {/* <Route path='/admin' element={<AdminPanel />} /> */}
-          <Route path='/admin' element={<ProtectedRoute component={AdminPanel} />} />
+          <Route path='/admin' element={<ProtectedRoute component={Dashboard} />} />
 
           {/* <Route path='/RidePackage' element={<RidePackage />} /> */}
           <Route path='/RidePackage' element={<ProtectedRoute component={RidePackage} />} />
@@ -36,11 +34,10 @@ function App() {
           {/* <ProtectedRoute path='/Rides' element={<Rides />} /> */}
           <Route path='/Rides' element={<ProtectedRoute component={Rides} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={Sidebar} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={ClimedTicket} />} />
+          <Route path='/ClimedTicket' element={<ProtectedRoute component={ClimedTicket} />} />
 
-          <Route path='/Rides' element={<ProtectedRoute component={Dashboard} />} />
+          <Route path='/Dashboard' element={<ProtectedRoute component={Dashboard} />} />
 
 
           <Route path='/' element={<LandingPage />} />

@@ -95,6 +95,14 @@ const Ride = new mongoose.Schema(
             type: ObjectId,
             ref: 'Packages',
         },
+        Para: {
+            type: String,
+            ref: 'Packages',
+        },
+        Rating: {
+            type: String,
+            ref: 'Packages',
+        },
         RideName: {
             type: String,
             required: true,
