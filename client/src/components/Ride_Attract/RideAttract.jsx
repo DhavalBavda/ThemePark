@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../style.css'
+// import '../Ride_Attract/RideForm'
 import '../../../public/css/bootstrap.min.css'
 import '../../../public/lib/animate/animate.css'
 import '../../../public/lib/animate/animate.min.css'
@@ -246,6 +247,10 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                     </div>
                 </div>
             )}
+
+{/* {selectedRide && (
+        <RideForm ride={selectedRide} onSubmit={() => setSelectedRide(null)} />
+      )} */}
 
             {showFooter && <Footer />}
         </div>

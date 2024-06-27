@@ -50,7 +50,7 @@ const Booking = () => {
             <div className="container">
                 <div className="row g-0">
                     <div className="col-1">
-                        <img src="../../../public/image/hero.webp" className="img-fluid h-100 w-100 rounded-start" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
+                        <img src="../../../public/image/Hero_image/hero.webp" className="img-fluid h-100 w-100 rounded-start" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
                     </div>
                     <div className="col-10">
                         <div className="border-bottom border-top border-primary bg-light py-5 px-4">
@@ -114,7 +114,7 @@ const Booking = () => {
                         </div>
                     </div>
                     <div className="col-1">
-                        <img src="../../../public/image/hero.webp" className="img-fluid h-100 w-100 rounded-end" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
+                        <img src="../../../public/image/Hero_image/hero.webp" className="img-fluid h-100 w-100 rounded-end" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
                     </div>
                 </div>
             </div>

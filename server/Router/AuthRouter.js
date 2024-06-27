@@ -59,7 +59,8 @@ router.post('/UserRegistraion', async (req, res) => {
 //---------------Ticket Claimed----------------------------------
 router.put('/TicketClaimed/:id', async (req, res) => {
     try {
-        TicketId = req.params.Id
+        TicketId = req.params.id
+        console.log(TicketId,'Claimed');
         const Claimeduser = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: 'Claimed' })
         res.status(200).json(Claimeduser)
     } catch (error) {

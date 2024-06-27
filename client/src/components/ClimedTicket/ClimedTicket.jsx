@@ -9,7 +9,21 @@ import { Link } from 'react-router-dom';
 
 const ClimedTicket = () => {
     const [Tickets, setTickets] = useState([]);
+    const claimTicket = async (ticketId) => {
+        try {
+            const response = await axios.put(`http://localhost:4500/TicketClaimed/${ticketId}`);
+            console.log('Ticket Claimed:', response.data);
+            // Optionally, refresh the ticket list or update the UI accordingly
+            setTickets(prevTickets =>
+                prevTickets.map(ticket =>
+                    ticket._id === ticketId ? { ...ticket, Claimed: 'Claimed' } : ticket
+                )
+            );
 
+        } catch (error) {
+            console.error('Error claiming ticket:', error);
+        }
+    };
     useEffect(() => {
         axios.get('http://localhost:4500/ShowAllTickets')
             .then(result => setTickets(result.data))
@@ -60,9 +74,11 @@ const ClimedTicket = () => {
                                                             </button>
                                                         )}
                                                         {Ticket.Claimed === 'Pending' && (
-                                                            <Link to={`/TicketClaimed/${Ticket._id}`} className='btn btn-success'>
-                                                                Pending
-                                                            </Link>
+                                                            <button
+                                                                onClick={() => claimTicket(Ticket._id)}
+                                                                className='btn btn-success'>
+                                                                Claim
+                                                            </button>
                                                         )}
                                                         {Ticket.Claimed === 'Canceled' && (
                                                             <button className='btn btn-danger'>
