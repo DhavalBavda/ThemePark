@@ -34,6 +34,8 @@ const Rides = () => {
         formData.append('RideName', RideName);
         formData.append('Packageid', Packageid);
         formData.append('RideImage', RideImage);
+        formData.append('Patra', Para);
+        formData.append('Rating', Rating);
         formData.append('RideDescription', RideDescription);
 
         axios.post('http://localhost:4500/AddRide', formData, {
@@ -79,7 +81,6 @@ const Rides = () => {
         formData.append('Rating', Rating);
         formData.append('Packageid', Packageid);
         formData.append('RideDescription', RideDescription);
-        formData.append('Price', Price);
 
         axios.put(`http://localhost:4500/EditRide/${selectedRide._id}`, formData)
             .then(result => {
