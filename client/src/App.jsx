@@ -25,9 +25,6 @@ function App() {
         <Routes>
           <Route path='/AdminLogin' element={<AdminLogin />} />
 
-          {/* <Route path='/admin' element={<AdminPanel />} /> */}
-          <Route path='/admin' element={<ProtectedRoute component={Dashboard} />} />
-
           {/* <Route path='/RidePackage' element={<RidePackage />} /> */}
           <Route path='/RidePackage' element={<ProtectedRoute component={RidePackage} />} />
 
