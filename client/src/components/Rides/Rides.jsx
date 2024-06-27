@@ -71,6 +71,8 @@ const Rides = () => {
         setPackageid(ride.Packageid);
         setRideDescription(ride.RideDescription);
         setRideImage(ride.RideImage);
+        setPara(ride.Para);
+        setRating(ride.Rating);
         setShow(true);
     };
 
