@@ -13,8 +13,6 @@ import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AdminPanel from './components/AdminPanel/AdminPanel'
 import RidesAttract from './components/Ride_Attract/RideAttract';
-
-import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
 
@@ -36,7 +34,6 @@ function App() {
           {/* <ProtectedRoute path='/Rides' element={<Rides />} /> */}
           <Route path='/Rides' element={<ProtectedRoute component={Rides} />} />
 
-          <Route path='/Sidebar' element={<ProtectedRoute component={Sidebar} />} />
 
           <Route path='/ClimedTicket' element={<ProtectedRoute component={ClimedTicket} />} />
 
