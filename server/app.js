@@ -11,6 +11,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
+=======
 app.use(express.static(path.join(__dirname, "public")));
 //============================================================
 app.use(bodyParser.json());
