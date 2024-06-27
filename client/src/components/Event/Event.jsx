@@ -6,7 +6,7 @@ import '../../../public/lib/animate/animate.css';
 import '../../../public/lib/animate/animate.min.css';
 import '../../../public/lib/lightbox/css/lightbox.min.css';
 import '../../../public/lib/owlcarousel/owl.carousel.min.css';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
  
 
 const EventItem = ({ src, category, lightbox }) => (
@@ -104,7 +104,7 @@ const Event = ({showNavbar = true}) => {
         </div>
       </div>
     </div>
-    <Footer/>
+    {/* {showFooter && <Footer />} */}
     </div>
     
   )
