@@ -46,7 +46,6 @@
 
 .footer-link{
     width:100%;
-    max-width: 1000px;
     display: flex;
     justify-content: center;
 
@@ -55,7 +54,6 @@
 .footer-link-wrapper{
     display: flex;
     text-align: center;
-
 }
 
 .footer-link-items{
@@ -71,7 +69,6 @@
 
 .footer-link-items h2{
     margin-bottom: 16px;
-    margin-left: 130px;
 }
 
 .footer-link-items >h2{
