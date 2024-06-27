@@ -29,9 +29,7 @@ const Sidebar = () => {
                     <Link to="/ClimedTicket" className="list-group-item list-group-item-action py-2 ripple">
                         Tickets
                     </Link>
-                    <Link onClick={logout} className="list-group-item list-group-item-action py-2 ripple">
-                        Logout
-                    </Link>
+                    <button onClick={logout}>Logout</button>
                 </div>
             </div>
         </Nav>
