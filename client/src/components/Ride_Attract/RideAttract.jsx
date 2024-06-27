@@ -19,21 +19,21 @@ import '../../../public/image/Rides_Image/Splash_ride.jpeg'
 import Navbar1 from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
-const RidesAttract = ({ showNavbar = true , showFooter = true}) => {
+const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
     const [showModal, setShowModal] = useState(false);
     const [selectedRide, setSelectedRide] = useState(null);
     const Ridess = [
-        { icon: 'fa-wheelchair', title: 'Deep Space', para: 'High-speed roller coaster thrill.', image: '/public/image/Rides_Image/Deep_Space_ride.jpeg', delay: '0.5s', rating: 4.8, details: ['Ride Type: Roller Coaster', 'Height Requirement: 48 inches', 'Duration: 2 minutes'] },
-        { icon: 'fa-utensils', title: 'Cyclone', para: 'Classic roller coaster twists and turns.', image: '/public/image/Rides_Image/Cyclone_ride.jpeg', delay: '0.7s', rating: 4.5, details: ['Ride Type: Roller Coaster', 'Height Requirement: 42 inches', 'Duration: 3 minutes'] },
-        { icon: 'fa-pizza-slice', title: 'Twister', para: 'Gentle roller coaster for kids.', image: '/public/image/Rides_Image/Twister_ride.jpeg', delay: '0.3s', rating: 4.2, details: ['Ride Type: Roller Coaster', 'Height Requirement: 36 inches', 'Duration: 4 minutes'] },
-        { icon: 'fa-hotdog', title: 'Bumper Car', para: 'Classic bumper car fun and competition.', image: '/public/image/Rides_Image/bumpercar_card.jpg', delay: '0.5s', rating: 4.7, details: ['Ride Type: Bumper Cars', 'Height Requirement: None', 'Duration: 5 minutes'] },
-        { icon: 'fa-wine-glass-alt', title: 'Butterfly Ride', para: 'Peaceful ride for families with young children.', image: '/public/image/Rides_Image/Butterfly_ride.jpeg', delay: '0.1s', rating: 4.3, details: ['Ride Type: Gentle Ride', 'Height Requirement: 32 inches', 'Duration: 6 minutes'] },
-        { icon: 'fa-utensils', title: 'Lazy River', para: 'Relaxing float for a break from excitement.', image: '/public/image/Rides_Image/Lazy_river_ride.jpeg', delay: '0.7s', rating: 4.6, details: ['Ride Type: Water Ride', 'Height Requirement: None', 'Duration: 10 minutes'] },
-        { icon: 'fa-cheese', title: 'Wave Pool', para: 'Splash and play in the giant wave pool.', image: '/public/image/Rides_Image/Wavepool_ride.jpeg', delay: '0.1s', rating: 4.4, details: ['Ride Type: Water Ride', 'Height Requirement: 48 inches', 'Duration: 15 minutes'] },
-        { icon: 'fa-pizza-slice', title: 'Pendulum Ride', para: 'Adrenaline-filled swing ride for weightlessness.', image: '/public/image/Rides_Image/Pendulum_ride.jpeg', delay: '0.3s', rating: 4.9, details: ['Ride Type: Swing Ride', 'Height Requirement: 48 inches', 'Duration: 2 minutes'] },
-        { icon: 'fa-hotdog', title: 'Splash Water Ride', para: 'Wild water ride with splashing and spraying.', image: '/public/image/Rides_Image/Splash_ride.jpeg', delay: '0.5s', rating: 4.7, details: ['Ride Type: Water Ride', 'Height Requirement: 42 inches', 'Duration: 5 minutes'] },
-        { icon: 'fa-wheelchair', title: 'Flash Tower', para: 'Thrilling tower ride with lightning speed drop.', image: '/public/image/Rides_Image/Flash_Tower_ride.jpeg', delay: '0.5s', rating: 4.6, details: ['Ride Type: Tower Ride', 'Height Requirement: 48 inches', 'Duration: 1 minute'] },
-        { icon: 'fa-cheese', title: 'Skyfall', para: 'Family-friendly roller coaster adventure.', image: '/public/image/Rides_Image/Skyfall_ride.jpeg', delay: '0.1s', rating: 4.4, details: ['Ride Type: Roller Coaster', 'Height Requirement: 42 inches', 'Duration: 3 minutes'] }
+        { title: 'Deep Space', para: 'High-speed roller coaster thrill.', image: '/public/image/Rides_Image/Deep_Space_ride.jpeg', delay: '0.5s', rating: 4.8, details: ['Ride Type: Roller Coaster', 'Height Requirement: 48 inches', 'Duration: 2 minutes'] },
+        { title: 'Cyclone', para: 'Classic roller coaster twists and turns.', image: '/public/image/Rides_Image/Cyclone_ride.jpeg', delay: '0.7s', rating: 4.5, details: ['Ride Type: Roller Coaster', 'Height Requirement: 42 inches', 'Duration: 3 minutes'] },
+        { title: 'Twister', para: 'Gentle roller coaster for kids.', image: '/public/image/Rides_Image/Twister_ride.jpeg', delay: '0.3s', rating: 4.2, details: ['Ride Type: Roller Coaster', 'Height Requirement: 36 inches', 'Duration: 4 minutes'] },
+        { title: 'Bumper Car', para: 'Classic bumper car fun and competition.', image: '/public/image/Rides_Image/bumpercar_card.jpg', delay: '0.5s', rating: 4.7, details: ['Ride Type: Bumper Cars', 'Height Requirement: None', 'Duration: 5 minutes'] },
+        { title: 'Butterfly Ride', para: 'Peaceful ride for families with young children.', image: '/public/image/Rides_Image/Butterfly_ride.jpeg', delay: '0.1s', rating: 4.3, details: ['Ride Type: Gentle Ride', 'Height Requirement: 32 inches', 'Duration: 6 minutes'] },
+        { title: 'Lazy River', para: 'Relaxing float for a break from excitement.', image: '/public/image/Rides_Image/Lazy_river_ride.jpeg', delay: '0.7s', rating: 4.6, details: ['Ride Type: Water Ride', 'Height Requirement: None', 'Duration: 10 minutes'] },
+        { title: 'Wave Pool', para: 'Splash and play in the giant wave pool.', image: '/public/image/Rides_Image/Wavepool_ride.jpeg', delay: '0.1s', rating: 4.4, details: ['Ride Type: Water Ride', 'Height Requirement: 48 inches', 'Duration: 15 minutes'] },
+        { title: 'Pendulum Ride', para: 'Adrenaline-filled swing ride for weightlessness.', image: '/public/image/Rides_Image/Pendulum_ride.jpeg', delay: '0.3s', rating: 4.9, details: ['Ride Type: Swing Ride', 'Height Requirement: 48 inches', 'Duration: 2 minutes'] },
+        { title: 'Splash Water Ride', para: 'Wild water ride with splashing and spraying.', image: '/public/image/Rides_Image/Splash_ride.jpeg', delay: '0.5s', rating: 4.7, details: ['Ride Type: Water Ride', 'Height Requirement: 42 inches', 'Duration: 5 minutes'] },
+        { title: 'Flash Tower', para: 'Thrilling tower ride with lightning speed drop.', image: '/public/image/Rides_Image/Flash_Tower_ride.jpeg', delay: '0.5s', rating: 4.6, details: ['Ride Type: Tower Ride', 'Height Requirement: 48 inches', 'Duration: 1 minute'] },
+        { title: 'Skyfall', para: 'Family-friendly roller coaster adventure.', image: '/public/image/Rides_Image/Skyfall_ride.jpeg', delay: '0.1s', rating: 4.4, details: ['Ride Type: Roller Coaster', 'Height Requirement: 42 inches', 'Duration: 3 minutes'] }
     ];
 
     const toggleModal = (ride) => {
