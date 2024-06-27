@@ -9,10 +9,16 @@ import Rides from './components/Rides/Rides';
 import Contact from './components/Contact/Contact';
 import Services from './components/Services/Services';
 import Event from './components/Event/Event';
+<<<<<<< Updated upstream
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AdminPanel from './components/AdminPanel/AdminPanel'
 import RidesAttract from './components/Ride_Attract/RideAttract';
+=======
+import Sidebar from './components/Sidebar/Sidebar';
+import Dashboard from './components/Dashboard/Dashboard';
+import ClimedTicket from './components/ClimedTicket/ClimedTicket';
+>>>>>>> Stashed changes
 
 function App() {
   return (
@@ -20,6 +26,7 @@ function App() {
       <Router>
 
         <Routes>
+<<<<<<< Updated upstream
           <Route path='/AdminLogin' element={<AdminLogin />} />
 
           {/* <Route path='/admin' element={<AdminPanel />} /> */}
@@ -39,6 +46,22 @@ function App() {
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
           <Route path='/ride' element={<RidesAttract/>} />
+=======
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/Payment' element={<Payment />} />
+          <Route path='/BookTicket' element={<Booking />} />
+          <Route path='/Ticket' element={<Ticket />} />
+          <Route path='/RidePackage' element={<RidePackage />} />
+          <Route path='/Rides' element={<Rides />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact />} />
+          <Route path='/Services' element={<Services />} />
+          <Route path='/Events' element={<Event />} />
+          <Route path='/Sidebar' element={<Sidebar />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/ClimedTicket' element={<ClimedTicket />} />
+
+>>>>>>> Stashed changes
         </Routes>
 
       </Router>

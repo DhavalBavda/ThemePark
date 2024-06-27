@@ -1,9 +1,25 @@
 const express = require('express')
 const app = express();
 require('dotenv').config();
+const multer = require('multer');
 const router = express.Router();
+const path = require('path')
 const { UserRegistrations,Packages,Rides,RidesFeedBacks,FeedBacks,FoodMenus } = require('../model/AuthSchema');
 const { default: mongoose } = require('mongoose');
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        console.log(12345);
+        cb(null, "../server/public/upload")
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname))
+    }
+})
+const upload = multer({ storage: storage });
+
+
 
 router.get("/ShowAllTickets", async (req, res) => {
     try {
@@ -30,8 +46,8 @@ router.post("/ShowuserTicket/:id", async (req, res) => {
 router.post('/UserRegistraion', async (req, res) => {
     try {
         console.log(req.body);
-        const { CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Date,Claimed } = req.body
-        const newuser = new UserRegistrations({ CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson,Claimed, TotalPayment, Date })
+        const { TicketId,CustomerName, MobileNo, Email, Packages,PaymentStatus, NumberOfMember, TransactionID, TicketPerPerson, TotalPayment, Dates,Claimed } = req.body
+        const newuser = new UserRegistrations({ TicketId,CustomerName, MobileNo,PaymentStatus, Email, Packages, NumberOfMember, TransactionID, TicketPerPerson,Claimed, TotalPayment, Date:Dates })
         newuser.save()
         res.json('newuser')
     } catch (error) {
@@ -44,7 +60,7 @@ router.post('/UserRegistraion', async (req, res) => {
 router.put('/TicketClaimed/:id', async (req, res) => {
     try {
         TicketId = req.params.Id
-        const Claimeduser = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: True })
+        const Claimeduser = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: 'Claimed' })
         res.status(200).json(Claimeduser)
     } catch (error) {
         console.log(error);
@@ -53,10 +69,10 @@ router.put('/TicketClaimed/:id', async (req, res) => {
 })
 
 //---------------Ticket cancelation----------------------------------
-router.delete('/TicketCancelation/:id', async (req, res) => {
+router.put('/TicketCancelation/:id', async (req, res) => {
     try {
         TicketId = req.params.Id
-        const TicketCancel = await UserRegistrations.findByIdAndDelete(TicketId)
+        const TicketCancel = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: 'Canceled' })
         res.status(200).json(TicketCancel)
     } catch (error) {
         res.status(500).send(error)
@@ -120,6 +136,7 @@ router.delete('/PackageDelete/:id', async (req, res) => {
 router.get("/ShowRide", async (req, res) => {
     try {
         const allRides = await Rides.find().populate('Packageid', 'PackageName'); // Populate Packageid with PackageName
+        console.log(allRides);
         res.status(200).json(allRides);
     } catch (error) {
         console.log(error);
@@ -127,10 +144,12 @@ router.get("/ShowRide", async (req, res) => {
     }
 })
 //---------------New Ride Add----------------------------------
-router.post('/AddRide', async (req, res) => {
+router.post('/AddRide',upload.single('RideImage'), async (req, res) => {
     try {
-        const { Packageid,RideName,RideImage,RideDescription } = req.body
-        const NewRide = new Rides({Packageid,RideName,RideImage,RideDescription })
+        const { Packageid,RideName,RideDescription } = req.body
+        console.log(req.body);
+        console.log(req.file);
+        const NewRide = new Rides({Packageid,RideName,RideImage: req.file.filename,RideDescription })
         NewRide.save()
         res.status(200).json(NewRide)
     } catch (error) {
@@ -139,7 +158,7 @@ router.post('/AddRide', async (req, res) => {
     }
 })
 //---------------Edit Ride----------------------------------
-router.put('/EditRide/:id', async (req, res) => {
+router.put('/EditRide/:id',upload.single('RideImage'), async (req, res) => {
     try {
         RideId = req.params.Id
         const {RideName} =req.body
