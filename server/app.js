@@ -13,6 +13,8 @@ const jwt = require('jsonwebtoken');
 // const User = require('./models/User');
 
 
+
+app.use(express.static(path.join(__dirname, "public")));
 //============================================================
 app.use(bodyParser.json());
 app.use(cookieParser())

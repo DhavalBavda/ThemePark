@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
 import Booking from './components/Booking/Booking';
 import Ticket from './components/Ticket/Ticket';
@@ -15,6 +13,11 @@ import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AdminPanel from './components/AdminPanel/AdminPanel'
 import RidesAttract from './components/Ride_Attract/RideAttract';
+
+import Sidebar from './components/Sidebar/Sidebar';
+import Dashboard from './components/Dashboard/Dashboard';
+import ClimedTicket from './components/ClimedTicket/ClimedTicket';
+
 
 function App() {
   return (
@@ -41,6 +44,20 @@ function App() {
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
           <Route path='/ride' element={<RidesAttract/>} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/Payment' element={<Payment />} />
+          <Route path='/BookTicket' element={<Booking />} />
+          <Route path='/Ticket' element={<Ticket />} />
+          <Route path='/RidePackage' element={<RidePackage />} />
+          <Route path='/Rides' element={<Rides />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Contact' element={<Contact />} />
+          <Route path='/Services' element={<Services />} />
+          <Route path='/Events' element={<Event />} />
+          <Route path='/Sidebar' element={<Sidebar />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/ClimedTicket' element={<ClimedTicket />} />
+
         </Routes>
 
       </Router>

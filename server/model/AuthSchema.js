@@ -19,6 +19,10 @@ const AdminUsers = new mongoose.model('AdminUsers',AdminUser)
 //=============UserRegistration==================================================
 const UserRegistration = new mongoose.Schema(
     {
+        TicketId: {
+            type: String,
+            required: true,
+        },
         CustomerName: {
             type: String,
             required: true,

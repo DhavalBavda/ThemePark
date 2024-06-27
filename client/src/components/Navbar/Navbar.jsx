@@ -102,6 +102,7 @@ const Navbar1 = () => {
 
 
     return (
+        
         <div className="container-fluid nav-bar">
             <Container>
                 <Navbar expand="lg" className="py-4">
@@ -120,7 +121,8 @@ const Navbar1 = () => {
                             <Nav.Link as={Link} to="/events" className={isActive('/events')}>Events</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
                         </Nav>
-                        <Button variant="primary" className="py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</Button>
+
+                        <Nav.Link as={Link} to="/BookTicket" variant="primary" className="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</Nav.Link>
                     </Navbar.Collapse>
                 </Navbar>
             </Container>
