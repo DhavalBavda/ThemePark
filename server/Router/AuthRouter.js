@@ -159,11 +159,12 @@ router.post('/AddRide',upload.single('RideImage'), async (req, res) => {
     }
 })
 //---------------Edit Ride----------------------------------
-router.put('/EditRide/:id',upload.single('RideImage'), async (req, res) => {
+router.put('/EditRide/:id', async (req, res) => {
     try {
-        RideId = req.params.Id
-        const {RideName} =req.body
-        const EditRide = await Rides.findByIdAndUpdate(RideId, { RideName })
+        RideId = req.params.id
+        console.log(123456789,RideId,req.body);
+        const {Packageid,RideName,RideDescription,Para,Rating} =req.body
+        const EditRide = await Rides.findByIdAndUpdate(RideId, { Packageid,RideName,RideDescription,Para,Rating })
         res.status(200).json(EditRide)
     } catch (error) {
         console.log(error);

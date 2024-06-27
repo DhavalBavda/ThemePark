@@ -20,7 +20,7 @@ const Sidebar = () => {
     const isActive = (path) => location.pathname === path ? 'list-group-item list-group-item-action py-2 ripple active' : 'list-group-item list-group-item-action py-2 ripple';
 
     return (
-        <Nav id="sidebarMenu" className="d-lg-block sidebar bg-white">
+        <Nav id="sidebarMenu" className="d-lg-block sidebar">
             <div className="position-sticky">
                 <div className="list-group list-group-flush mx-3 mt-4">
                     <Link to="/Dashboard" className={isActive('/Dashboard')}>
