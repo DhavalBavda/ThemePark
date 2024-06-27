@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../style.css'
-// import '../Ride_Attract/RideForm'
 import '../../../public/css/bootstrap.min.css'
 import '../../../public/lib/animate/animate.css'
 import '../../../public/lib/animate/animate.min.css'
@@ -165,6 +164,10 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
         setShowModal(!showModal);
     };
 
+    const handleWriteReview = (ride) => {
+        navigate(`/rideform/${ride.title.toLowerCase().replace(/\s/g, '-')}`);
+    };
+
     return (
         <div>
             {showNavbar && <Navbar1 />}
@@ -238,19 +241,27 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                                     </div>
                                 ))}
                             </div>
+                            <button className="btn btn-primary px-4 py-2 rounded-pill">
+                                Write a Review
+                            </button>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={toggleModal}>
                                     Close
                                 </button>
                             </div>
                         </div>
+
                     </div>
                 </div>
             )}
 
-{/* {selectedRide && (
+            {/* {selectedRide && (
         <RideForm ride={selectedRide} onSubmit={() => setSelectedRide(null)} />
       )} */}
+
+            {/* {selectedRide && (
+  <RideForm ride={selectedRide} Ridess={Ridess} onSubmit={() => setSelectedRide(null)} />
+)} */}
 
             {showFooter && <Footer />}
         </div>

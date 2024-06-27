@@ -35,7 +35,7 @@ const Sidebar = () => {
                     <Link to="/ClimedTicket" className={isActive('/ClimedTicket')}>
                         Tickets
                     </Link>
-                    <button onClick={logout}>Logout</button>
+                    <button className='btn btn-danger' onClick={logout}>Logout</button>
                 </div>
             </div>
         </Nav>

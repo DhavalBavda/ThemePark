@@ -2,6 +2,10 @@ import Navbar1 from '../Navbar/Navbar'
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import '../../../public/lib/animate/animate.css';
+import '../../../public/lib/animate/animate.min.css';
+import '../../../public/lib/lightbox/css/lightbox.min.css';
+import '../../../public/lib/owlcarousel/owl.carousel.min.css';
 import Footer from '../Footer/Footer';
  
 
@@ -40,60 +44,60 @@ const Event = ({showNavbar = true}) => {
             </li>
             <li className="nav-item p-2">
               <a className="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                <span className="text-dark" style={{ width: '150px' }}>Wedding</span>
+                <span className="text-dark" style={{ width: '150px' }}>Christmas</span>
               </a>
             </li>
             <li className="nav-item p-2">
               <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                <span className="text-dark" style={{ width: '150px' }}>Corporate</span>
+                <span className="text-dark" style={{ width: '150px' }}>Holi</span>
               </a>
             </li>
             <li className="nav-item p-2">
               <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                <span className="text-dark" style={{ width: '150px' }}>Cocktail</span>
+                <span className="text-dark" style={{ width: '150px' }}>Halloween</span>
               </a>
             </li>
             <li className="nav-item p-2">
               <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                <span className="text-dark" style={{ width: '150px' }}>Buffet</span>
+                <span className="text-dark" style={{ width: '150px' }}>New-Year</span>
               </a>
             </li>
           </ul>
           <div className="tab-content">
             <div id="tab-1" className="tab-pane fade show p-0 active">
               <div className="row g-4">
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-1" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Corporate" lightbox="event-2" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-3" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Buffet" lightbox="event-4" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Cocktail" lightbox="event-5" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Wedding" lightbox="event-6" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Buffet" lightbox="event-7" />
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Corporate" lightbox="event-8" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Christmas" lightbox="event-1" />
+                <EventItem src="/image/Event_image/event-9.jpeg" category="Christmas" lightbox="event-2" />
+                <EventItem src="/image/Event_image/event-6.jpeg" category="Holi" lightbox="event-3" />
+                <EventItem src="/image/Event_image/event-4.jpeg" category="Halloween" lightbox="event-4" />
+                <EventItem src="/image/Event_image/event-5.jpeg" category="Holi" lightbox="event-5" />
+                <EventItem src="/image/Event_image/event-3.jpeg" category="Halloween" lightbox="event-6" />
+                <EventItem src="/image/Event_image/event-7.jpeg" category="New-Year" lightbox="event-7" />
+                <EventItem src="/image/Event_image/event-8.jpeg" category="New-Year" lightbox="event-8" />
               </div>
             </div>
             <div id="tab-2" className="tab-pane fade show p-0">
               <div className="row g-4">
-                <EventItem src="img/event-1.jpg" category="Wedding" lightbox="event-8" />
-                <EventItem src="img/event-2.jpg" category="Wedding" lightbox="event-9" />
+                <EventItem src="/image/Event_image/event-1.jpeg" category="Christmas" lightbox="event-1" />
+                <EventItem src="/image/Event_image/event-9.jpeg" category="Christmas" lightbox="event-9" />
               </div>
             </div>
             <div id="tab-3" className="tab-pane fade show p-0">
               <div className="row g-4">
-                <EventItem src="img/event-3.jpg" category="Corporate" lightbox="event-10" />
-                <EventItem src="img/event-4.jpg" category="Corporate" lightbox="event-11" />
+                <EventItem src="/image/Event_image/event-6.jpeg" category="Holi" lightbox="event-3" />
+                <EventItem src="/image/Event_image/event-5.jpeg" category="Holi" lightbox="event-5" />
               </div>
             </div>
             <div id="tab-4" className="tab-pane fade show p-0">
               <div className="row g-4">
-                <EventItem src="img/event-5.jpg" category="Cocktail" lightbox="event-12" />
-                <EventItem src="img/event-6.jpg" category="Cocktail" lightbox="event-13" />
+                <EventItem src="/image/Event_image/event-4.jpeg" category="Halloween" lightbox="event-4" />
+                <EventItem src="/image/Event_image/event-3.jpeg" category="Halloween" lightbox="event-6" />
               </div>
             </div>
             <div id="tab-5" className="tab-pane fade show p-0">
               <div className="row g-4">
-                <EventItem src="img/event-7.jpg" category="Buffet" lightbox="event-14" />
-                <EventItem src="img/event-8.jpg" category="Buffet" lightbox="event-15" />
+                <EventItem src="/image/Event_image/event-7.jpeg" category="New-Year" lightbox="event-7" />
+                <EventItem src="/image/Event_image/event-8.jpeg" category="New-Year" lightbox="event-8" />
               </div>
             </div>
           </div>
