@@ -45,10 +45,42 @@ const Menu = () => {
                     <div className="tab-content">
                         <div id="tab-6" className="tab-pane fade show p-0 active">
                             <div className="row g-4">
-                                {renderMenuItem('img/menu-01.jpg', 'Paneer', '$90')}
-                                {renderMenuItem('img/menu-02.jpg', 'Sweet Potato', '$90')}
-                                {renderMenuItem('img/menu-03.jpg', 'Sabudana Tikki', '$90')}
-                                {renderMenuItem('img/menu-04.jpg', 'Pizza', '$90')}
+                                {renderMenuItem('img/menu-01.jpg', 'Paneer', '₹90')}
+                                {renderMenuItem('img/menu-02.jpg', 'Sweet Potato', '₹90')}
+                                {renderMenuItem('img/menu-03.jpg', 'Sabudana Tikki', '₹90')}
+                                {renderMenuItem('img/menu-04.jpg', 'Pizza', '₹90')}
+                            </div>
+                        </div>
+                        <div id="tab-7" className="tab-pane fade show p-0">
+                            <div className="row g-4">
+                                {renderMenuItem('img/menu-05.jpg', 'Butter Chicken', '₹150')}
+                                {renderMenuItem('img/menu-06.jpg', 'Biryani', '₹180')}
+                                {renderMenuItem('img/menu-07.jpg', 'Tandoori Chicken', '₹120')}
+                                {renderMenuItem('img/menu-08.jpg', 'Chole Bhature', '₹100')}
+                            </div>
+                        </div>
+                        <div id="tab-8" className="tab-pane fade show p-0">
+                            <div className="row g-4">
+                                {renderMenuItem('img/menu-09.jpg', 'Masala Chai', '₹50')}
+                                {renderMenuItem('img/menu-10.jpg', 'Lassi', '₹60')}
+                                {renderMenuItem('img/menu-11.jpg', 'Mango Shake', '₹70')}
+                                {renderMenuItem('img/menu-12.jpg', 'Nimbu Pani', '₹40')}
+                            </div>
+                        </div>
+                        <div id="tab-9" className="tab-pane fade show p-0">
+                            <div className="row g-4">
+                                {renderMenuItem('img/menu-13.jpg', 'Combo Meal', '₹200')}
+                                {renderMenuItem('img/menu-14.jpg', 'Family Platter', '₹500')}
+                                {renderMenuItem('img/menu-15.jpg', 'Lunch Box', '₹120')}
+                                {renderMenuItem('img/menu-16.jpg', 'Weekend Special', '₹300')}
+                            </div>
+                        </div>
+                        <div id="tab-10" className="tab-pane fade show p-0">
+                            <div className="row g-4">
+                                {renderMenuItem('img/menu-17.jpg', 'Dosa', '₹80')}
+                                {renderMenuItem('img/menu-18.jpg', 'Idli Sambar', '₹70')}
+                                {renderMenuItem('img/menu-19.jpg', 'Vada Pav', '₹50')}
+                                {renderMenuItem('img/menu-20.jpg', 'Pani Puri', '₹40')}
                             </div>
                         </div>
                     </div>
