@@ -4,6 +4,8 @@ import { Nav } from 'react-bootstrap';
 import './Sidebar.css'
 import Rides from '../Rides/Rides';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 const Sidebar = () => {
 
     const navigate = useNavigate();
