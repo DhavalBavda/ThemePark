@@ -7,16 +7,11 @@ const path = require('path')
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser')
 const cors = require('cors');
-<<<<<<< Updated upstream
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// const User = require('./models/User');
 
-
-=======
 app.use(express.static(path.join(__dirname, "public")));
->>>>>>> Stashed changes
 //============================================================
 app.use(bodyParser.json());
 app.use(cookieParser())
