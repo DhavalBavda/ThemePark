@@ -20,6 +20,9 @@ const Rides = () => {
     const [Price, setPrice] = useState('');
     const [Packages, setPackages] = useState([]);
     const [Ride, setRide] = useState([]);
+    const [Para, setPara] = useState([]);
+    const [Rating, setRating] = useState([]);
+
     const [selectedRide, setSelectedRide] = useState(null); // For storing selected ride data
     const [show, setShow] = useState(false);
 
@@ -109,6 +112,7 @@ const Rides = () => {
                                                 <th>Ride Image</th>
                                                 <th>Ride Name</th>
                                                 <th>Package Name</th>
+                                                <th>Rating</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -120,6 +124,7 @@ const Rides = () => {
                                                     <td><img src={`http://localhost:4500/upload/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{ride.RideName}</td>
                                                     <td>{ride.Packageid.PackageName}</td>
+                                                    <td>{ride.rating}</td>
                                                     <td>
                                                         <Button variant="success" onClick={() => handleShow(ride)}>
                                                             Edit
@@ -162,6 +167,7 @@ const Rides = () => {
                                                 <label>Ride Name</label>
                                                 <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setRideName(e.target.value)} />
                                             </div>
+                                            
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Ride Description</label>
                                                 <input type="text" className="form-control border-primary p-2" placeholder="Lovely Ride" onChange={(e) => setRideDescription(e.target.value)} />
