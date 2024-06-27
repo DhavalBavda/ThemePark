@@ -43,27 +43,10 @@ function App() {
           <Route path='/Contact' element={<Contact />} />
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
-          <Route path='/ride' element={<RidesAttract/>} />
-=======
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/Payment' element={<Payment />} />
-          <Route path='/BookTicket' element={<Booking />} />
-          <Route path='/Ticket' element={<Ticket />} />
-          <Route path='/RidePackage' element={<RidePackage />} />
-          <Route path='/Rides' element={<Rides />} />
-          <Route path='/About' element={<About />} />
-          <Route path='/Contact' element={<Contact />} />
-          <Route path='/Services' element={<Services />} />
-          <Route path='/Events' element={<Event />} />
-          <Route path='/Sidebar' element={<Sidebar />} />
-          <Route path='/Dashboard' element={<Dashboard />} />
-          <Route path='/ClimedTicket' element={<ClimedTicket />} />
-
->>>>>>> Stashed changes
-        </Routes>
-
-      </Router>
-    </div>
+          <Route path='/ride' element={<RidesAttract />} />
+        </Routes >
+      </Router >
+    </div >
   )
 }
 export default App;
