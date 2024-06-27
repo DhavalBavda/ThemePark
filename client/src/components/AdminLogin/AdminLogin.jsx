@@ -14,10 +14,12 @@ const AdmimLogin = () => {
         try {
             console.log("asckn")
             const response = await axios.post('http://localhost:4500/login', { Username, Password });
-            console.log("Login response:", response.data)
+            
+            // console.log("Login response:", response.data)
+
             localStorage.setItem('token', response.data.token);
 
-            navigate('/admin');
+            navigate('/Dashboard');
         } catch (err) {
             setError('Invalid username or password');
         }
@@ -29,7 +31,7 @@ const AdmimLogin = () => {
                 <div className="col-6">
                     <div className="border-bottom border-top border-primary bg-light py-5 px-4">
                         <div className="text-center">
-                            <h1 className="display-5 mb-5">Admine Login</h1>
+                            <h1 className="display-5 mb-5">Admin Login</h1>
                         </div>
                         <form onSubmit={handleLogin}>
                             <div>
@@ -50,6 +52,7 @@ const AdmimLogin = () => {
                                     required
                                 />
                             </div>
+                            <br/>
                             {error && <p style={{ color: 'red' }}>{error}</p>}
                             <button type="submit">Login</button>
                         </form>
