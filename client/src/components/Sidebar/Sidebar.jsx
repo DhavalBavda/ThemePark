@@ -16,9 +16,7 @@ const Sidebar = () => {
                     <Link to="/Rides" className="list-group-item list-group-item-action py-2 ripple active">
                         Manage Rides
                     </Link>
-                    <Link to="/password" className="list-group-item list-group-item-action py-2 ripple">
-                        Password
-                    </Link>
+                   
                     <Link to="/ClimedTicket" className="list-group-item list-group-item-action py-2 ripple">
                     Tickets
                     </Link>
