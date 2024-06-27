@@ -37,7 +37,7 @@ const Booking = () => {
         axios.post('http://localhost:4500/UserRegistraion',bookingData )
             .then(result => {
                 console.log(result);
-                // navigate('/Ticket', { state: bookingData });
+                navigate('/Ticket', { state: bookingData });
             })
             .catch(err => console.log(err));
     };
