@@ -54,12 +54,12 @@ const Event = ({showNavbar = true}) => {
             </li>
             <li className="nav-item p-2">
               <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                <span className="text-dark" style={{ width: '150px' }}>New-Year</span>
+                <span className="text-dark" style={{ width: '150px' }}>Halloween</span>
               </a>
             </li>
             <li className="nav-item p-2">
               <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                <span className="text-dark" style={{ width: '150px' }}>Halloween</span>
+                <span className="text-dark" style={{ width: '150px' }}>New-Year</span>
               </a>
             </li>
           </ul>
