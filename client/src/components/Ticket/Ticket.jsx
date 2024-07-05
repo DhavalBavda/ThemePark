@@ -7,7 +7,7 @@ import './Ticket.css'; // Custom CSS file
 import logo from '../../../public/image/Logo.png'
 const Ticket = () => {
     const location = useLocation();
-    const bookingData = location.state;
+    const bookingDatas = location.state;
 
     const downloadTicket = () => {
         const input = document.getElementById('ticket');
@@ -35,37 +35,37 @@ const Ticket = () => {
                 <h1 className="text-center mb-4">Ticket Details</h1>
                 <div className="row">
                     <div className="col-md-6 mb-3">
-                        <p><strong>Customer Name:</strong> {bookingData.CustomerName}</p>
+                        <p><strong>Customer Name:</strong> {bookingDatas.CustomerName}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Mobile No:</strong> {bookingData.MobileNo}</p>
+                        <p><strong>Mobile No:</strong> {bookingDatas.MobileNo}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Email:</strong> {bookingData.Email}</p>
+                        <p><strong>Email:</strong> {bookingDatas.Email}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Package:</strong> {bookingData.Packages}</p>
+                        <p><strong>Package:</strong> {bookingDatas.Packages}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Number Of Members:</strong> {bookingData.NumberOfMember}</p>
+                        <p><strong>Number Of Members:</strong> {bookingDatas.NumberOfMember}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Transaction ID:</strong> {bookingData.TransactionID}</p>
+                        <p><strong>Transaction ID:</strong> {bookingDatas.TransactionID}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Ticket Per Person:</strong> {bookingData.TicketPerPerson}</p>
+                        <p><strong>Ticket Per Person:</strong> {bookingDatas.TicketPerPerson}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Total Payment:</strong> {bookingData.TotalPayment}</p>
+                        <p><strong>Total Payment:</strong> {bookingDatas.TotalPayment}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Claimed:</strong> {bookingData.Claimed}</p>
+                        <p><strong>Claimed:</strong> {bookingDatas.Claimed}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Date:</strong> {bookingData.Date}</p>
+                        <p><strong>Date:</strong> {bookingDatas.Date}</p>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <p><strong>Payment Status:</strong> {bookingData.PaymentStatus}</p>
+                        <p><strong>Payment Status:</strong> {bookingDatas.PaymentStatus}</p>
                     </div>
                 </div>
             </div>

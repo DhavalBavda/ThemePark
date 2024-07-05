@@ -72,11 +72,22 @@ router.put('/TicketClaimed/:id', async (req, res) => {
 //---------------Ticket cancelation----------------------------------
 router.put('/TicketCancelation/:id', async (req, res) => {
     try {
-        TicketId = req.params.Id
+        TicketId = req.params.id
         const TicketCancel = await UserRegistrations.findByIdAndUpdate(TicketId, { Claimed: 'Canceled' })
+        console.log(TicketCancel);
         res.status(200).json(TicketCancel)
     } catch (error) {
         res.status(500).send(error)
+    }
+})
+router.post("/ShowTickets", async (req, res) => {
+    try {
+        const {MobileNo}=req.body
+        const AllTicket = await UserRegistrations.find({MobileNo});
+        res.status(200).json(AllTicket);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: error })
     }
 })
 

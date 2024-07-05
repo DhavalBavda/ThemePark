@@ -15,6 +15,8 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import RidesAttract from './components/Ride_Attract/RideAttract';
 import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
+import PaymentPage from './components/PaymentPage/PaymentPage';
+import CancellationPage from './components/CancellationPage/CancellationPage';
 
 
 function App() {
@@ -43,6 +45,9 @@ function App() {
           <Route path='/Services' element={<Services />} />
           <Route path='/Events' element={<Event />} />
           <Route path='/ride' element={<RidesAttract />} />
+          <Route path='/Payment' element={<PaymentPage />} />
+          <Route path='/CancellationPage' element={<CancellationPage />} />
+
         </Routes >
       </Router >
     </div >
