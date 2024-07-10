@@ -1,29 +1,77 @@
 .sidebar {
-    /* position: fixed; */
+  /* position: fixed; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0;
+  /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  border-radius: 7px;
+  background: linear-gradient(90deg, white 0%, rgb(111, 181, 204) 100%);
+
+}
+
+/* .sidebar {
+    position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
-    padding: 58px 0 0; /* Height of navbar */
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
-    z-index: 600;
+    height: 100%;
+    width: 250px;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    overflow-y: auto; /* Add this if the sidebar content is long and needs scrolling */
+z-index: 1000;
+/* Ensure it stays above other content */
+}
+
+*/ .position-sticky {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.list-group-item {
+  border: none;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.list-group-item-action:hover {
+  background-color: #23e6e6;
+}
+
+.btn-danger {
+  width: 100%;
+  margin-top: auto;
+}
+
+h2.ms-4 {
+  margin-left: 20px;
+}
+
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
   }
-  
-  @media (max-width: 991.98px) {
-    .sidebar {
-      width: 100%;
-    }
-  }
-  .sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-  }
-  
-  .sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  }
+}
+
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}

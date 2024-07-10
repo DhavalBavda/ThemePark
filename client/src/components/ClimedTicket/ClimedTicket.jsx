@@ -43,7 +43,7 @@ const ClimedTicket = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="bg-dark text-light p-4 rounded" style={{ backdropFilter: 'blur(10px)', opacity: 0.85 }}>
-                                    <h3 className="mb-4">Available Packages</h3>
+                                    <h3 className="mb-4">Ticket Details</h3>
                                     <Table striped bordered hover variant="dark">
                                         <thead>
                                             <tr>

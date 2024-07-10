@@ -1,19 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
-import './Sidebar.css'
-import { useLocation } from 'react-router-dom';
-import Rides from '../Rides/Rides';
-import { Link } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import './Sidebar.css';
 
 const Sidebar = () => {
-
     const navigate = useNavigate();
 
     const logout = () => {
         localStorage.removeItem('token');
-        navigate('/AdminLogin')
+        navigate('/AdminLogin');
     };
 
     const location = useLocation();
@@ -22,20 +17,25 @@ const Sidebar = () => {
     return (
         <Nav id="sidebarMenu" className="d-lg-block sidebar">
             <div className="position-sticky">
+                {/* <h2 className="ms-4 mt-4">Admin Controls</h2> */}
                 <div className="list-group list-group-flush mx-3 mt-4">
+                <div className='mb-3'></div>
                     <Link to="/Dashboard" className={isActive('/Dashboard')}>
-                        Dashboard                    </Link>
+                        Dashboard
+                    </Link>
                     <Link to="/RidePackage" className={isActive('/RidePackage')}>
                         Manage Packages
                     </Link>
                     <Link to="/Rides" className={isActive('/Rides')}>
                         Manage Rides
                     </Link>
-
                     <Link to="/ClimedTicket" className={isActive('/ClimedTicket')}>
                         Tickets
                     </Link>
-                    <button className='btn btn-danger' onClick={logout}>Logout</button>
+                    <div className='mt-4'>
+
+                    <button className="btn btn-danger mt-auto mt-5" onClick={logout}>Logout</button>
+                    </div>
                 </div>
             </div>
         </Nav>

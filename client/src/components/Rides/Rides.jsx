@@ -120,7 +120,7 @@ const Rides = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="bg-dark text-light p-4 rounded" style={{ backdropFilter: 'blur(10px)', opacity: 0.85 }}>
-                                    <h3 className="mb-4">Available Packages</h3>
+                                    <h3 className="mb-4">Manage Ride</h3>
                                     <Table striped bordered hover variant="dark">
                                         <thead>
                                             <tr>
@@ -165,7 +165,7 @@ const Rides = () => {
                             <div className="col-12">
                                 <div className="border-bottom border-top border-primary bg-light py-5 px-4">
                                     <div className="text-center">
-                                        <h1 className="display-5 mb-5">Add New Package</h1>
+                                        <h1 className="display-5 mb-5">Add New Ride</h1>
                                     </div>
                                     <form onSubmit={Submit} encType="multipart/form-data">
                                         <div className="row g-4 form">

@@ -9,7 +9,6 @@ const Dashboard = () => {
             <div className="row">
                 <Navbar1 />
                 <div className="col-2">
-
                     <Sidebar />
                 </div>
                 <div className="col-10">

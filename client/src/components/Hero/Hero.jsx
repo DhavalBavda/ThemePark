@@ -6,6 +6,7 @@ import '../../../public/lib/animate/animate.min.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const settings = {
@@ -24,8 +25,8 @@ const Hero = () => {
         <div className="row g-5 align-items-center">
           <div className="col-lg-7 col-md-12">
             <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">Welcome to The </small>
-            <h1 className="display-1 mb-4 animated bounceInDown">Amusement <span className="text-primary">Park</span></h1>
-            <a href="#" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book Now</a>
+            <h1 className="display-1 mb-4 animated bounceInDown">Amusement<span className="text-primary">Park</span></h1>
+            <Link to="/BookTicket" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book Now</Link>
             <a href="#" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know More</a>
           </div>
           <div className="col-lg-5 col-md-12">
