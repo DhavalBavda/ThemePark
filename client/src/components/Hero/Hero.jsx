@@ -28,8 +28,7 @@ const Hero = () => {
             <h1 className="display-1 mb-4 animated bounceInDown text-white">Amusement<span className="text-primary">Park</span></h1>
             <Link to="/BookTicket" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book Now</Link>
             <Link to="/CancellationPage" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Cancel ticket</Link>
-
-            <a href="#" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know More</a>
+            <Link to='/Services' className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know More</Link>
           </div>
           <div className="col-lg-5 col-md-12 ">
             <Slider {...settings}>
