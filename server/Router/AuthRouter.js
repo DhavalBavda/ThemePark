@@ -250,7 +250,7 @@ router.post('/AddFeedBack', async (req, res) => {
 //==================FoodMenu==================================================================================================
 
 
-router.get("/ShowFoodMenu", async (req, res) => {
+router.get("/ShowFoodMenu",  async (req, res) => {
     try {
         const AllFoodMenu = await FoodMenus.find();
         res.status(200).json(AllFoodMenu);
@@ -260,10 +260,13 @@ router.get("/ShowFoodMenu", async (req, res) => {
     }
 })
 //---------------New FoodMenu Add----------------------------------
-router.post('/AddFoodMenu', async (req, res) => {
+router.post('/AddFoodMenu', upload.single('FoodImage'),async (req, res) => {
     try {
-        const { PackageName,Price } = req.body
-        const NewFoodMenu = new FoodMenus({PackageName,Price })
+        const { FoodName,Price } = req.body
+        console.log(req.body);
+        console.log(req.file);
+        // const NewRide = new Rides({Packageid,RideName,RideImage: `upload/${req.file.filename}`,RideDescription,Para,Rating })
+        const NewFoodMenu = new FoodMenus({FoodName,Price,FoodImage:`upload/${req.file.filename}` })
         NewFoodMenu.save()
         res.status(200).json(NewFoodMenu)
     } catch (error) {
@@ -275,8 +278,9 @@ router.post('/AddFoodMenu', async (req, res) => {
 router.put('/EditFoodMenu/:id', async (req, res) => {
     try {
         FoodMenuId = req.params.Id
-        const {FoodMenuName} =req.body
-        const EditFoodMenu = await FoodMenus.findByIdAndUpdate(PackageId, { FoodName,Price })
+        const {FoodName,Price} =req.body
+        console.log(FoodName,Price,FoodMenuId)
+        const EditFoodMenu = await FoodMenus.findByIdAndUpdate(FoodMenuId, { FoodName,Price})
         res.status(200).json(EditFoodMenu)
     } catch (error) {
         console.log(error);

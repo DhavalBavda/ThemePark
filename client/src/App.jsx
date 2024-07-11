@@ -17,6 +17,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
 import PaymentPage from './components/PaymentPage/PaymentPage';
 import CancellationPage from './components/CancellationPage/CancellationPage';
+import FoodMenus from './components/FoodMenus/FoodMenus';
 
 
 function App() {
@@ -37,7 +38,9 @@ function App() {
 
           <Route path='/Dashboard' element={<ProtectedRoute component={Dashboard} />} />
 
+          <Route path='/FoodMenus' element={<ProtectedRoute component={FoodMenus} />} />
 
+          
           <Route path='/' element={<LandingPage />} />
           <Route path='/BookTicket' element={<Booking />} />
           <Route path='/Ticket' element={<Ticket />} />

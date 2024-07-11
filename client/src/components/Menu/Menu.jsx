@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import '../style.css'
 import '../../../public/css/bootstrap.min.css'
 import '../../../public/lib/animate/animate.css'
@@ -30,6 +32,17 @@ import '/public/image/Menu_image/Panipuri.jpeg'
 
 
 const Menu = () => {
+
+    const [FoodData, setFoodData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:4500/ShowFoodMenu')
+            .then(result => setFoodData(result.data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    // const [selectedRide, setSelectedRide] = useState(null);
+
     return (
         <div className="container-fluid menu py-6">
             <div className="container">
@@ -38,72 +51,29 @@ const Menu = () => {
                     <h1 className="display-5 mb-5">Most Popular Food in the Park</h1>
                 </div>
                 <div className="tab-class text-center">
-                    <ul className="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
-                        <li className="nav-item p-2">
-                            <a className="d-flex py-2 mx-2 border border-primary bg-white rounded-pill active" data-bs-toggle="pill" href="#tab-6">
-                                <span className="text-dark" style={{ width: '150px' }}>Starter</span>
-                            </a>
-                        </li>
-                        <li className="nav-item p-2">
-                            <a className="d-flex py-2 mx-2 border border-primary bg-white rounded-pill" data-bs-toggle="pill" href="#tab-7">
-                                <span className="text-dark" style={{ width: '150px' }}>Main Course</span>
-                            </a>
-                        </li>
-                        <li className="nav-item p-2">
-                            <a className="d-flex py-2 mx-2 border border-primary bg-white rounded-pill" data-bs-toggle="pill" href="#tab-8">
-                                <span className="text-dark" style={{ width: '150px' }}>Drinks</span>
-                            </a>
-                        </li>
-                        <li className="nav-item p-2">
-                            <a className="d-flex py-2 mx-2 border border-primary bg-white rounded-pill" data-bs-toggle="pill" href="#tab-9">
-                                <span className="text-dark" style={{ width: '150px' }}>Offers</span>
-                            </a>
-                        </li>
-                        <li className="nav-item p-2">
-                            <a className="d-flex py-2 mx-2 border border-primary bg-white rounded-pill" data-bs-toggle="pill" href="#tab-10">
-                                <span className="text-dark" style={{ width: '150px' }}>Our Special</span>
-                            </a>
-                        </li>
-                    </ul>
                     <div className="tab-content">
                         <div id="tab-6" className="tab-pane fade show p-0 active">
                             <div className="row g-4">
+
+                                {FoodData.map((foodmenu, index) => (
+                                    <div className="col-lg-6 wow bounceInUp" data-wow-delay="0.1s" key={index}>
+                                        <div className="menu-item d-flex align-items-center">
+                                            {foodmenu.FoodImage && <img className="flex-shrink-0 img-fluid rounded-circle" src={`http://localhost:4500/${foodmenu.FoodImage}`} alt={foodmenu.FoodName} />}
+                                            <div className="w-100 d-flex flex-column text-start ps-4">
+                                                <div className="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                                                    <h4>{foodmenu.FoodName}</h4>
+                                                    <h4 className="text-primary">{foodmenu.Price}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
                                 {renderMenuItem('/public/image/Menu_image/Burger.jpeg', 'Burger', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Taco.jpeg', 'Taco', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Tikki.jpeg', 'Sabudana Tikki', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Pizza.jpeg', 'Pizza', '₹90')}
-                            </div>
-                        </div>
-                        <div id="tab-7" className="tab-pane fade show p-0">
-                            <div className="row g-4">
                                 {renderMenuItem('/public/image/Menu_image/Paneer.jpeg', 'Paneer Masala', '₹150')}
-                                {renderMenuItem('/public/image/Menu_image/Biryani.jpeg', 'Biryani', '₹180')}
-                                {renderMenuItem('/public/image/Menu_image/Gujarati.jpeg', 'Gujarati Dish', '₹120')}
-                                {renderMenuItem('/public/image/Menu_image/Chole.jpeg', 'Chole Bhature', '₹100')}
-                            </div>
-                        </div>
-                        <div id="tab-8" className="tab-pane fade show p-0">
-                            <div className="row g-4">
-                                {renderMenuItem('/public/image/Menu_image/Chai.jpeg', 'Masala Chai', '₹50')}
-                                {renderMenuItem('/public/image/Menu_image/Lassi.jpeg', 'Lassi', '₹60')}
-                                {renderMenuItem('/public/image/Menu_image/Cold_drink.jpeg', 'Cold Drink', '₹70')}
-                                {renderMenuItem('/public/image/Menu_image/Limbupani.jpeg', 'Nimbu Pani', '₹40')}
-                            </div>
-                        </div>
-                        <div id="tab-9" className="tab-pane fade show p-0">
-                            <div className="row g-4">
-                                {renderMenuItem('/public/image/Menu_image/Combo.jpeg', 'Combo Meal', '₹200')}
-                                {renderMenuItem('/public/image/Menu_image/Platter.jpeg', 'Family Platter', '₹500')}
-                                {renderMenuItem('/public/image/Menu_image/Punjabi.jpeg', 'Punjabi Thali', '₹120')}
-                                {renderMenuItem('/public/image/Menu_image/Weekend.jpeg', 'Weekend Special', '₹300')}
-                            </div>
-                        </div>
-                        <div id="tab-10" className="tab-pane fade show p-0">
-                            <div className="row g-4">
-                                {renderMenuItem('/public/image/Menu_image/Dosa.jpeg', 'Dosa', '₹80')}
-                                {renderMenuItem('/public/image/Menu_image/Idli.jpeg', 'Idli Sambar', '₹70')}
-                                {renderMenuItem('/public/image/Menu_image/Vadapav.jpeg', 'Vada Pav', '₹50')}
-                                {renderMenuItem('/public/image/Menu_image/Panipuri.jpeg', 'Pani Puri', '₹40')}
                             </div>
                         </div>
                     </div>
@@ -122,10 +92,11 @@ const renderMenuItem = (imgSrc, itemName, itemPrice) => (
                     <h4>{itemName}</h4>
                     <h4 className="text-primary">{itemPrice}</h4>
                 </div>
-                <p className="mb-0">Consectetur adipiscing elit sed dwso eiusmod tempor incididunt ut labore.</p>
             </div>
         </div>
     </div>
 );
+
+
 
 export default Menu;
