@@ -105,15 +105,15 @@ const Booking = () => {
                                     <div className="row g-4 form">
                                         <div className="col-lg-4 col-md-6">
                                             <label>Customer Name</label>
-                                            <input type="text" className="form-control border-primary p-2" placeholder="Full Address" onChange={(e) => setCustomerName(e.target.value)} />
+                                            <input type="text" className="form-control border-primary p-2" placeholder="Laxit khanpara" onChange={(e) => setCustomerName(e.target.value)} />
                                         </div>
                                         <div className="col-lg-4 col-md-6">
                                             <label>Mobile No</label>
-                                            <input type="text" className="form-control border-primary p-2" placeholder="Full Address" onChange={(e) => setMobileNo(e.target.value)} />
+                                            <input type="text" className="form-control border-primary p-2" placeholder="1234567890" onChange={(e) => setMobileNo(e.target.value)} />
                                         </div>
                                         <div className="col-lg-4 col-md-6">
                                             <label>Email</label>
-                                            <input type="text" className="form-control border-primary p-2" placeholder="Full Address" onChange={(e) => setEmail(e.target.value)} />
+                                            <input type="text" className="form-control border-primary p-2" placeholder="Abc@gmail.com" onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         <div className="col-lg-4 col-md-6">
                                             <label>Packages</label>
