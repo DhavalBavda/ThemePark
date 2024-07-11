@@ -18,7 +18,7 @@ import '../../../public/image/Rides_Image/Pendulum_ride.jpeg'
 import '../../../public/image/Rides_Image/Splash_ride.jpeg'
 import Navbar1 from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
 
@@ -28,6 +28,7 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
 
     // ========fetch data dynamic=====
     const [Ridesdata, setRidesData] = useState([]);
+    
 
     useEffect(() => {
         axios.get('http://localhost:4500/ShowRide')
@@ -164,9 +165,14 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
         setShowModal(!showModal);
     };
 
-    const handleWriteReview = (ride) => {
-        navigate(`/rideform/${ride.title.toLowerCase().replace(/\s/g, '-')}`);
-    };
+    const navigate = useNavigate();
+
+    const handleWriteReviewClick = () => {
+        navigate('/ride-form');
+      };
+
+    
+
 
     return (
         <div>
@@ -242,9 +248,15 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                                     </div>
                                 ))} */}
                             </div>
-                            <button className="btn btn-primary px-4 py-2 rounded-pill">
-                                Write a Review
-                            </button>
+                            <div className="text-center">
+                    <button
+                      className="btn btn-primary px-3 py-2 rounded-pill"
+                      style={{ fontSize: '16px' }}
+                      onClick={handleWriteReviewClick}
+                    >
+                      Write a Review
+                    </button>
+                  </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={toggleModal}>
                                     Close

@@ -191,7 +191,7 @@ const Rides = () => {
                                                 <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setPara(e.target.value)} />
                                             </div><div className="col-lg-6 col-md-6">
                                                 <label>Ride Rating</label>
-                                                <input type="text" className="form-control border-primary p-2" placeholder="Roller" onChange={(e) => setRating(e.target.value)} />
+                                                <input type="text" className="form-control border-primary p-2" placeholder="4.2" onChange={(e) => setRating(e.target.value)} />
                                             </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Ride Description</label>

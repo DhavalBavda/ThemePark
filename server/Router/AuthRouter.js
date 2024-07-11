@@ -132,7 +132,7 @@ router.put('/EditPackage/:id', async (req, res) => {
 //---------------Package Delete----------------------------------
 router.delete('/PackageDelete/:id', async (req, res) => {
     try {
-        PackageId = req.params.Id
+        PackageId = req.params.id
         const PackagesDelete = await Packages.findByIdAndDelete(PackageId)
         res.status(200).json(PackagesDelete)
     } catch (error) {
