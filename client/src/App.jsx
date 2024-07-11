@@ -17,6 +17,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
 import PaymentPage from './components/PaymentPage/PaymentPage';
 import CancellationPage from './components/CancellationPage/CancellationPage';
+import RideForm from './components/Ride_Attract/RideForm';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/ride' element={<RidesAttract />} />
           <Route path='/Payment' element={<PaymentPage />} />
           <Route path='/CancellationPage' element={<CancellationPage />} />
+          <Route path='/ride-form' element={<RideForm/>} />
 
         </Routes >
       </Router >

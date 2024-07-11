@@ -31,7 +31,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
     if (service.title === 'Food Menu') {
       setShowMenu(true);
       setShowModal(false);
-      scroll.scrollToBottom();
+      scroll.scrollMore(999)
     } else {
       setShowModal(true);
       setShowMenu(false);
@@ -66,7 +66,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
         </div>
       </div>
 
-      {showFooter && showMenu && <Menu />}
+      { showMenu && <Menu />}
 
       {showModal && (
         <div className="modal fade show" tabIndex="-1" role="dialog" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
