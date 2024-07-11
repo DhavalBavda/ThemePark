@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-
+import Navbar1 from '../Navbar/Navbar';
+import './CancellationPage.css'
 const CancellationPage = () => {
     const [MobileNo, setMobileNo] = useState('');
     const [tickets, setTickets] = useState([]);
@@ -62,69 +63,83 @@ const CancellationPage = () => {
         return `${day}-${month}-${year}`;
     };
 
+
     return (
-        <div className="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
+        <>
             {/* <div className="container"> */}
-                <div className="row g-0 justify-content-center">
-                    <div className="col-10 col-md-8 col-lg-6">
-                        <div className="border-bottom border-top border-primary bg-light py-5 px-4">
-                            <div className="text-center">
-                                <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Ticket Cancellation</small>
-                                <h1 className="display-5 mb-5">Cancellation ❌</h1>
-                            </div>
-                            <form>
-                                <div className="row g-3">
-                                    <div className="col-lg-8">
-                                        <label>Enter Mobile Number</label>
-                                        <input type="text" className="form-control border-primary p-2" value={MobileNo} onChange={(e) => setMobileNo(e.target.value)} />
-                                    </div>
-                                    <div className="col-lg-4">
-                                    <label>.</label>
-                                        <button type="button" className="btn btn-primary p-2 w-100" onClick={handleSearchTickets}>Search Tickets</button>
-                                    </div>
-                                    <div className="col-12 mt-4">
-                                        <Table striped bordered hover>
-                                            <thead>
-                                                <tr>
-                                                    <th>Ticket ID</th>
-                                                    <th>Customer Name</th>
-                                                    <th>Booking Date</th>
-                                                    <th>Ticket Date</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {tickets.map(ticket => (
-                                                    <tr key={ticket._id}>
-                                                        <td>{ticket.TicketId}</td>
-                                                        <td>{ticket.CustomerName}</td>
-                                                        <td>{formatDate(ticket.createdAt)}</td>
-                                                        <td>{ticket.Date}</td>
 
-                                                        <td>{ticket.Claimed}</td>
-                                                        <td>
-                                                            {ticket.Claimed !== 'Canceled' ? (
-                                                                <button type="button" className="btn btn-primary" onClick={() => handleCancelTicket(ticket._id)}>Cancel</button>
-                                                            ) : (
-                                                                ticket.Claimed === 'Claimed' ? (
-                                                                    <button type="button" className="btn btn-primary">Claimed</button>
-                                                                ) : (
-                                                                    <button type="button" className="btn btn-danger">{ticket.Claimed}</button>
-                                                                )
-                                                            )}
-
-                                                        </td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </Table>
-                                    </div>
+            < Navbar1 />
+            <div className="container-fluid contact py-6 wow bounceInUp lol" data-wow-delay="0.1s" >
+                <div className="container lol-content">
+                    <div className="row g-0">
+                        <div className="col-1">
+                            <img src="../../../public/image/Hero_image/hero.webp" className="img-fluid h-100 w-100 rounded-start" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
+                        </div>
+                        <div className="col-10">
+                            <div className="border-bottom border-top border-primary bg-light py-5 px-4">
+                                <div className="text-center">
+                                    <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Ticket Cancellation</small>
+                                    <h1 className="display-5 mb-5">Cancellation ❌</h1>
                                 </div>
-                            </form>
+                                <form>
+                                    <div className="row g-3">
+                                        <div className="col-lg-8">
+                                            <label>Enter Mobile Number</label>
+                                            <input type="text" className="form-control border-primary p-2" value={MobileNo} onChange={(e) => setMobileNo(e.target.value)} />
+                                        </div>
+                                        <div className="col-lg-4">
+                                            <label>.</label>
+                                            <button type="button" className="btn btn-primary p-2 w-100" onClick={handleSearchTickets}>Search Tickets</button>
+                                        </div>
+                                        <div className="col-12 mt-4">
+                                            <Table striped bordered hover>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Ticket ID</th>
+                                                        <th>Customer Name</th>
+                                                        <th>Booking Date</th>
+                                                        <th>Ticket Date</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {tickets.map(ticket => (
+                                                        <tr key={ticket._id}>
+                                                            <td>{ticket.TicketId}</td>
+                                                            <td>{ticket.CustomerName}</td>
+                                                            <td>{formatDate(ticket.createdAt)}</td>
+                                                            <td>{ticket.Date}</td>
+
+                                                            <td>{ticket.Claimed}</td>
+                                                            <td>
+                                                                {ticket.Claimed !== 'Canceled' ? (
+                                                                    <button type="button" className="btn btn-primary" onClick={() => handleCancelTicket(ticket._id)}>Cancel</button>
+                                                                ) : (
+                                                                    ticket.Claimed === 'Claimed' ? (
+                                                                        <button type="button" className="btn btn-primary">Claimed</button>
+                                                                    ) : (
+                                                                        <button type="button" className="btn btn-danger">{ticket.Claimed}</button>
+                                                                    )
+                                                                )}
+
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </Table>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div className="col-1">
+                            <img src="../../../public/image/Hero_image/hero.webp" className="img-fluid h-100 w-100 rounded-end" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
                         </div>
                     </div>
                 </div>
+            </div>
+
             {/* </div> */}
 
             {/* OTP Modal */}
@@ -147,7 +162,7 @@ const CancellationPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </div>
+        </>
     );
 };
 

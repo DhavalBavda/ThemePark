@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom'
-
+import './Hero.css'
 const Hero = () => {
   const settings = {
     dots: true,
@@ -20,19 +20,21 @@ const Hero = () => {
   };
 
   return (
-    <div className="container-fluid bg-light py-6 my-6 mt-0">
-      <div className="container">
+    <div className="container-fluid hero-background py-6 my-6 mt-0">
+      <div className="container hero-content">
         <div className="row g-5 align-items-center">
           <div className="col-lg-7 col-md-12">
             <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">Welcome to The </small>
-            <h1 className="display-1 mb-4 animated bounceInDown">Amusement<span className="text-primary">Park</span></h1>
+            <h1 className="display-1 mb-4 animated bounceInDown text-white">Amusement<span className="text-primary">Park</span></h1>
             <Link to="/BookTicket" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book Now</Link>
+            <Link to="/CancellationPage" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Cancel ticket</Link>
+
             <a href="#" className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know More</a>
           </div>
-          <div className="col-lg-5 col-md-12">
+          <div className="col-lg-5 col-md-12 ">
             <Slider {...settings}>
-              <div>
-                <img src="/image/Hero_image/hero.webp" className="img-fluid rounded animated zoomIn" alt="Hero" />
+              <div >
+                <img src="/image/Hero_image/hero.webp" className="img-fluid animated zoomIn " alt="Hero" />
               </div>
               <div>
                 {/* Add your third slide image here */}

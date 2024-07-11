@@ -1,54 +1,62 @@
 .container-fluid.nav-bar {
-  background: linear-gradient(90deg, white 0%, rgb(111, 181, 204) 100%);
+  background: linear-gradient(90deg, rgb(237, 252, 252) 0%, rgb(127, 226, 226) 100%);
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
+  position:sticky;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
   padding: 10px;
   text-align: center;
+  border-radius: 10px;
+}
+/* Styling for Admin Login link */
+.admin-login-link {
+  background-color: #000000 !important; /* Black background */
+  color: #ffffff !important; /* White text color */
 }
 
-.nav-item .nav-link {
-  color: #000; /* Default text color */
+.admin-login-link:hover {
+  background-color: #333333 !important; /* Darker shade on hover */
+}
+
+
+/* Ensure nav links have white color by default */
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Use !important to override other styles */
   transition: color 0.3s ease;
 }
 
-.nav-item .nav-link:hover {
-  color: #007bff; /* Change to the color you prefer */
-  text-decoration: underline; /* Optional underline effect */
+.navbar-nav .nav-link:hover {
+  color: #007bff !important; /* Change to the color you prefer on hover */
 }
 
 .navbar-brand h1 {
-  color: #000;
+  color: #00ccff !important; /* Ensure the brand color is also white */
   transition: color 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 0, 139, 0.7), 0 0 20px rgba(0, 0, 139, 0.7), 0 0 30px rgba(0, 0, 139, 0.7);
 }
 
 .navbar-brand h1:hover {
-  color: #007bff;
-}
-
-.nav-bar {
-  background: var(--bs-light);
-  border-bottom: 1px solid rgba(0, 0, 0, .05);
-  border-radius: 7px;
+  color: #007bff !important;
 }
 
 .navbar .navbar-nav .nav-link {
   padding: 10px 12px;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 25px !important;
   transition: .5s;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  color: var(--bs-primary);
+  color: #00ccff !important; /* Ensure the brand color is also white */
+  transition: color 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 0, 139, 0.7), 0 0 20px rgba(0, 0, 139, 0.7), 0 0 30px rgba(0, 0, 139, 0.7);
 }
 
 .navbar .dropdown-toggle::after {
@@ -80,7 +88,7 @@
 
 .dropdown .dropdown-menu a:hover {
   background: var(--bs-primary);
-  color: var(--bs-white);
+  color: var(--bs-white) !important;
 }
 
 #searchModal .modal-content {

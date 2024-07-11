@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../../public/image/Logo.png"
 import { Navbar } from 'react-bootstrap';
+import Navbar1 from '../Navbar/Navbar';
 
 
 const AdmimLogin = () => {
@@ -30,8 +31,9 @@ const AdmimLogin = () => {
 
     return (
         <>
-            <div className="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s" style={{ backgroundImage: 'url(../../../public/image/Hero_image/hero3.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                <div className="container">
+        <Navbar1/>
+            <div className="container-fluid contact py-6 wow bounceInUp lol" data-wow-delay="0.1s" >
+                <div className="container lol-content">
                     <div className="row g-0">
                         <div className="col-3"></div>
                         <div className="col-1">

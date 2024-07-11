@@ -4,7 +4,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Logo from "../../../public/image/Logo.png";
-import './Navbar.css';
+import './Navbar.css'; // Ensure this is imported after Bootstrap CSS
 
 const Navbar1 = () => {
     const location = useLocation();
@@ -29,7 +29,7 @@ const Navbar1 = () => {
                             <Nav.Link as={Link} to="/events" className={isActive('/events')}>Events</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className={isActive('/contact')}>Contact</Nav.Link>
                         </Nav>
-                        <Nav.Link as={Link} to="/AdminLogin" variant="primary" className="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Admin Login</Nav.Link>
+                        <Nav.Link as={Link} to="/AdminLogin" variant="primary" className="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill admin-login-link">Admin Login</Nav.Link>
                     </Navbar.Collapse>
                 </Navbar>
             </Container>

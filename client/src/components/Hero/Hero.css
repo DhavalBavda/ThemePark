@@ -1,13 +1,16 @@
-.lol {
+.hero-background {
+    position: relative;
     background-image: url('../../../public/image/Hero_image/image.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 90vh;
-    position: relative;
-}
-
-.lol::before {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-background::before {
     content: '';
     position: absolute;
     top: 0;
@@ -16,8 +19,11 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity to make it darker */
     z-index: 1;
-}
-.lol-content {
+  }
+  
+  .hero-content {
     position: relative;
     z-index: 2;
   }
+  
+ 

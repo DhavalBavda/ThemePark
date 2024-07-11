@@ -89,8 +89,8 @@ const Booking = () => {
     return (
         <>
             <Navbar1 />
-            <div className="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
-                <div className="container">
+            <div className="container-fluid contact py-6 wow bounceInUp lol" data-wow-delay="0.1s" style={{ backgroundImage: 'url(../../../public/image/Hero_image/image.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '90vh' }}>
+                <div className="container lol-content">
                     <div className="row g-0">
                         <div className="col-1">
                             <img src="../../../public/image/Hero_image/hero.webp" className="img-fluid h-100 w-100 rounded-start" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
