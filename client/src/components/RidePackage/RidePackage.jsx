@@ -28,7 +28,7 @@ const RidePackage = () => {
         axios.post('http://localhost:4500/AddPackage', RidePackageData)
             .then(result => {
                 console.log(result);
-                navigate('/Ticket', { state: RidePackageData });
+                navigate('/RidePackage', { state: RidePackageData });
                 setPackages([...Packages, result.data]);
                 setPackageName('');
                 setPrice('');
@@ -61,11 +61,20 @@ const RidePackage = () => {
             .then(result => {
                 console.log(result);
                 handleClose();
-                setPackages(packages => packages.map(pkg => pkg._id === selectedPackage._id ? updatedPackage : pkg));
+                setPackages(packages => packages.map(pkg => Packages._id === selectedPackage._id ? updatedPackage : pkg));
             })
             .catch(err => console.log(err));
     };
+    const handleDelete = (ticketId) => {
+        try {
+            axios.delete(`http://localhost:4500/PackageDelete/${ticketId}`);
+            setPackages(prevRides => prevRides.filter(ride => ride._id !== ticketId));
 
+        } catch (error) {
+            console.error('Error claiming ticket:', error);
+        }
+
+    }
     return (
         <div >
 
@@ -98,14 +107,18 @@ const RidePackage = () => {
                                                     <td>{pkg.PackageName}</td>
                                                     <td>{pkg.Price}</td>
                                                     <td>
-                                                        <Button variant="success" onClick={() => handleShow(pkg)}>
+                                                        <Button
+                                                            onClick={() => handleShow(pkg)}
+                                                            className='btn btn-success' >
                                                             Edit
                                                         </Button>
                                                     </td>
                                                     <td>
-                                                        <Link to={`/PackageDelete/${pkg._id}`} className='btn btn-danger'>
+                                                        <Button
+                                                            onClick={() => handleDelete(pkg._id)}
+                                                            className='btn btn-danger'>
                                                             Delete
-                                                        </Link>
+                                                        </Button>
                                                     </td>
                                                 </tr>
                                             ))}
