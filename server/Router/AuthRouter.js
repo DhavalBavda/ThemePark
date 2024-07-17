@@ -234,10 +234,10 @@ router.get("/ShowFeedBack", async (req, res) => {
     }
 })
 //---------------New FeedBack Add----------------------------------
-router.post('/AddFeedBack', async (req, res) => {
+router.post('/AddFeedBack',upload.none(), async (req, res) => {
     try {
-        const { UserName,FeedBack } = req.body
-        const NewFeedBack = new FeedBacks({UserName,FeedBack })
+        const {FeedBack } = req.body
+        const NewFeedBack = new FeedBacks({FeedBack })
         NewFeedBack.save()
         res.status(200).json(NewFeedBack)
     } catch (error) {

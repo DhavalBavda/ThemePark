@@ -1,37 +1,58 @@
-import React from 'react'
-import './Footer.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import '@fortawesome/fontawesome-free/css/all.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./Footer.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const SocialIcon = ({ href, className }) => (
-  <a className="btn btn-primary btn-sm-square me-2 rounded-circle" href={href}>
-    <i className={className}></i>
-  </a>
+    <a className="btn btn-primary btn-sm-square me-2 rounded-circle" href={href}>
+        <i className={className}></i>
+    </a>
 );
 
 const Footer = () => {
+    const [FeedBack, setFeedBack] = useState("");
 
-    const handleSubmit =(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    }    
+        const formData = new FormData();
+        formData.append("FeedBack", FeedBack);
+
+        try {
+            await axios.post("http://localhost:4500/AddFeedBack", formData, {
+                headers: {
+                    "Content-Type": "multipart/from-data",
+                }
+            });
+            alert('Feedback Submitted');
+            setFeedBack('');
+        } catch (e) {
+            console.log("Error Posting FeedBack", e);
+        }
+    };
     return (
-        <>
-            <div className='footer-container'>
-                <section className='footer-send'>
-                    <p className='footer-send-heading'>
+            <div className="footer-container">
+                <section className="footer-send">
+                    <p className="footer-send-heading">
                         Join the Adventure to the Park full of Rides
                     </p>
-                    <p className='footer-send-text'>
-                        Visit Us Now!!
-                        Give Your Feedback
-                    </p>
+                    <p className="footer-send-text">Visit Us Now!! Give Your Feedback On Our Park</p>
 
                     <div className="input-area">
                         <form onSubmit={handleSubmit}>
-                            <input type="text" name='Feedback' placeholder='Your Feedback' className='footer-input' />
-                            <button type="submit" className="btn btn-primary">Send Feedback</button>
+                            <input
+                                type="text"
+                                name="Feedback"
+                                value={FeedBack}
+                                placeholder="Your Feedback"
+                                className="footer-input"
+                                onChange={(e) => setFeedBack(e.target.value)}
+                            />
+                            <button type="submit" className="btn btn-primary">
+                                Send Feedback
+                            </button>
                         </form>
                     </div>
                 </section>
@@ -39,26 +60,23 @@ const Footer = () => {
                     <div className="footer-link-wrapper">
                         <div className="footer-link-items">
                             <h2>SocialMedia</h2>
-                                <SocialIcon href="#" className="fab fa-facebook-f" />
-                                <SocialIcon href="#" className="fab fa-twitter" />
-                                <SocialIcon href="#" className="fab fa-instagram" />
-                                <SocialIcon href="#" className="fab fa-linkedin-in" />
+                            <SocialIcon href="#" className="fab fa-facebook-f" />
+                            <SocialIcon href="#" className="fab fa-twitter" />
+                            <SocialIcon href="#" className="fab fa-instagram" />
+                            <SocialIcon href="#" className="fab fa-linkedin-in" />
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+    );
+};
 
-    )
-}
-
-export default Footer
+export default Footer;
 
 // import React from 'react';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 // import '@fortawesome/fontawesome-free/css/all.css';
 // import '../style.css';
-
 
 // const FooterItem = ({ title, children }) => (
 //   <div className="footer-item">
@@ -133,16 +151,12 @@ export default Footer
 
 // export default Footer;
 
-
-
-
-
 // import React from 'react'
 
 // const Footer = () => {
 //   return (
 //     <div>
-      
+
 //     </div>
 //   )
 // }

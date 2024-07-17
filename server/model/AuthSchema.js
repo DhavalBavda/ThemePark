@@ -152,10 +152,6 @@ const RidesFeedBacks = new mongoose.model("RidesFeedBacks", RidesFeedBack);
 //=============FeedBack==================================================
 const FeedBack = new mongoose.Schema(
   {
-    UserName: {
-      type: String,
-      required: true,
-    },
     FeedBack: {
       type: String,
       required: true,
