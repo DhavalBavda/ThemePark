@@ -124,15 +124,23 @@ const Rides = new mongoose.model("Rides", Ride);
 //=============Rides FeedBack==================================================
 const RidesFeedBack = new mongoose.Schema(
   {
-    Rideid: {
-      type: ObjectId,
-      ref: "Rides",
+    RideName:{
+      type:String,
+      required:true
     },
     UserName: {
       type: String,
       required: true,
     },
-    FeedBack: {
+    Email:{
+      type:String,
+      required:true
+    },
+    Rating:{
+      type:Number,
+      required:true
+    },
+    Comment: {
       type: String,
       required: true,
     },

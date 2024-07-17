@@ -148,7 +148,7 @@ router.delete('/PackageDelete/:id', async (req, res) => {
 router.get("/ShowRide", async (req, res) => {
     try {
         const allRides = await Rides.find().populate('Packageid', 'PackageName'); // Populate Packageid with PackageName
-        console.log(allRides);
+        // console.log(allRides);
         res.status(200).json(allRides);
     } catch (error) {
         console.log(error);
@@ -209,10 +209,10 @@ router.get("/ShowRideFeedBack", async (req, res) => {
     }
 })
 //---------------New RideFeedBack Add----------------------------------
-router.post('/AddRideFeedBack', async (req, res) => {
+router.post('/AddRideFeedBack', upload.none() ,async (req, res) => {
     try {
-        const { Rideid,UserName,FeedBack } = req.body
-        const NewRideFeedBack = new RidesFeedBacks({Rideid,UserName,FeedBack })
+        const { UserName,Email,RideName,Rating,Comment } = req.body
+        const NewRideFeedBack = new RidesFeedBacks({UserName,Email,RideName,Rating,Comment})
         NewRideFeedBack.save()
         res.status(200).json(NewRideFeedBack)
     } catch (error) {
