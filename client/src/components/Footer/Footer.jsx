@@ -49,6 +49,7 @@ const Footer = () => {
                                 placeholder="Your Feedback"
                                 className="footer-input"
                                 onChange={(e) => setFeedBack(e.target.value)}
+                                
                             />
                             <button type="submit" className="btn btn-primary">
                                 Send Feedback
