@@ -69,11 +69,11 @@ const Menu = () => {
                                     </div>
                                 ))}
 
-                                {renderMenuItem('/public/image/Menu_image/Burger.jpeg', 'Burger', '₹90')}
+                                {/* {renderMenuItem('/public/image/Menu_image/Burger.jpeg', 'Burger', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Taco.jpeg', 'Taco', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Tikki.jpeg', 'Sabudana Tikki', '₹90')}
                                 {renderMenuItem('/public/image/Menu_image/Pizza.jpeg', 'Pizza', '₹90')}
-                                {renderMenuItem('/public/image/Menu_image/Paneer.jpeg', 'Paneer Masala', '₹150')}
+                                {renderMenuItem('/public/image/Menu_image/Paneer.jpeg', 'Paneer Masala', '₹150')} */}
                             </div>
                         </div>
                     </div>

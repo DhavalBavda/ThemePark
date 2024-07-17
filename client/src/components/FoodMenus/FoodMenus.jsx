@@ -24,6 +24,7 @@ const FoodMenus = () => {
     const [show, setShow] = useState(false);
 
 
+
     const Submit = (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -42,6 +43,7 @@ const FoodMenus = () => {
                 axios.get('http://localhost:4500/ShowFoodMenu')
                     .then(result => setFoodMenus(result.data))
                     .catch(err => console.log(err));
+                
             })
             .catch(err => console.log(err));
     };
