@@ -124,21 +124,21 @@ const Rides = new mongoose.model("Rides", Ride);
 //=============Rides FeedBack==================================================
 const RidesFeedBack = new mongoose.Schema(
   {
-    RideName:{
-      type:String,
-      required:true
+    RideName: {
+      type: String,
+      required: true,
     },
     UserName: {
       type: String,
       required: true,
     },
-    Email:{
-      type:String,
-      required:true
+    Email: {
+      type: String,
+      required: true,
     },
-    Rating:{
-      type:Number,
-      required:true
+    Rating: {
+      type: Number,
+      required: true,
     },
     Comment: {
       type: String,
@@ -175,11 +175,100 @@ const FoodMenu = new mongoose.Schema(
     FoodImage: {
       type: String,
       required: true,
-    }
+    },
   },
   { timestamps: true }
 );
 const FoodMenus = new mongoose.model("FoodMenus", FoodMenu);
+
+//=============Events Details==================================================
+
+const EventDetail = new mongoose.Schema({
+  EventName:{
+    type:String,
+    required:true
+  },
+  EventDescription:{
+    type:String,
+    required:true
+  },
+  EventDate:{
+    type:String,
+    required:true
+  },
+  EventTime:{
+    type:String,
+    required:true
+  },
+  EventPrice:{
+    type:Number,
+    required:true
+  },
+  Completed:{
+    type:String,
+    required:true
+  }
+},{timestamps:true});
+const EventDetails = new mongoose.model('EventDetails',EventDetail); 
+
+
+//=============EventUserRegistration==================================================
+const EventUserRegistration = new mongoose.Schema(
+  {
+    TicketId: {
+      type: String,
+      required: true,
+    },
+    CustomerName: {
+      type: String,
+      required: true,
+    },
+    MobileNo: {
+      type: String,
+      required: true,
+    },
+    Email: {
+      type: String,
+      required: true,
+    },
+    Events: {
+      type: String,
+      required: true,
+    },
+    PaymentStatus: {
+      type: String,
+    },
+    NumberOfMember: {
+      type: String,
+      required: true,
+    },
+    TransactionID: {
+      type: String,
+      required: true,
+    },
+    TicketPerPerson: {
+      type: String,
+      required: true,
+    },
+    TotalPayment: {
+      type: String,
+      required: true,
+    },
+    Claimed: {
+      type: String,
+      required: true,
+    },
+    Date: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
+const EventUserRegistrations = new mongoose.model(
+  "EventUserRegistrations",
+  EventUserRegistration
+);
 
 /*=============Export the model==============*/
 
@@ -191,4 +280,6 @@ module.exports = {
   RidesFeedBacks,
   FeedBacks,
   FoodMenus,
+  EventDetails,
+  EventUserRegistrations
 };

@@ -5,7 +5,7 @@ import Services from '../Services/Services'
 import Contact from '../Contact/Contact'
 import Footer from '../Footer/Footer'
 import RidesAttract from '../Ride_Attract/RideAttract'
-import Event from '../Event/Event'
+import Event from '../Event_Attract/Event'
 
 const LandingPage = () => {
   return (

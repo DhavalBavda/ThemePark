@@ -8,7 +8,7 @@ import RidePackage from './components/RidePackage/RidePackage';
 import Rides from './components/Rides/Rides';
 import Contact from './components/Contact/Contact';
 import Services from './components/Services/Services';
-import Event from './components/Event/Event';
+import Event from './components/Event_Attract/Event';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 // import AdminPanel from './components/AdminPanel/AdminPanel'
@@ -19,6 +19,8 @@ import PaymentPage from './components/PaymentPage/PaymentPage';
 import CancellationPage from './components/CancellationPage/CancellationPage';
 import RideForm from './components/Ride_Attract/RideForm';
 import FoodMenus from './components/FoodMenus/FoodMenus';
+import EventBooking from './components/EventBooking/EventBooking';
+import EventAdmin from './components/EventsAdmin/EventsAdmin';
 
 
 function App() {
@@ -41,6 +43,8 @@ function App() {
 
           <Route path='/FoodMenus' element={<ProtectedRoute component={FoodMenus} />} />
 
+          <Route path='/EventAdmin' element={<ProtectedRoute component={EventAdmin} />} />
+
           
           <Route path='/' element={<LandingPage />} />
           <Route path='/BookTicket' element={<Booking />} />
@@ -52,6 +56,7 @@ function App() {
           <Route path='/Payment' element={<PaymentPage />} />
           <Route path='/CancellationPage' element={<CancellationPage />} />
           <Route path='/ride-form' element={<RideForm/>} />
+          <Route path='/BookEventTicket' element={<EventBooking />} />
 
         </Routes >
       </Router >

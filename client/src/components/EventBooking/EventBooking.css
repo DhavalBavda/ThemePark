@@ -1,0 +1,23 @@
+.lol {
+    background-image: url('../../../public/image/Hero_image/image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    position: relative;
+}
+
+.lol::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity to make it darker */
+    z-index: 1;
+}
+.lol-content {
+    position: relative;
+    z-index: 2;
+  }
