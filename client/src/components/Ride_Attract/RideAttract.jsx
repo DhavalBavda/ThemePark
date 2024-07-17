@@ -21,6 +21,7 @@ import Footer from '../Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
+import Feedback from '../Feedback/Feedbackcard.jsx';
 
 
 const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
@@ -267,6 +268,7 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                     </div>
                 </div>
             )}
+            <Feedback/>
 
             {/* {selectedRide && (
         <RideForm ride={selectedRide} onSubmit={() => setSelectedRide(null)} />
