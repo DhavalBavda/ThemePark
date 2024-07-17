@@ -32,6 +32,9 @@ const Sidebar = () => {
                     <Link to='/FoodMenus' className={isActive('/FoodMenus')}>
                         Manage Food
                     </Link>
+                    <Link to='/EventAdmin' className={isActive('/EventAdmin')}>
+                        Manage Events
+                    </Link>
                     <Link to="/ClimedTicket" className={isActive('/ClimedTicket')}>
                         Tickets
                     </Link>
