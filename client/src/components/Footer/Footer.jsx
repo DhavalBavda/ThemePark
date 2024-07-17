@@ -12,6 +12,10 @@ const SocialIcon = ({ href, className }) => (
 );
 
 const Footer = () => {
+
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+    }    
     return (
         <>
             <div className='footer-container'>
@@ -25,7 +29,7 @@ const Footer = () => {
                     </p>
 
                     <div className="input-area">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <input type="text" name='Feedback' placeholder='Your Feedback' className='footer-input' />
                             <button type="submit" className="btn btn-primary">Send Feedback</button>
                         </form>

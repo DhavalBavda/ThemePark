@@ -1,25 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { faHouseMedicalCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const RideForm = () => {
-    const rideOptions = [
-        { id: 1, title: 'Roller Coaster' },
-        { id: 2, title: 'Ferris Wheel' },
-        { id: 3, title: 'Merry-Go-Round' },
-        { id: 4, title: 'Bumper Cars' },
-        { id: 5, title: 'All Rides' },
-    ];
 
-    const handleSubmit = (e) => {
+    const [RideData, setRidesData] = useState([]);
+    const [UserName, setUserName] = useState('');
+    const [Email, setEmail] = useState('');
+    const [RideName, setRideName] = useState('');
+    const [Rating, setRating] = useState();
+    const [Comment, setComment] = useState('');
+
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        axios.get('http://localhost:4500/ShowRide')
+            .then(result => setRidesData(result.data))
+            .catch(error => console.error('Error Fetching Details', error))
+    })
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const formData = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            rideTitle: e.target.rideTitle.value,
-            rating: e.target.rating.value,
-            comment: e.target.comment.value,
-        };
-        console.log(formData);
-        alert('Feedback submitted!');
+
+        console.log(UserName);
+
+        const formData = new FormData();
+        formData.append('UserName', UserName);
+        formData.append('Email', Email);
+        formData.append('RideName', RideName);
+        formData.append('Rating', Rating);
+        formData.append('Comment', Comment);
+
+        try {
+            const response = await axios.post('http://localhost:4500/AddRideFeedBack', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log(response.data); // Log the response data for debugging
+            alert('Feedback submitted!');
+            navigate('/ride')
+        } catch (error) {
+            console.error('There was an error submitting the feedback!', error);
+            alert('Error submitting feedback. Please try again.');
+        }
     };
 
     return (
@@ -32,9 +58,11 @@ const RideForm = () => {
                     </label>
                     <input
                         type="text"
+                        value={UserName}
                         className="form-control"
                         id="name"
-                        name="name"
+                        // name="name"
+                        onChange={(e) => setUserName(e.target.value)}
                         required
                     />
                 </div>
@@ -44,26 +72,30 @@ const RideForm = () => {
                     </label>
                     <input
                         type="email"
+                        value={Email}
                         className="form-control"
                         id="email"
-                        name="email"
+                        // name="email"
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="rideTitle" className="form-label">
-                        Ride Title
+                        Ride Name
                     </label>
                     <select
                         className="form-control"
                         id="rideTitle"
-                        name="rideTitle"
+                        value={RideName}
+                        // name="rideTitle"
+                        onChange={(e) => setRideName(e.target.value)}
                         required
                     >
                         <option value="">Select a ride</option>
-                        {rideOptions.map((ride) => (
-                            <option key={ride.id} value={ride.title}>
-                                {ride.title}
+                        {RideData.map((ride, index) => (
+                            <option key={index} value={ride.RideName}>
+                                {ride.RideName}
                             </option>
                         ))}
                     </select>
@@ -74,11 +106,13 @@ const RideForm = () => {
                     </label>
                     <input
                         type="number"
+                        value={Rating}
                         className="form-control"
                         id="rating"
-                        name="rating"
+                        // name="rating"
                         min="1"
                         max="5"
+                        onChange={(e) => setRating(e.target.value)}
                         required
                     />
                 </div>
@@ -88,9 +122,11 @@ const RideForm = () => {
                     </label>
                     <textarea
                         className="form-control"
+                        value={Comment}
                         id="comment"
-                        name="comment"
+                        // name="comment"
                         rows="3"
+                        onChange={(e) => setComment(e.target.value)}
                         required
                     ></textarea>
                 </div>

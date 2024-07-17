@@ -29,137 +29,21 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
 
     // ========fetch data dynamic=====
     const [Ridesdata, setRidesData] = useState([]);
-    
+    const [RideFeeedback, setRideFeedback] = useState([]);
+
 
     useEffect(() => {
         axios.get('http://localhost:4500/ShowRide')
             .then(result => setRidesData(result.data))
             .catch(error => console.error('Error fetching data:', error));
+
+        axios.get('http://localhost:4500/ShowRideFeedBack')
+            .then(result=>setRideFeedback(result.data))
+            .catch(error=>console.error('Error Fetching Feedback Data',error))
     }, []);
 
     const [showModal, setShowModal] = useState(false);
     const [selectedRide, setSelectedRide] = useState(null);
-    const Ridess = [
-        {
-            title: 'Deep Space',
-            para: 'High-speed roller coaster thrill.',
-            image: '/public/image/Rides_Image/Deep_Space_ride.jpeg',
-            delay: '0.5s',
-            rating: 4.8,
-            details: ['Ride Type: Roller Coaster', 'Height Requirement: 48 inches', 'Duration: 2 minutes'],
-            reviews: [
-                { name: 'Harsh A', rating: 5, comment: 'Absolutely thrilling! Loved every second of it.' },
-                { name: 'Laxit K', rating: 4, comment: 'Great ride, but a bit too intense for my liking.' },
-                { name: 'Dhaval S', rating: 4.5, comment: 'Definitely worth a try. The speed is incredible!' },
-            ],
-        },
-        {
-            title: 'Cyclone',
-            para: 'Classic roller coaster twists and turns.',
-            image: '/public/image/Rides_Image/Cyclone_ride.jpeg',
-            delay: '0.7s',
-            rating: 4.5,
-            details: ['Ride Type: Roller Coaster', 'Height Requirement: 42 inches', 'Duration: 3 minutes'],
-            reviews: [
-                { name: 'Rutvik P', rating: 4.5, comment: 'Loved the classic feel of this roller coaster. Great for all ages.' },
-                { name: 'Harsh A', rating: 4, comment: 'The twists and turns were a bit too much for me, but still a fun ride.' },
-                { name: 'Laxit K', rating: 5, comment: 'This is my new favorite ride! The adrenaline rush is unbeatable.' },
-            ],
-        },
-        {
-            title: 'Twister',
-            para: 'Gentle roller coaster for kids.',
-            image: '/public/image/Rides_Image/Twister_ride.jpeg',
-            delay: '0.3s',
-            rating: 4.2,
-            details: ['Ride Type: Roller Coaster', 'Height Requirement: 36 inches', 'Duration: 4 minutes'],
-            reviews: [
-                { name: 'Dhaval S', rating: 4, comment: 'Perfect for my little ones. They had a blast on this ride.' },
-                { name: 'Rutvik P', rating: 3.5, comment: 'A bit too tame for my liking, but great for families with young children.' },
-                { name: 'Harsh A', rating: 4.5, comment: 'Gentle enough for my kids, but still fun for the whole family.' },
-            ],
-        },
-        {
-            title: 'Bumper Car',
-            para: 'Classic bumper car fun and competition.',
-            image: '/public/image/Rides_Image/bumpercar_card.jpg',
-            delay: '0.5s',
-            rating: 4.7,
-            details: ['Ride Type: Bumper Cars', 'Height Requirement: None', 'Duration: 5 minutes'],
-            reviews: [
-                { name: 'Laxit K', rating: 4.5, comment: 'So much fun! Brings back childhood memories.' },
-                { name: 'Harsh A', rating: 4, comment: 'Great for a quick adrenaline rush. Loved the competitive aspect.' },
-                { name: 'Dhaval S', rating: 4.8, comment: 'Definitely a must-try ride. Lots of laughs and excitement.' },
-            ],
-        },
-        {
-            title: 'Butterfly Ride',
-            para: 'Peaceful ride for families with young children.',
-            image: '/public/image/Rides_Image/Butterfly_ride.jpeg',
-            delay: '0.1s',
-            rating: 4.3,
-            details: ['Ride Type: Gentle Ride', 'Height Requirement: 32 inches', 'Duration: 6 minutes'],
-            reviews: [
-                { name: 'Aagam', rating: 4, comment: 'Perfect for my little ones. They loved the gentle swaying motion.' },
-                { name: 'Laxit K', rating: 3.5, comment: 'A bit too tame for my taste, but great for families with young kids.' },
-                { name: 'Rutvik P', rating: 4.2, comment: 'Relaxing and enjoyable. A nice break from the more thrilling rides.' },
-            ],
-        },
-        {
-            title: 'Lazy River',
-            para: 'Relaxing float for a break from excitement.',
-            image: '/public/image/Rides_Image/Lazy_river_ride.jpeg',
-            delay: '0.7s',
-            rating: 4.6,
-            details: ['Ride Type: Water Ride', 'Height Requirement: None', 'Duration: 10 minutes'],
-            reviews: [
-                { name: 'Aagam', rating: 4.5, comment: 'So peaceful and relaxing. Perfect for a break between rides.' },
-                { name: 'Rutvik P', rating: 4, comment: 'Loved floating along and taking in the sights. Great for all ages.' },
-                { name: 'Dhaval S', rating: 4.8, comment: 'Definitely a must-try for anyone looking to unwind. Highly recommended!' },
-            ],
-        },
-        {
-            title: 'Wave Pool',
-            para: 'Splash and play in the giant wave pool.',
-            image: '/public/image/Rides_Image/Wavepool_ride.jpeg',
-            delay: '0.1s',
-            rating: 4.4,
-            details: ['Ride Type: Water Ride', 'Height Requirement: 48 inches', 'Duration: 15 minutes'],
-            reviews: [
-                { name: 'Dhaval S', rating: 4.5, comment: 'So much fun! The waves are perfect for playing and splashing around.' },
-                { name: 'Rutvik P', rating: 4, comment: 'Great for cooling off and having some water-based fun. Loved the energy.' },
-                { name: 'Aagam', rating: 4.7, comment: 'Definitely a must-try for anyone who loves water rides. Lots of excitement!' },
-            ],
-        },
-        {
-            title: 'Pendulum Ride',
-            para: 'Adrenaline-filled swing ride for weightlessness.',
-            image: '/public/image/Rides_Image/Pendulum_ride.jpeg',
-            delay: '0.3s',
-            rating: 4.9,
-            details: ['Ride Type: Swing Ride', 'Height Requirement: 48 inches', 'Duration: 2 minutes'],
-            reviews: [
-                { name: 'Laxit K', rating: 5, comment: 'Absolutely thrilling! The feeling of weightlessness is incredible.' },
-                { name: 'Harsh A', rating: 4.5, comment: 'Not for the faint of heart, but definitely an adrenaline rush worth experiencing.' },
-                { name: 'Dhaval S', rating: 4.8, comment: 'Loved the sensation of swinging high in the air. A must-try for thrill-seekers!' },
-            ],
-        },
-        {
-            title: 'Splash Water Ride',
-            para: 'Wild water ride with splashing and spraying.',
-            image: '/public/image/Rides_Image/Splash_ride.jpeg',
-            delay: '0.5s',
-            rating: 4.7,
-            details: ['Ride Type: Water Ride', 'Height Requirement: 42 inches', 'Duration: 5 minutes'],
-            reviews: [
-                { name: 'Aagam', rating: 4.5, comment: 'So much fun! Prepare to get soaked, but its worth it.' },
-                { name: 'Harsh A', rating: 4, comment: 'Great for cooling off on a hot day. Lots of splashing and excitement.' },
-                { name: 'Laxit K', rating: 4.7, comment: 'Definitely a must-try for anyone who loves water rides. Lots of thrills!' },
-            ],
-        },
-    ];
-
-    // console.log(Ridesdata.RideImage)
 
     const toggleModal = (ride) => {
         setSelectedRide(ride);
@@ -170,9 +54,7 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
 
     const handleWriteReviewClick = () => {
         navigate('/ride-form');
-      };
-
-    
+    };
 
 
     return (
@@ -250,14 +132,14 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                                 ))} */}
                             </div>
                             <div className="text-center">
-                    <button
-                      className="btn btn-primary px-3 py-2 rounded-pill"
-                      style={{ fontSize: '16px' }}
-                      onClick={handleWriteReviewClick}
-                    >
-                      Write a Review
-                    </button>
-                  </div>
+                                <button
+                                    className="btn btn-primary px-3 py-2 rounded-pill"
+                                    style={{ fontSize: '16px' }}
+                                    onClick={handleWriteReviewClick}
+                                >
+                                    Write a Review
+                                </button>
+                            </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" onClick={toggleModal}>
                                     Close
