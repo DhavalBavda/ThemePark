@@ -167,26 +167,26 @@ const EventAdmin = () => {
                                         <div className="row g-4 form">
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Event Name</label>
-                                                <input type="text" className="form-control border-primary p-2" placeholder="Event" onChange={(e) => setEventName(e.target.value)} />
+                                                <input type="text" className="form-control border-primary p-2"  onChange={(e) => setEventName(e.target.value)} />
                                             </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Event Description</label>
-                                                <input type="text" className="form-control border-primary p-2" placeholder="Event Description" onChange={(e) => setEventDescription(e.target.value)} />
+                                                <input type="text" className="form-control border-primary p-2"  onChange={(e) => setEventDescription(e.target.value)} />
                                             </div><div className="col-lg-6 col-md-6">
                                                 <label>Event Date</label>
-                                                <input type="Date" className="form-control border-primary p-2" placeholder="25/06/2024" onChange={(e) => setEventDate(e.target.value)} />
+                                                <input type="Date" className="form-control border-primary p-2"  onChange={(e) => setEventDate(e.target.value)} />
                                             </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Event Time</label>
-                                                <input type="text" className="form-control border-primary p-2" placeholder="Event Time" onChange={(e) => setEventTime(e.target.value)} />
+                                                <input type="text" className="form-control border-primary p-2"  onChange={(e) => setEventTime(e.target.value)} />
                                             </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Event Price</label>
-                                                <input type="text" className="form-control border-primary p-2" placeholder="Event Price" onChange={(e) => setEventPrice(e.target.value)} />
+                                                <input type="text" className="form-control border-primary p-2"  onChange={(e) => setEventPrice(e.target.value)} />
                                             </div>
                                             <div className="col-lg-6 col-md-6">
                                                 <label>Completed</label>
-                                                <input type='text' className="form-control border-primary p-2" placeholder="" onChange={(e) => setCompleted(e.target.value)} />
+                                                <input type='text' className="form-control border-primary p-2" placeholder="Yes or No" onChange={(e) => setCompleted(e.target.value)} />
                                             </div>
                                         </div>
                                         <div className="m-4 col-lg-6 col-md-6">
@@ -208,26 +208,26 @@ const EventAdmin = () => {
                                 <div className="row g-4 form">
                                     <div className="col-lg-6 col-md-6">
                                         <label>Event Name</label>
-                                        <input type="text" className="form-control border-primary p-2" value={EventName} placeholder="Event" onChange={(e) => setEventName(e.target.value)} />
+                                        <input type="text" className="form-control border-primary p-2" value={EventName}  onChange={(e) => setEventName(e.target.value)} />
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <label>Event Description</label>
-                                        <input type="text" className="form-control border-primary p-2" value={EventDescription} placeholder="Event Description" onChange={(e) => setEventDescription(e.target.value)} />
+                                        <input type="text" className="form-control border-primary p-2" value={EventDescription}  onChange={(e) => setEventDescription(e.target.value)} />
                                     </div><div className="col-lg-6 col-md-6">
                                         <label>Event Date</label>
-                                        <input type="Date" className="form-control border-primary p-2" value={EventDate} placeholder="25/06/2024" onChange={(e) => setEventDate(e.target.value)} />
+                                        <input type="Date" className="form-control border-primary p-2" value={EventDate} onChange={(e) => setEventDate(e.target.value)} />
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <label>Event Time</label>
-                                        <input type="text" className="form-control border-primary p-2" value={EventTime} placeholder="Event Time" onChange={(e) => setEventTime(e.target.value)} />
+                                        <input type="text" className="form-control border-primary p-2" value={EventTime}  onChange={(e) => setEventTime(e.target.value)} />
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <label>Event Price</label>
-                                        <input type="text" className="form-control border-primary p-2" value={EventPrice} placeholder="Event Price" onChange={(e) => setEventPrice(e.target.value)} />
+                                        <input type="text" className="form-control border-primary p-2" value={EventPrice}  onChange={(e) => setEventPrice(e.target.value)} />
                                     </div>
                                     <div className="col-lg-6 col-md-6">
                                         <label>Completed</label>
-                                        <input type='text' className="form-control border-primary p-2" value={Completed} placeholder="" onChange={(e) => setCompleted(e.target.value)} />
+                                        <input type='text' className="form-control border-primary p-2" value={Completed}  onChange={(e) => setCompleted(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className="justify-content-center m-4 col-lg-6 col-md-6">
