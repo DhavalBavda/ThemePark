@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import './PaymentPage.css'; 
 
 const PaymentPage = () => {
     const navigate = useNavigate();
@@ -8,17 +9,23 @@ const PaymentPage = () => {
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvc, setCvc] = useState('');
+    const [showSplash, setShowSplash] = useState(false);
 
     const handlePaymentSubmit = (e) => {
         e.preventDefault();
-        // Handle payment submission logic here
+        setShowSplash(true);
+
         const bookingDatas = {
             ...bookingData,
             cardNumber,
             expiryDate,
             cvc
-        }
-        navigate('/Ticket', { state: bookingDatas });
+        };
+
+        setTimeout(() => {
+            setShowSplash(false);
+            navigate('/Ticket', { state: bookingDatas });
+        }, 3000);
     };
 
     return (
@@ -80,6 +87,20 @@ const PaymentPage = () => {
                     </div>
                 </div>
             </div>
+            {showSplash && (
+                <div className="splash-screen">
+                    <div className="splash-content">
+                        <div className="checkmark-wrapper">
+                            <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                <path className="checkmark__check" fill="none" d="M14 27l7 7 16-16" />
+                            </svg>
+                        </div>
+                        <h2>Payment Successful</h2>
+                        <p className="splash-message">Redirecting to your ticket...</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
