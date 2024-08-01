@@ -41,7 +41,7 @@ const AdminRideFeeback = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="bg-dark text-light p-4 rounded" style={{ backdropFilter: 'blur(10px)', opacity: 0.85 }}>
-                                    <h3 className="mb-4">Manage Ride</h3>
+                                    <h3 className="mb-4">Manage Ride Feedback</h3>
                                     <Table striped bordered hover variant="dark">
                                         <thead>
                                             <tr>
