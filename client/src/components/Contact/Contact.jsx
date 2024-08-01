@@ -1,45 +1,11 @@
-// import React from 'react'
-// import './Contact.css'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
-// import Navbar from '../Navbar/Navbar';
-// function Contact () {
-//   return (
-//     <div>
-//       <Navbar1/>
-//       <div className="contact-page-area section-gap">
-//         <div className="contact-container">
-//           <div className="row">
-//             <div className='col-lg-4 d-flex flex-column address-wrap'>
-//               <div className='single-contact-address d-flex flex-row'>
-//                 <div className="contact-details">
-//                   <h5>Amusment Park</h5>
-//                 </div>
-//                 <div className="single-contact-address d-flex flex-row">
-//                 <div className="contact-details">
-// 							    <h5>1234567890</h5>
-// 							    <p>Mon to Sat 9am to 5pm</p>
-// 						      </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-
-//   )
-// }
-
-// export default Contact
-
 import React,{useEffect,useRef} from 'react'
 import Navbar1 from '../Navbar/Navbar'
 import WOW from 'wow.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import teamimage from '../../assets/images/teamimage.jpg'
+import { faFacebookF, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import dhavalimage from '../../assets/images/dhavalimage.jpg'
+import harshimage from '../../assets/images/harshimage.jpg'
 
 
 const Contact = ({ showNavbar = true }) => {
@@ -60,32 +26,62 @@ const Contact = ({ showNavbar = true }) => {
     {
       name: "Harsh Ajay",
       position: "Frontend Developer",
-      imgSrc: teamimage,
-      delay: "0.1s"
+      imgSrc: harshimage,
+      delay: "0.1s",
+      socialMedia: {
+        facebook: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+      },
     },
     {
       name: "Dhaval S Bavda",
       position: "Backend Developer",
-      imgSrc: teamimage,
-      delay: "0.3s"
+      imgSrc: dhavalimage,
+      delay: "0.3s",
+      socialMedia: {
+        facebook: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+      },
     },
     {
       name: "Aagam Shah",
       position: "Frontend Developer",
-      imgSrc: teamimage,
-      delay: "0.5s"
+      imgSrc: (''),
+      delay: "0.5s",
+      socialMedia: {
+        facebook: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+      },
     },
     {
       name: "Laxit Khanpara",
       position: "Backend Developer",
-      imgSrc: teamimage,
-      delay: "0.7s"
+      imgSrc: (''),
+      delay: "0.7s",
+      socialMedia: {
+        facebook: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+      },
     },
     {
       name: "Rutvik Padhara",
       position: "ML Expert",
-      imgSrc: teamimage,
-      delay: "0.7s"
+      imgSrc: (''),
+      delay: "0.7s",
+      socialMedia: {
+        facebook: "",
+        linkedin: "",
+        twitter: "",
+        instagram: "",
+      },
     },
   ];
 
@@ -117,23 +113,24 @@ const Contact = ({ showNavbar = true }) => {
                     <i className="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                     <div>
                       <h4>Address</h4>
-                      <p>Ajwa - Nimeta Road, Ajwa Compound, Rayan Talavadi, Vadodara, Gujarat 390019</p>
+                      <p>Amusement Park 
+                        near Waghodia Road, Vadodara, Gujarat 390019</p>
                     </div>
                   </div>
                   <div className="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
                     <i className="fas fa-envelope fa-2x text-primary me-4"></i>
                     <div>
                       <h4>Mail Us</h4>
-                      <p className="mb-2">info@ajwawaterpark.com</p>
-                      <p className="mb-0">support@ajwawaterpark.com</p>
+                      <p className="mb-2">info@amusementpark.com</p>
+                      <p className="mb-0">support@amusementpark.com</p>
                     </div>
                   </div>
                   <div className="d-inline-flex w-100 border border-primary p-4 rounded">
                     <i className="fa fa-phone-alt fa-2x text-primary me-4"></i>
                     <div>
                       <h4>Telephone</h4>
-                      <p className="mb-2">(+91) 76244 82345</p>
-                      <p className="mb-0">(+91) 65342 88347</p>
+                      <p className="mb-2">(+91) 76767 67676</p>
+                      <p className="mb-0">(+91) 98989 89898</p>
                     </div>
                   </div>
                 </div>
@@ -142,44 +139,44 @@ const Contact = ({ showNavbar = true }) => {
           </div>
         </div>
       </div>
-
-      {/* Team Members start */}
-      {showNavbar && <div className="container-fluid team py-6">
-        <div className="container">
-          <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
-            <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
-            <h1 className="display-5 mb-5">Our Tech Team</h1>
-          </div>
-          <div className="row g-4">
-            {teamMembers.map((member, index) => (
-              <div key={index} className={`col-lg-3 col-md-6 wow bounceInUp`} data-wow-delay={member.delay}>
-                <div className="team-item rounded">
-                  <img className="img-fluid rounded-top" src={member.imgSrc} alt={member.name} />
-                  <div className="team-content text-center py-3 bg-dark rounded-bottom">
-                    <h4 className="text-primary">{member.name}</h4>
-                    <p className="text-white mb-0">{member.position}</p>
-                  </div>
-                  <div className="team-icon d-flex flex-column justify-content-center m-4">
-                    <a className="share btn btn-primary btn-md-square rounded-circle mb-2" href="#">
-                      <FontAwesomeIcon icon={faShareAlt} />
-                    </a>
-                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
-                      <FontAwesomeIcon icon={faFacebookF} />
-                    </a>
-                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
-                      <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href="#">
-                      <FontAwesomeIcon icon={faInstagram} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+{showNavbar && <div className="container-fluid team py-6">
+  <div className="container">
+    <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
+      <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
+      <h1 className="display-5 mb-5">Our Tech Team</h1>
+    </div>
+    <div className="row g-4 d-flex justify-content-center">
+      {teamMembers.map((member, index) => (
+        <div key={index} className={`col-lg-2 col-md-3 col-sm-4 wow bounceInUp d-inline-block`} data-wow-delay={member.delay}>
+         <div className="team-item rounded">
+  <img className="img-fluid rounded-top" src={member.imgSrc} alt={member.name} />
+  <div className="team-content text-center py-3 bg-dark rounded-bottom">
+    <h4 className="text-primary">{member.name}</h4>
+    <p className="text-white mb-0">{member.position}</p>
+  </div>
+  <div className="team-icon d-flex flex-column justify-content-center m-4">
+    <a className="share btn btn-primary btn-md-square rounded-circle mb-2" href="#">
+      <FontAwesomeIcon icon={faShareAlt} />
+    </a>
+    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href={member.socialMedia.facebook}>
+      <FontAwesomeIcon icon={faFacebookF} />
+    </a>
+    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href={member.socialMedia.linkedin}>
+      <FontAwesomeIcon icon={faLinkedin} />
+    </a>
+    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href={member.socialMedia.twitter}>
+      <FontAwesomeIcon icon={faTwitter} />
+    </a>
+    <a className="share-link btn btn-primary btn-md-square rounded-circle mb-2" href={member.socialMedia.instagram}>
+      <FontAwesomeIcon icon={faInstagram} />
+    </a>
+  </div>
           </div>
         </div>
-      </div>}
-      {/* Team Members end */}
+      ))}
+    </div>
+  </div>
+</div>}
     </div>
   )
 }

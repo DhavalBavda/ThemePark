@@ -3,4 +3,20 @@
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
 }
 
+.team .col-lg-2 {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+  }
+  
+  .team .team-item {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .team .team-content {
+    width: 100%;
+    display: inline-block;
+  }
+
 /*** Contact End ***/
