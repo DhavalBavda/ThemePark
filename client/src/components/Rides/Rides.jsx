@@ -148,7 +148,7 @@ const Rides = () => {
                                                     </td>
                                                     <td>
                                                
-                                                        <Button
+                                                        <Button style={{width:"fit-content"}}
                                                             onClick={() => handleDelete(ride._id)}
                                                             className='btn btn-danger'>
                                                             Delete
