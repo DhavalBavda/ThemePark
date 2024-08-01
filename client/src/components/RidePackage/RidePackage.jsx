@@ -114,7 +114,7 @@ const RidePackage = () => {
                                                         </Button>
                                                     </td>
                                                     <td>
-                                                        <Button
+                                                        <Button style={{width:"fit-content"}}
                                                             onClick={() => handleDelete(pkg._id)}
                                                             className='btn btn-danger'>
                                                             Delete

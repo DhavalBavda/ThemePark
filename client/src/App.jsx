@@ -11,7 +11,6 @@ import Services from './components/Services/Services';
 import Event from './components/Event_Attract/Event';
 import AdminLogin from './components/AdminLogin/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
-// import AdminPanel from './components/AdminPanel/AdminPanel'
 import RidesAttract from './components/Ride_Attract/RideAttract';
 import Dashboard from './components/Dashboard/Dashboard';
 import ClimedTicket from './components/ClimedTicket/ClimedTicket';
@@ -21,6 +20,7 @@ import RideForm from './components/Ride_Attract/RideForm';
 import FoodMenus from './components/FoodMenus/FoodMenus';
 import EventBooking from './components/EventBooking/EventBooking';
 import EventAdmin from './components/EventsAdmin/EventsAdmin';
+import AdminParkFeedback from './components/Footer/AdminParkFeedback';
 
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
           <Route path='/FoodMenus' element={<ProtectedRoute component={FoodMenus} />} />
 
           <Route path='/EventAdmin' element={<ProtectedRoute component={EventAdmin} />} />
+          <Route path='/AdminParkFeedback' element={<ProtectedRoute component={AdminParkFeedback} />} />
 
           
           <Route path='/' element={<LandingPage />} />

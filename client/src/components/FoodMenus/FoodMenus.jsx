@@ -130,7 +130,7 @@ const FoodMenus = () => {
                                                         </Button>
                                                     </td>
                                                     <td>
-                                                        <Button
+                                                        <Button style={{width:"fit-content"}}
                                                             onClick={() => handleDelete(foodmenu._id)}
                                                             className='btn btn-danger'>
                                                             Delete
