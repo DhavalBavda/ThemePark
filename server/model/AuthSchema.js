@@ -144,6 +144,9 @@ const RidesFeedBack = new mongoose.Schema(
       type: String,
       required: true,
     },
+    Image: { 
+      type: String,
+      required: false },
   },
   { timestamps: true }
 );

@@ -7,11 +7,10 @@ const path = require('path')
 const { UserRegistrations, Packages, Rides, RidesFeedBacks, FeedBacks, FoodMenus, EventDetails, EventUserRegistrations } = require('../model/AuthSchema');
 const { default: mongoose } = require('mongoose');
 
-
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         console.log(12345);
-        cb(null, "../server/public/upload")
+        cb(null, "public/upload/")
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname))
@@ -209,18 +208,27 @@ router.get("/ShowRideFeedBack", async (req, res) => {
     }
 })
 //---------------New RideFeedBack Add----------------------------------
-router.post('/AddRideFeedBack', upload.none(), async (req, res) => {
+router.post('/AddRideFeedBack', upload.single('Image'), async (req, res) => {
     try {
-        const { UserName, Email, RideName, Rating, Comment } = req.body
-        const NewRideFeedBack = new RidesFeedBacks({ UserName, Email, RideName, Rating, Comment })
-        NewRideFeedBack.save()
-        res.status(200).json(NewRideFeedBack)
+      const { UserName, Email, RideName, Rating, Comment } = req.body;
+    //   const imagePath = req.file ? req.file.path : null;
+    //   console.log(imagePath); // Log the image path
+      const NewRideFeedBack = new RidesFeedBacks({
+        UserName,
+        Email,
+        RideName,
+        Rating,
+        Comment,
+        Image: `upload/${req.file.filename}`,
+      });
+  
+      await NewRideFeedBack.save();
+      res.status(200).json(NewRideFeedBack);
     } catch (error) {
-        console.log(error);
-        res.status(500).send(error)
+      console.log(error);
+      res.status(500).send(error);
     }
-})
-
+  })
 //==================FeedBacks FeedBack==================================================================================================
 
 

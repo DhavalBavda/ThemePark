@@ -31,13 +31,20 @@ const Feedbackcard = () => {
           {feedback.map((item, index) => (
             <div key={index} className={`carousel-item ${index === activeIndex ? 'active' : ''}`}>
               <div className="row justify-content-center">
-                <div className="col-md-6">
+                <div className="col-md-8">
                   <div className="card feedback-card mb-4">
-                    <div className="card-body">
-                      <h5 className="card-title">{item.UserName}</h5>
-                      <h6 className="card-subtitle mb-2 text-muted">{item.RideName}</h6>
-                      <p className="card-text">Rating: {item.Rating}</p>
-                      <p className="card-text">{item.Comment}</p>
+                    <div className="card-body d-flex align-items-center">
+                      <div className="card-details">
+                        <h5 className="card-title">{item.UserName}</h5>
+                        <h6 className="card-subtitle mb-2 text-muted">{item.RideName}</h6>
+                        <p className="card-text">Rating: {item.Rating}</p>
+                        <p className="card-text">{item.Comment}</p>
+                      </div>
+                      <div className="card-image">
+                        {item.Image && (
+                          <img src={`http://localhost:4500/${item.Image}`} alt="Feedback" />
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -51,4 +58,3 @@ const Feedbackcard = () => {
 };
 
 export default Feedbackcard;
-
