@@ -21,6 +21,7 @@ import FoodMenus from './components/FoodMenus/FoodMenus';
 import EventBooking from './components/EventBooking/EventBooking';
 import EventAdmin from './components/EventsAdmin/EventsAdmin';
 import AdminParkFeedback from './components/Footer/AdminParkFeedback';
+import AdminRideFeeback from './components/Rides/AdminRideFeeback';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
           <Route path='/EventAdmin' element={<ProtectedRoute component={EventAdmin} />} />
           <Route path='/AdminParkFeedback' element={<ProtectedRoute component={AdminParkFeedback} />} />
+          <Route path='/AdminRideFeedback' element={<ProtectedRoute component={AdminRideFeeback} />} />
 
           
           <Route path='/' element={<LandingPage />} />

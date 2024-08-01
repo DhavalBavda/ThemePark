@@ -12,23 +12,23 @@ import Button from 'react-bootstrap/Button';
 import Navbar1 from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 
-const AdminParkFeedback = () => {
-
-    const [ParkFeedback, setParkFeedback] = useState([]);
+const AdminRideFeeback = () => {
+    const [RideFeedbacks, setRideFeedbacks] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowFeedBack')
-            .then(result => setParkFeedback(result.data))
-            .catch(err => console.log(err))
+        axios.get('http://localhost:4500/ShowRideFeedBack')
+            .then(result => setRideFeedbacks(result.data))
+            .catch(err => console.log(err));
     },[]);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4500/DeleteFeedBack/${id}`)
-            .then(axios.get('http://localhost:4500/ShowFeedBack')
-                .then(result => setParkFeedback(result.data))
+        axios.delete(`http://localhost:4500/DeleteRideFeedback/${id}`)
+            .then(axios.get('http://localhost:4500/ShowRideFeedBack')
+                .then(result => setRideFeedbacks(result.data))
                 .catch(err => console.log(err)))
             .catch(err => console.log(err))
     }
+
     return (
         <>
             <div className="row">
@@ -41,20 +41,30 @@ const AdminParkFeedback = () => {
                         <div className="row">
                             <div className="col-12">
                                 <div className="bg-dark text-light p-4 rounded" style={{ backdropFilter: 'blur(10px)', opacity: 0.85 }}>
-                                    <h3 className="mb-4">Manage Food</h3>
+                                    <h3 className="mb-4">Manage Ride</h3>
                                     <Table striped bordered hover variant="dark">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Feedback</th>
+                                                <th>Ride Name</th>
+                                                <th>User Name</th>
+                                                <th>Email</th>
+                                                <th>Rating</th>
+                                                <th>Comment</th>
+                                                <th>Image</th>
                                                 <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {ParkFeedback.map((feedbacks, index) => (
+                                            {RideFeedbacks.map((feedbacks, index) => (
                                                 <tr key={feedbacks._id}>
                                                     <td>{index + 1}</td>
-                                                    <td>{feedbacks.FeedBack}</td>
+                                                    <td>{feedbacks.RideName}</td>
+                                                    <td>{feedbacks.UserName}</td>
+                                                    <td>{feedbacks.Email}</td>
+                                                    <td>{feedbacks.Rating}</td>
+                                                    <td>{feedbacks.Comment}</td>
+                                                    <td><img src={`http://localhost:4500/${feedbacks.Image}`} alt={feedbacks.UserName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>
                                                         <Button style={{ width: "fit-content" }}
                                                             onClick={() => handleDelete(feedbacks._id)}
@@ -76,4 +86,4 @@ const AdminParkFeedback = () => {
     )
 }
 
-export default AdminParkFeedback
+export default AdminRideFeeback

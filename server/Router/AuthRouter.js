@@ -273,10 +273,19 @@ router.post("/AddRideFeedBack", upload.single("Image"), async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+router.delete('/DeleteRideFeedback/:id', async (req,res)=>{
+  try{
+    const FeeId = req.params.id;
+    const dleEvent = await RidesFeedBacks.findByIdAndDelete(FeeId)
+    res.status(200).json(dleEvent)
+  }catch(err){}
+})
 //==================FeedBacks FeedBack==================================================================================================
 
 router.get("/ShowFeedBack", async (req, res) => {
   try {
+    console.log("cllaed")
     const AllFeedBack = await FeedBacks.find();
     res.status(200).json(AllFeedBack);
   } catch (error) {
