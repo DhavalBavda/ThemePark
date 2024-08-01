@@ -20,6 +20,13 @@ const AdminParkFeedback = () => {
         .then(result => setParkFeedback(result.data))
         .catch(err => console.log(err))
 
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:4500/DeleteFeedBack/${id}`)
+            .then(axios.get('http://localhost:4500/ShowFeedBack')
+                .then(result => setParkFeedback(result.data))
+                .catch(err => console.log(err)))
+            .catch(err=>console.log(err))
+    }
     return (
         <>
             <div className="row">
@@ -47,7 +54,7 @@ const AdminParkFeedback = () => {
                                                     <td>{index + 1}</td>
                                                     <td>{feedbacks.FeedBack}</td>
                                                     <td>
-                                                        <Button style={{width:"fit-content"}}
+                                                        <Button style={{ width: "fit-content" }}
                                                             onClick={() => handleDelete(feedbacks._id)}
                                                             className='btn btn-danger'>
                                                             Delete
