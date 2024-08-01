@@ -23,8 +23,6 @@ const FoodMenus = () => {
     const [selectedFood, setSelectedFood] = useState(null); // For storing selected ride data\
     const [show, setShow] = useState(false);
 
-
-
     const Submit = (e) => {
         e.preventDefault();
         const formData = new FormData();
