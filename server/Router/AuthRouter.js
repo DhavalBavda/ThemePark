@@ -386,7 +386,7 @@ router.get("/ShowEvents", async (req, res) => {
 });
 
 //---------------Event Details Add----------------------------------
-router.post("/AddEvent", upload.none(), async (req, res) => {
+router.post("/AddEvent", upload.single("EventImage"), async (req, res) => {
   try {
     const {
       EventName,
@@ -402,6 +402,7 @@ router.post("/AddEvent", upload.none(), async (req, res) => {
       EventDate,
       EventTime,
       EventPrice,
+      EventImage: `upload/${req.file.filename}`,
       Completed,
     });
     newEvent.save();

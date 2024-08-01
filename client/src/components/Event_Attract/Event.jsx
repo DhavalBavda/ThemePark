@@ -59,7 +59,7 @@ const Event = ({ showNavbar = true }) => {
                 {events.previous.map((event, index) => (
                   <EventItem
                     key={index}
-                    src={event.src}
+                    src={`http://localhost:4500/${event.Image}`}
                     details={event}
                     onClick={() => handleShow(event)}
                   />

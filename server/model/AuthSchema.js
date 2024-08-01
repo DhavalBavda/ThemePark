@@ -144,9 +144,10 @@ const RidesFeedBack = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Image: { 
+    Image: {
       type: String,
-      required: false },
+      required: false,
+    },
   },
   { timestamps: true }
 );
@@ -186,34 +187,40 @@ const FoodMenus = new mongoose.model("FoodMenus", FoodMenu);
 
 //=============Events Details==================================================
 
-const EventDetail = new mongoose.Schema({
-  EventName:{
-    type:String,
-    required:true
+const EventDetail = new mongoose.Schema(
+  {
+    EventName: {
+      type: String,
+      required: true,
+    },
+    EventDescription: {
+      type: String,
+      required: true,
+    },
+    EventDate: {
+      type: String,
+      required: true,
+    },
+    EventTime: {
+      type: String,
+      required: true,
+    },
+    EventPrice: {
+      type: Number,
+      required: true,
+    },
+    EventImage: {
+      type: String,
+      required: true,
+    },
+    Completed: {
+      type: String,
+      required: true,
+    },
   },
-  EventDescription:{
-    type:String,
-    required:true
-  },
-  EventDate:{
-    type:String,
-    required:true
-  },
-  EventTime:{
-    type:String,
-    required:true
-  },
-  EventPrice:{
-    type:Number,
-    required:true
-  },
-  Completed:{
-    type:String,
-    required:true
-  }
-},{timestamps:true});
-const EventDetails = new mongoose.model('EventDetails',EventDetail); 
-
+  { timestamps: true }
+);
+const EventDetails = new mongoose.model("EventDetails", EventDetail);
 
 //=============EventUserRegistration==================================================
 const EventUserRegistration = new mongoose.Schema(
@@ -284,5 +291,5 @@ module.exports = {
   FeedBacks,
   FoodMenus,
   EventDetails,
-  EventUserRegistrations
+  EventUserRegistrations,
 };
