@@ -12,11 +12,8 @@ const EventBooking = () => {
     const [CustomerName, setCustomerName] = useState('');
     const [MobileNo, setMobileNo] = useState('');
     const [Email, setEmail] = useState('');
-    // const [Packages, setPackages] = useState([]);
 
     const [Events, setEvents] = useState([]);
-
-    // const [SelectedPackage, setSelectedPackage] = useState('');
 
     const [SelectedEvent, setSelectedEvent] = useState('');
 
@@ -137,10 +134,6 @@ const EventBooking = () => {
                                         <div className="col-lg-4 col-md-6">
                                             <label>Total Payment</label>
                                             <input type="text" className="form-control border-primary p-2" value={TotalPayment} readOnly />
-                                        </div>
-                                        <div className="col-lg-4 col-md-6">
-                                            <label>Dates</label>
-                                            <input type="Date" className="form-control border-primary p-2" placeholder="25/06/2024" onChange={(e) => setDates(e.target.value)} />
                                         </div>
                                         <div className="col-lg-4 mt-5 col-md-6">
                                             <button className="btn btn-primary p-2 w-100">Submit</button>

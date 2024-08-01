@@ -19,6 +19,7 @@ const EventAdmin = () => {
   const [EventPrice, setEventPrice] = useState('');
   const [Completed, setCompleted] = useState('');
   const [Events, setEvents] = useState([]);
+  const [EventImage, setEventImage] = useState(null);
 
   const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -34,7 +35,11 @@ const EventAdmin = () => {
     formData.append('EventDate', EventDate);
     formData.append('EventTime', EventTime);
     formData.append('EventPrice', EventPrice);
+    if (EventImage) {
+      formData.append('EventImage', EventImage);
+    }
     formData.append('Completed', Completed);
+
 
     axios.post('http://localhost:4500/AddEvent', formData, {
       headers: {
@@ -63,6 +68,7 @@ const EventAdmin = () => {
     setEventDate(eve.EventDate);
     setEventTime(eve.EventTime);
     setEventPrice(eve.EventPrice);
+    setEventImage(eve.EventImage);
     setCompleted(eve.Completed);
     setShow(true);
   };
@@ -114,37 +120,48 @@ const EventAdmin = () => {
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="EventName" className="form-label">Event Name</label>
-                          <input type="text" className="form-control" id="EventName" placeholder="Enter Event Name" value={EventName} onChange={(e) => setEventName(e.target.value)} />
+                          <input type="text" className="form-control" id="EventName" placeholder="Enter Event Name" onChange={(e) => setEventName(e.target.value)} />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="EventDescription" className="form-label">Event Description</label>
-                          <input type="text" className="form-control" id="EventDescription" placeholder="Enter Event Description" value={EventDescription} onChange={(e) => setEventDescription(e.target.value)} />
+                          <input type="text" className="form-control" id="EventDescription" placeholder="Enter Event Description"  onChange={(e) => setEventDescription(e.target.value)} />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="EventDate" className="form-label">Event Date</label>
-                          <input type="date" className="form-control" id="EventDate" value={EventDate} onChange={(e) => setEventDate(e.target.value)} />
+                          <input type="date" className="form-control" id="EventDate"  onChange={(e) => setEventDate(e.target.value)} />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="EventTime" className="form-label">Event Time</label>
-                          <input type="time" className="form-control" id="EventTime" value={EventTime} onChange={(e) => setEventTime(e.target.value)} />
+                          <input type="time" className="form-control" id="EventTime" onChange={(e) => setEventTime(e.target.value)} />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="EventPrice" className="form-label">Event Price</label>
-                          <input type="text" className="form-control" id="EventPrice" placeholder="Enter Event Price" value={EventPrice} onChange={(e) => setEventPrice(e.target.value)} />
+                          <input type="text" className="form-control" id="EventPrice" placeholder="Enter Event Price"  onChange={(e) => setEventPrice(e.target.value)} />
+                        </div>
+                      </div>
+                      <div className='col-md-6'>
+                        <div className="mb-3">
+                          <label htmlFor="image" className="form-label">Event Image</label>
+                          <input
+                            type="file"
+                            className="form-control"
+                            id="image"
+                            onChange={(e) => setEventImage(e.target.files[0])}
+                          />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="mb-3">
                           <label htmlFor="Completed" className="form-label">Completed</label>
-                          <input type="text" className="form-control" id="Completed" placeholder="Enter Yes or No" value={Completed} onChange={(e) => setCompleted(e.target.value)} />
+                          <input type="text" className="form-control" id="Completed" placeholder="Enter Yes or No"  onChange={(e) => setCompleted(e.target.value)} />
                         </div>
                       </div>
                     </div>
@@ -163,6 +180,7 @@ const EventAdmin = () => {
                         <th>Event Date</th>
                         <th>Event Time</th>
                         <th>Event Price</th>
+                        <th>Event Image</th>
                         <th>Completed</th>
                         <th>Actions</th>
                       </tr>
@@ -175,6 +193,8 @@ const EventAdmin = () => {
                           <td>{event.EventDate}</td>
                           <td>{event.EventTime}</td>
                           <td>{event.EventPrice}</td>
+                          <td>
+                            <img src={`http://localhost:4500/${event.EventImage}`} alt={event.EventName} style={{ width: '100px', height: '100px' }}></img></td>
                           <td>{event.Completed}</td>
                           <td>
                             <div className="d-flex justify-content-between">
@@ -226,6 +246,10 @@ const EventAdmin = () => {
             <div className="mb-3">
               <label htmlFor="EventPrice" className="form-label">Event Price</label>
               <input type="text" className="form-control" id="EventPrice" placeholder="Enter Event Price" value={EventPrice} onChange={(e) => setEventPrice(e.target.value)} />
+            </div>
+            <div className="col-lg-6 col-md-6">
+              <label>Event Image:</label>
+              <img src="../../../public/image/hero.webp" className="img-fluid h-100 w-100 rounded-end" style={{ objectFit: 'cover', opacity: 0.7 }} alt="" />
             </div>
             <div className="mb-3">
               <label htmlFor="Completed" className="form-label">Completed</label>

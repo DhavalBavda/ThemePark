@@ -388,6 +388,7 @@ router.get("/ShowEvents", async (req, res) => {
 //---------------Event Details Add----------------------------------
 router.post("/AddEvent", upload.single("EventImage"), async (req, res) => {
   try {
+    console.log(req.file)
     const {
       EventName,
       EventDescription,

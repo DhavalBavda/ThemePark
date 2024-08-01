@@ -17,7 +17,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
 
   const services = [
     { icon: 'fa-ticket-alt', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s', description: 'Book your tickets in advance to skip the lines and enjoy more time on the rides.' },
-    { icon: 'fa-calendar-alt', title: 'Venue Bookings', para: 'Unlock the thrills on the Active Events', delay: '0.7s', description: 'Host your events and parties at our exciting venue, perfect for any occasion.' },
+    { icon: 'fa-calendar-alt', title: 'Event Bookings', para: 'Unlock the thrills on the Active Events', delay: '0.7s', description: 'Book your tickets in advance to skip the lines to booking.' },
     { icon: 'fa-utensils', title: 'Food Menu', para: 'Tasty meals that give you energy for the rides.', delay: '0.1s', description: 'Indulge in delicious food and drinks to fuel your adventure at the park.' },
     { icon: 'fa-medal', title: 'Silver Package', para: 'Get more thrills with our premium package', delay: '0.3s', description: 'The Silver Package includes entry fee and access to water park activities.' },
     { icon: 'fa-crown', title: 'Gold Package', para: 'Treat yourself to the best of the best.', delay: '0.5s', description: 'The Gold Package includes entry fee, water park access, and up to 5 adventurous rides.' },

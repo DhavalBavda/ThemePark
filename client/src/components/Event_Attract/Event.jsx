@@ -6,6 +6,7 @@ import './Event.css';
 import Navbar1 from '../Navbar/Navbar';
 import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const EventItem = ({ src, details, onClick }) => (
   <div className="col-md-6 col-lg-3">
@@ -20,6 +21,8 @@ const EventItem = ({ src, details, onClick }) => (
 );
 
 const Event = ({ showNavbar = true }) => {
+
+  const navigate = useNavigate()
   const [show, setShow] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [events, setEvents] = useState({ previous: [], upcoming: [] });
@@ -50,7 +53,7 @@ const Event = ({ showNavbar = true }) => {
             <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
               Latest Events
             </small>
-            <h1 className="display-5 mb-5">Our Events Gallery</h1>
+            <h1 className="display-5 mb-5">Our Events </h1>
           </div>
           <div className="col-12 mb-5">
             <section className="previous-events animate__animated animate__fadeInUp">
@@ -59,7 +62,7 @@ const Event = ({ showNavbar = true }) => {
                 {events.previous.map((event, index) => (
                   <EventItem
                     key={index}
-                    src={`http://localhost:4500/${event.Image}`}
+                    src={`http://localhost:4500/${event.EventImage}`}
                     details={event}
                     onClick={() => handleShow(event)}
                   />
@@ -74,7 +77,7 @@ const Event = ({ showNavbar = true }) => {
                 {events.upcoming.map((event, index) => (
                   <EventItem
                     key={index}
-                    src={event.src}
+                    src={`http://localhost:4500/${event.EventImage}`}
                     details={event}
                     onClick={() => handleShow(event)}
                   />
@@ -96,6 +99,12 @@ const Event = ({ showNavbar = true }) => {
             <p><strong>Time:</strong> {selectedEvent.EventTime}</p>
             <p><strong>Price:</strong> ₹{selectedEvent.EventPrice}</p>
             <p><strong>Completed:</strong> {selectedEvent.Completed}</p>
+            {selectedEvent.Completed == "No" &&
+              <div>
+                <br></br>
+                <h2>Contact Us To Book Ticket</h2>
+                <p><strong>+91 98988 05508  or  +91 98988 05509</strong></p>
+              </div>}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
