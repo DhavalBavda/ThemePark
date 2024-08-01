@@ -1,116 +1,111 @@
-import Navbar1 from '../Navbar/Navbar'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import '../../../public/lib/animate/animate.css';
-import '../../../public/lib/animate/animate.min.css';
-import '../../../public/lib/lightbox/css/lightbox.min.css';
-import '../../../public/lib/owlcarousel/owl.carousel.min.css';
-// import Footer from '../Footer/Footer';
- 
+import 'animate.css';
+import './Event.css';
+import Navbar1 from '../Navbar/Navbar';
+import { Modal, Button } from 'react-bootstrap';
+import axios from 'axios';
 
-const EventItem = ({ src, category, lightbox }) => (
+const EventItem = ({ src, details, onClick }) => (
   <div className="col-md-6 col-lg-3">
     <div className="event-img position-relative">
-      <img className="img-fluid rounded w-100" src={src} alt="" />
+      <img className="img-fluid rounded w-100" src={src} alt={details.EventName} />
       <div className="event-overlay d-flex flex-column p-4">
-        <h4 className="me-auto">{category}</h4>
-        <a href={src} data-lightbox={lightbox} className="my-auto">
-          <i className="fas fa-search-plus text-dark fa-2x"></i>
-        </a>
+        <h4 className="me-auto">{details.EventName}</h4>
       </div>
     </div>
+    <button className="btn btn-primary mt-2 w-100" onClick={onClick}>More</button>
   </div>
 );
 
-const Event = ({showNavbar = true}) => {
+const Event = ({ showNavbar = true }) => {
+  const [show, setShow] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState({ previous: [], upcoming: [] });
+
+  useEffect(() => {
+    axios.get('http://localhost:4500/ShowEvents')
+      .then(result => {
+        const previousEvents = result.data.filter(event => event.Completed === 'Yes');
+        const upcomingEvents = result.data.filter(event => event.Completed === 'No');
+        setEvents({ previous: previousEvents, upcoming: upcomingEvents });
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  const handleShow = (event) => {
+    setSelectedEvent(event);
+    setShow(true);
+  };
+
+  const handleClose = () => setShow(false);
+
   return (
     <div>
-      {showNavbar && <Navbar1/>}
-      <div className="container-fluid event py-6">
-      <div className="container">
-        <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
-          <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
-            Latest Events
-          </small>
-          <h1 className="display-5 mb-5">Our Events Gallery</h1>
-        </div>
-        <div className="tab-class text-center">
-          <ul className="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
-            <li className="nav-item p-2">
-              <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                <span className="text-dark" style={{ width: '150px' }}>All Events</span>
-              </a>
-            </li>
-            <li className="nav-item p-2">
-              <a className="d-flex py-2 mx-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                <span className="text-dark" style={{ width: '150px' }}>Christmas</span>
-              </a>
-            </li>
-            <li className="nav-item p-2">
-              <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                <span className="text-dark" style={{ width: '150px' }}>Holi</span>
-              </a>
-            </li>
-            <li className="nav-item p-2">
-              <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                <span className="text-dark" style={{ width: '150px' }}>Halloween</span>
-              </a>
-            </li>
-            <li className="nav-item p-2">
-              <a className="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                <span className="text-dark" style={{ width: '150px' }}>New-Year</span>
-              </a>
-            </li>
-          </ul>
-          <div className="tab-content">
-            <div id="tab-1" className="tab-pane fade show p-0 active">
+      {showNavbar && <Navbar1 />}
+      <div className="container mt-5 events-container">
+        <div className="row">
+          <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
+            <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
+              Latest Events
+            </small>
+            <h1 className="display-5 mb-5">Our Events Gallery</h1>
+          </div>
+          <div className="col-12 mb-5">
+            <section className="previous-events animate__animated animate__fadeInUp">
+              <h2 className="text-center">Previous Events</h2>
               <div className="row g-4">
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Christmas" lightbox="event-1" />
-                <EventItem src="/image/Event_image/event-9.jpeg" category="Christmas" lightbox="event-2" />
-                <EventItem src="/image/Event_image/event-6.jpeg" category="Holi" lightbox="event-3" />
-                <EventItem src="/image/Event_image/event-4.jpeg" category="Halloween" lightbox="event-4" />
-                <EventItem src="/image/Event_image/event-5.jpeg" category="Holi" lightbox="event-5" />
-                <EventItem src="/image/Event_image/event-3.jpeg" category="Halloween" lightbox="event-6" />
-                <EventItem src="/image/Event_image/event-7.jpeg" category="New-Year" lightbox="event-7" />
-                <EventItem src="/image/Event_image/event-8.jpeg" category="New-Year" lightbox="event-8" />
+                {events.previous.map((event, index) => (
+                  <EventItem
+                    key={index}
+                    src={event.src}
+                    details={event}
+                    onClick={() => handleShow(event)}
+                  />
+                ))}
               </div>
-            </div>
-            <div id="tab-2" className="tab-pane fade show p-0">
+            </section>
+          </div>
+          <div className="col-12">
+            <section className="upcoming-events animate__animated animate__fadeInUp">
+              <h2 className="text-center">Upcoming Events</h2>
               <div className="row g-4">
-                <EventItem src="/image/Event_image/event-1.jpeg" category="Christmas" lightbox="event-1" />
-                <EventItem src="/image/Event_image/event-9.jpeg" category="Christmas" lightbox="event-9" />
+                {events.upcoming.map((event, index) => (
+                  <EventItem
+                    key={index}
+                    src={event.src}
+                    details={event}
+                    onClick={() => handleShow(event)}
+                  />
+                ))}
               </div>
-            </div>
-            <div id="tab-3" className="tab-pane fade show p-0">
-              <div className="row g-4">
-                <EventItem src="/image/Event_image/event-6.jpeg" category="Holi" lightbox="event-3" />
-                <EventItem src="/image/Event_image/event-5.jpeg" category="Holi" lightbox="event-5" />
-              </div>
-            </div>
-            <div id="tab-4" className="tab-pane fade show p-0">
-              <div className="row g-4">
-                <EventItem src="/image/Event_image/event-4.jpeg" category="Halloween" lightbox="event-4" />
-                <EventItem src="/image/Event_image/event-3.jpeg" category="Halloween" lightbox="event-6" />
-              </div>
-            </div>
-            <div id="tab-5" className="tab-pane fade show p-0">
-              <div className="row g-4">
-                <EventItem src="/image/Event_image/event-7.jpeg" category="New-Year" lightbox="event-7" />
-                <EventItem src="/image/Event_image/event-8.jpeg" category="New-Year" lightbox="event-8" />
-              </div>
-            </div>
+            </section>
           </div>
         </div>
       </div>
+
+      {selectedEvent && (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedEvent.EventName}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{selectedEvent.EventDescription}</p>
+            <p><strong>Date:</strong> {selectedEvent.EventDate}</p>
+            <p><strong>Time:</strong> {selectedEvent.EventTime}</p>
+            <p><strong>Price:</strong> ₹{selectedEvent.EventPrice}</p>
+            <p><strong>Completed:</strong> {selectedEvent.Completed}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </div>
-    {/* {showFooter && <Footer />} */}
-    </div>
-    
-  )
-}
+  );
+};
 
-export default Event
-
-
-
+export default Event;
