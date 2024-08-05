@@ -17,11 +17,14 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve static files from the "public" directory
-app.use('/upload',express.static(path.join(__dirname, "Public/upload")));
+app.use('/upload', express.static(path.join(__dirname, "Public/upload")));
 
 // CORS configuration
-app.use(cors());
-
+app.use(cors({
+    origin: 'https://themeparkcodesment.netlify.app', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 // Database connection
 mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true,
