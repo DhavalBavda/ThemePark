@@ -9,17 +9,23 @@ var cookieParser = require('cookie-parser')
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const url = require('url');
+
+const filename = path.join(__dirname,__filename)
+const fileUrl = url.pathToFileURL(filename).href;
 
 
-app.use(express.static(path.join(__dirname, "public")));
 //============================================================
 app.use(bodyParser.json());
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, "/client/dist")));
 app.use(express.static(path.join(__dirname, "public")));
+
 app.use(cors());
-
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+  });
 //=================connection to the db===============
 mongoose.connect(process.env.MONGODB,{
     useNewUrlParser: true,

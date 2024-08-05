@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "built" : "npm "
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "mongoose": "^8.4.4",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "url": "^0.11.4"
   }
 }
