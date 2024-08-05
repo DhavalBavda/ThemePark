@@ -33,11 +33,11 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowRide')
+        axios.get('https://waterpark.onrender.com/ShowRide')
             .then(result => setRidesData(result.data))
             .catch(error => console.error('Error fetching data:', error));
 
-        axios.get('http://localhost:4500/ShowRideFeedBack')
+        axios.get('https://waterpark.onrender.com/ShowRideFeedBack')
             .then(result=>setRideFeedback(result.data))
             .catch(error=>console.error('Error Fetching Feedback Data',error))
     }, []);
