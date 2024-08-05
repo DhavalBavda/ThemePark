@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use('/upload',express.static(path.join(__dirname, "Public/upload")));
 
 // CORS configuration
 app.use(cors());
