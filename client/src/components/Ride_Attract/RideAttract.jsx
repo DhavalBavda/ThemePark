@@ -73,7 +73,7 @@ const RidesAttract = ({ showNavbar = true, showFooter = true }) => {
                                 <div className="bg-light rounded service-item">
                                     <div className="service-content d-flex align-items-center justify-content-center p-4">
                                         <div className="service-content-icon text-center">
-                                            {attraction.RideImage && <img src={`http://localhost:4500/${attraction.RideImage}`} alt="" className="img-fluid mb-4" />}
+                                            {attraction.RideImage && <img style={{height:"250px",width:"250px"}} src={`http://localhost:4500/${attraction.RideImage}`} alt="" className="img-fluid mb-4" />}
                                             <h4 className="mb-3">{attraction.RideName}</h4>
                                             <div className="d-flex justify-content-center mb-4">
                                                 <i className="fas fa-star text-warning mr-1"></i>
