@@ -40,6 +40,9 @@ const AuthRouter= require("./Router/AuthRouter");
 const { AdminUsers } = require('./model/AuthSchema');
 app.use("/",AuthRouter);
 
+app.get((req,res)=>{
+    res.send("hello")
+})
 
 
 app.post('/login', async (req, res) => {
@@ -61,10 +64,6 @@ app.post('/login', async (req, res) => {
     console.log(token)
     res.json({token});
 });
-
-
-
-
 
 //==================server=========================
 app.listen(port,()=>{
