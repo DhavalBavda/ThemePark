@@ -20,11 +20,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/upload', express.static(path.join(__dirname, "Public/upload")));
 
 // CORS configuration
-app.use(cors({
-    origin: 'https://themeparkcodesment.netlify.app', // Replace with your frontend URL
+const corsOptions = {
+    origin: 'https://themeparkcodesment.netlify.app', // Your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+    credentials: true
+};
+app.use(cors(corsOptions));
+app.options('*',cors())
+
 // Database connection
 mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true,
