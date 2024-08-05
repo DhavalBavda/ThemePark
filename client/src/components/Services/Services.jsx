@@ -9,11 +9,16 @@ import '../../../public/lib/owlcarousel/owl.carousel.min.css';
 import Navbar1 from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Menu from '../Menu/Menu';
+import './Services.css';
+import axios from 'axios'
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 const Services = ({ showNavbar = true, showFooter = true }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const [Ride, setRide] = useState([]);
 
   const services = [
     { icon: 'fa-ticket-alt', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s', description: 'Book your tickets in advance to skip the lines and enjoy more time on the rides.' },
@@ -31,12 +36,19 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
     if (service.title === 'Food Menu') {
       setShowMenu(true);
       setShowModal(false);
-      scroll.scrollMore(999)
+      scroll.scrollMore(999);
     } else {
+      getRidesData()
       setShowModal(true);
       setShowMenu(false);
     }
   };
+
+  const getRidesData = () => {
+    axios.get('http://localhost:4500/ShowRide')
+      .then(result => setRide(result.data))
+      .catch(err => console.log(err));
+  }
 
   return (
     <div>
@@ -51,7 +63,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
             {services.map((service, index) => (
               <div className={`col-lg-3 col-md-6 col-sm-12 wow bounceInUp`} data-wow-delay={service.delay} key={index}>
                 <div className="bg-light rounded service-item">
-                  <div className="service-content d-flex align-items-center justify-content-center p-4">
+                  <div className="service-content align-items-center justify-content-center p-4">
                     <div className="service-content-icon text-center">
                       <i className={`fas ${service.icon} fa-7x text-primary mb-4`}></i>
                       <h4 className="mb-3">{service.title}</h4>
@@ -66,7 +78,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
         </div>
       </div>
 
-      { showMenu && <Menu />}
+      {showMenu && <Menu />}
 
       {showModal && (
         <div className="modal fade show" tabIndex="-1" role="dialog" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
@@ -78,9 +90,32 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body d-flex flex-column align-items-center justify-content-center">
                 <i className={`fas ${selectedService?.icon} fa-7x text-primary mb-4`}></i>
                 <p>{selectedService?.description}</p>
+                {["Silver Package", "Gold Package", "Platinum Package"].includes(selectedService.title) && (
+                  <Table striped bordered hover variant="dark">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Ride Image</th>
+                        <th>Ride Name</th>
+                        <th>Rating</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {Ride.map((ride, index) => (
+                        selectedService?.title === ride.Packageid.PackageName+" Package" && 
+                        (<tr key={ride._id}>
+                          <td>{index + 1}</td>
+                          <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '50px', height: '50px' }} /></td>
+                          <td>{ride.RideName}</td>
+                          <td>{ride.Rating}</td>
+                        </tr>)
+                      ))}
+                    </tbody>
+                  </Table>
+                )}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>
@@ -90,10 +125,11 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
             </div>
           </div>
         </div>
-      )}
+      )
+      }
 
       {showFooter && <Footer />}
-    </div>
+    </div >
   );
 };
 
