@@ -9,11 +9,15 @@ import '../../../public/lib/owlcarousel/owl.carousel.min.css';
 import Navbar1 from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Menu from '../Menu/Menu';
+import axios from 'axios'
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 const Services = ({ showNavbar = true, showFooter = true }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const [Ride, setRide] = useState([]);
 
   const services = [
     { icon: 'fa-ticket-alt', title: 'Ticket Booking', para: 'plan your adventure online and Enjoy', delay: '0.5s', description: 'Book your tickets in advance to skip the lines and enjoy more time on the rides.' },
@@ -33,10 +37,17 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
       setShowModal(false);
       scroll.scrollMore(999)
     } else {
+      getRidesData()
       setShowModal(true);
       setShowMenu(false);
     }
   };
+
+  const getRidesData = () => {
+    axios.get('http://localhost:4500/ShowRide')
+      .then(result => setRide(result.data))
+      .catch(err => console.log(err));
+  }
 
   return (
     <div>
@@ -66,7 +77,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
         </div>
       </div>
 
-      { showMenu && <Menu />}
+      {showMenu && <Menu />}
 
       {showModal && (
         <div className="modal fade show" tabIndex="-1" role="dialog" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
@@ -81,6 +92,29 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
               <div className="modal-body">
                 <i className={`fas ${selectedService?.icon} fa-7x text-primary mb-4`}></i>
                 <p>{selectedService?.description}</p>
+                {["Silver Package", "Gold Package", "Platinum Package"].includes(selectedService.title) && (
+                  <Table striped bordered hover variant="dark">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Ride Image</th>
+                        <th>Ride Name</th>
+                        <th>Rating</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {Ride.map((ride, index) => (
+                        selectedService?.title === ride.Packageid.PackageName+" Package" && 
+                        (<tr key={ride._id}>
+                          <td>{index + 1}</td>
+                          <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '50px', height: '50px' }} /></td>
+                          <td>{ride.RideName}</td>
+                          <td>{ride.Rating}</td>
+                        </tr>)
+                      ))}
+                    </tbody>
+                  </Table>
+                )}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>
@@ -90,10 +124,11 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
             </div>
           </div>
         </div>
-      )}
+      )
+      }
 
       {showFooter && <Footer />}
-    </div>
+    </div >
   );
 };
 
