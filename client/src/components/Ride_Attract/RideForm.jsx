@@ -14,7 +14,7 @@ const RideForm = () => {
     const navigate = useNavigate();
 
 useEffect(() => {
-    axios.get('http://localhost:4500/ShowRide')
+    axios.get('https://waterpark.onrender.com/ShowRide')
         .then(result => setRidesData(result.data))
         .catch(error => console.error('Error Fetching Details', error));
 }, []);
@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
     }
 
     try {
-        const response = await axios.post('http://localhost:4500/AddRideFeedBack', formData, {
+        const response = await axios.post('https://waterpark.onrender.com/AddRideFeedBack', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

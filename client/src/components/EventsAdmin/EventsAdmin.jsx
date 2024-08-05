@@ -41,13 +41,13 @@ const EventAdmin = () => {
     formData.append('Completed', Completed);
 
 
-    axios.post('http://localhost:4500/AddEvent', formData, {
+    axios.post('https://waterpark.onrender.com/AddEvent', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     })
       .then(result => {
-        axios.get('http://localhost:4500/ShowEvents')
+        axios.get('https://waterpark.onrender.com/ShowEvents')
           .then(result => setEvents(result.data))
           .catch(err => console.log(err));
       })
@@ -55,7 +55,7 @@ const EventAdmin = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:4500/ShowEvents')
+    axios.get('https://waterpark.onrender.com/ShowEvents')
       .then(result => setEvents(result.data))
       .catch(err => console.log(err));
   }, []);
@@ -83,10 +83,10 @@ const EventAdmin = () => {
     formData.append('EventPrice', EventPrice);
     formData.append('Completed', Completed);
 
-    axios.put(`http://localhost:4500/EditEventDeatils/${selectedEvent._id}`, formData)
+    axios.put(`https://waterpark.onrender.com/EditEventDeatils/${selectedEvent._id}`, formData)
       .then(result => {
         handleClose();
-        axios.get('http://localhost:4500/ShowEvents')
+        axios.get('https://waterpark.onrender.com/ShowEvents')
           .then(result => setEvents(result.data))
           .catch(err => console.log(err));
       })
@@ -95,7 +95,7 @@ const EventAdmin = () => {
 
   const handleDelete = (ticketId) => {
     try {
-      axios.delete(`http://localhost:4500/DeleteEvent/${ticketId}`);
+      axios.delete(`https://waterpark.onrender.com/DeleteEvent/${ticketId}`);
       setEvents(prevEvents => prevEvents.filter(eve => eve._id !== ticketId));
     } catch (error) {
       console.error('Error deleting event:', error);
@@ -194,7 +194,7 @@ const EventAdmin = () => {
                           <td>{event.EventTime}</td>
                           <td>{event.EventPrice}</td>
                           <td>
-                            <img src={`http://localhost:4500/${event.EventImage}`} alt={event.EventName} style={{ width: '100px', height: '100px' }}></img></td>
+                            <img src={`https://waterpark.onrender.com/${event.EventImage}`} alt={event.EventName} style={{ width: '100px', height: '100px' }}></img></td>
                           <td>{event.Completed}</td>
                           <td>
                             <div className="d-flex justify-content-between">
@@ -312,14 +312,14 @@ export default EventAdmin;
 //         formData.append('EventPrice', EventPrice);
 //         formData.append('Completed', Completed);
 
-//         axios.post('http://localhost:4500/AddEvent', formData, {
+//         axios.post('https://waterpark.onrender.com/AddEvent', formData, {
 //             headers: {
 //                 'Content-Type': 'multipart/form-data'
 //             }
 //         })
 //             .then(result => {
 //                 console.log(result);
-//                 axios.get('http://localhost:4500/ShowEvents')
+//                 axios.get('https://waterpark.onrender.com/ShowEvents')
 //                     .then(result => setEvents(result.data))
 //                     .catch(err => console.log(err));
 //             })
@@ -327,7 +327,7 @@ export default EventAdmin;
 //     };
 
 //     useEffect(() => {
-//         axios.get('http://localhost:4500/ShowEvents')
+//         axios.get('https://waterpark.onrender.com/ShowEvents')
 //             .then(result => setEvents(result.data))
 //             .catch(err => console.log(err));
 //     }, []);
@@ -354,12 +354,12 @@ export default EventAdmin;
 //         formData.append('EventPrice', EventPrice);
 //         formData.append('Completed', Completed);
 
-//         axios.put(`http://localhost:4500/EditEventDeatils/${selectedEvent._id}`, formData)
+//         axios.put(`https://waterpark.onrender.com/EditEventDeatils/${selectedEvent._id}`, formData)
 //             .then(result => {
 //                 // console.log(result);
 //                 handleClose();
 //                 // Reload the events after editing
-//                 axios.get('http://localhost:4500/ShowEvents')
+//                 axios.get('https://waterpark.onrender.com/ShowEvents')
 //                     .then(result => setEvents(result.data))
 //                     .catch(err => console.log(err));
 //             })
@@ -367,7 +367,7 @@ export default EventAdmin;
 //     };
 //     const handleDelete = (ticketId) => {
 //         try {
-//             axios.delete(`http://localhost:4500/DeleteEvent/${ticketId}`);
+//             axios.delete(`https://waterpark.onrender.com/DeleteEvent/${ticketId}`);
 //             setEvents(prevEvents => prevEvents.filter(eve => eve._id !== ticketId));
 //         } catch (error) {
 //             console.error('Error deleting event:', error);

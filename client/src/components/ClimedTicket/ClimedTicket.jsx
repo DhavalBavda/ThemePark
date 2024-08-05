@@ -11,7 +11,7 @@ const ClimedTicket = () => {
     const [Tickets, setTickets] = useState([]);
     const claimTicket = async (ticketId) => {
         try {
-            const response = await axios.put(`http://localhost:4500/TicketClaimed/${ticketId}`);
+            const response = await axios.put(`https://waterpark.onrender.com/TicketClaimed/${ticketId}`);
             console.log('Ticket Claimed:', response.data);
             // Optionally, refresh the ticket list or update the UI accordingly
             setTickets(prevTickets =>
@@ -25,7 +25,7 @@ const ClimedTicket = () => {
         }
     };
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowAllTickets')
+        axios.get('https://waterpark.onrender.com/ShowAllTickets')
             .then(result => setTickets(result.data))
             .catch(err => console.log(err));
 

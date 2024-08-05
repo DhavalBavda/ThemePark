@@ -28,7 +28,7 @@ const EventBooking = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowEvents')
+        axios.get('https://waterpark.onrender.com/ShowEvents')
             .then(response => {
                 setEvents(response.data);
             })
@@ -81,7 +81,7 @@ const EventBooking = () => {
             TicketId: generatedTicketId
         };
 
-        axios.post('http://localhost:4500/UserRegistraion', bookingData)
+        axios.post('https://waterpark.onrender.com/UserRegistraion', bookingData)
             .then(result => {
                 console.log(result);
                 navigate('/Payment', { state: bookingData });

@@ -62,7 +62,7 @@ const Event = ({ showNavbar = true }) => {
                 {events.previous.map((event, index) => (
                   <EventItem
                     key={index}
-                    src={`http://localhost:4500/${event.EventImage}`}
+                    src={`https://waterpark.onrender.com/${event.EventImage}`}
                     details={event}
                     onClick={() => handleShow(event)}
                   />
@@ -77,7 +77,7 @@ const Event = ({ showNavbar = true }) => {
                 {events.upcoming.map((event, index) => (
                   <EventItem
                     key={index}
-                    src={`http://localhost:4500/${event.EventImage}`}
+                    src={`https://waterpark.onrender.com/${event.EventImage}`}
                     details={event}
                     onClick={() => handleShow(event)}
                   />

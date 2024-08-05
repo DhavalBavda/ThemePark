@@ -39,7 +39,7 @@ const Rides = () => {
 
         formData.append('RideDescription', RideDescription);
 
-        axios.post('http://localhost:4500/AddRide', formData, {
+        axios.post('https://waterpark.onrender.com/AddRide', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -47,7 +47,7 @@ const Rides = () => {
             .then(result => {
                 console.log(result);
                 // Reload the rides after submission
-                axios.get('http://localhost:4500/ShowRide')
+                axios.get('https://waterpark.onrender.com/ShowRide')
                     .then(result => setRide(result.data))
                     .catch(err => console.log(err));
             })
@@ -55,11 +55,11 @@ const Rides = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowRide')
+        axios.get('https://waterpark.onrender.com/ShowRide')
             .then(result => setRide(result.data))
             .catch(err => console.log(err));
 
-        axios.get('http://localhost:4500/ShowPackage')
+        axios.get('https://waterpark.onrender.com/ShowPackage')
             .then(result => setPackages(result.data))
             .catch(err => console.log(err));
     }, []);
@@ -86,12 +86,12 @@ const Rides = () => {
         formData.append('RideDescription', RideDescription);
         formData.append('Price', Price);
 
-        axios.put(`http://localhost:4500/EditRide/${selectedRide._id}`, formData)
+        axios.put(`https://waterpark.onrender.com/EditRide/${selectedRide._id}`, formData)
             .then(result => {
                 console.log(result);
                 handleClose();
                 // Reload the rides after editing
-                axios.get('http://localhost:4500/ShowRide')
+                axios.get('https://waterpark.onrender.com/ShowRide')
                     .then(result => setRide(result.data))
                     .catch(err => console.log(err));
             })
@@ -99,7 +99,7 @@ const Rides = () => {
     };
     const handleDelete = (ticketId) => {
         try {
-            axios.delete(`http://localhost:4500/RideDelete/${ticketId}`);
+            axios.delete(`https://waterpark.onrender.com/RideDelete/${ticketId}`);
             setRide(prevRides => prevRides.filter(ride => ride._id !== ticketId));
 
         } catch (error) {
@@ -137,7 +137,7 @@ const Rides = () => {
                                             {Ride.map((ride, index) => (
                                                 <tr key={ride._id}>
                                                     <td>{index + 1}</td>
-                                                    <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
+                                                    <td><img src={`https://waterpark.onrender.com/${ride.RideImage}`} alt={ride.RideName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{ride.RideName}</td>
                                                     <td>{ride.Packageid.PackageName}</td>
                                                     <td>{ride.Rating}</td>

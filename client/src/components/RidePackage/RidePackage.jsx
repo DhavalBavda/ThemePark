@@ -25,7 +25,7 @@ const RidePackage = () => {
         e.preventDefault();
         const RidePackageData = { PackageName, Price };
 
-        axios.post('http://localhost:4500/AddPackage', RidePackageData)
+        axios.post('https://waterpark.onrender.com/AddPackage', RidePackageData)
             .then(result => {
                 console.log(result);
                 navigate('/RidePackage', { state: RidePackageData });
@@ -37,7 +37,7 @@ const RidePackage = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowPackage')
+        axios.get('https://waterpark.onrender.com/ShowPackage')
             .then(result => {
                 setPackages(result.data);
             })
@@ -57,7 +57,7 @@ const RidePackage = () => {
     const handleEditSubmit = (e) => {
         e.preventDefault();
         const updatedPackage = { PackageName, Price };
-        axios.put(`http://localhost:4500/EditPackage/${selectedPackage._id}`, updatedPackage)
+        axios.put(`https://waterpark.onrender.com/EditPackage/${selectedPackage._id}`, updatedPackage)
             .then(result => {
                 console.log(result);
                 handleClose();
@@ -67,7 +67,7 @@ const RidePackage = () => {
     };
     const handleDelete = (ticketId) => {
         try {
-            axios.delete(`http://localhost:4500/PackageDelete/${ticketId}`);
+            axios.delete(`https://waterpark.onrender.com/PackageDelete/${ticketId}`);
             setPackages(prevRides => prevRides.filter(ride => ride._id !== ticketId));
 
         } catch (error) {

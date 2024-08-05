@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(express.static(path.join(__dirname, "../client/dist")));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/server/Public")));
 
 app.use(cors());
 // app.get('*', (req, res) => {

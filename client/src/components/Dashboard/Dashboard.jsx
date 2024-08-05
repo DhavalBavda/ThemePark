@@ -14,27 +14,27 @@ const Dashboard = () => {
     
 
     useEffect(()=>{
-        axios.get('http://localhost:4500/ShowRide')
+        axios.get('https://waterpark.onrender.com/ShowRide')
         .then(result=>settotalRides(result.data.length))
         .catch(err=>console.log(err))
 
-        axios.get('http://localhost:4500/ShowPackage')
+        axios.get('https://waterpark.onrender.com/ShowPackage')
         .then(result=>settotalPackages(result.data.length))
         .catch(err=>console.log(err))
 
-        axios.get('http://localhost:4500/ShowFoodMenu')
+        axios.get('https://waterpark.onrender.com/ShowFoodMenu')
         .then(result=>settotalFoodItems(result.data.length))
         .catch(err=>console.log(err))
 
-        axios.get('http://localhost:4500/ShowEvents')
+        axios.get('https://waterpark.onrender.com/ShowEvents')
         .then(result=>settotalEvents(result.data.length))
         .catch(err=>console.log(err))
 
-        axios.get('http://localhost:4500/ShowFeedBack')
+        axios.get('https://waterpark.onrender.com/ShowFeedBack')
         .then(result=>settotalParkFeedback(result.data.length))
         .catch(err=>console.log(err))
 
-        axios.get('http://localhost:4500/ShowRideFeedBack')
+        axios.get('https://waterpark.onrender.com/ShowRideFeedBack')
         .then(result=>settotalRideFeedback(result.data.length))
         .catch(err=>console.log(err))
     },[]);

@@ -45,7 +45,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
   };
 
   const getRidesData = () => {
-    axios.get('http://localhost:4500/ShowRide')
+    axios.get('https://waterpark.onrender.com/ShowRide')
       .then(result => setRide(result.data))
       .catch(err => console.log(err));
   }
@@ -108,7 +108,7 @@ const Services = ({ showNavbar = true, showFooter = true }) => {
                         selectedService?.title === ride.Packageid.PackageName+" Package" && 
                         (<tr key={ride._id}>
                           <td>{index + 1}</td>
-                          <td><img src={`http://localhost:4500/${ride.RideImage}`} alt={ride.RideName} style={{ width: '50px', height: '50px' }} /></td>
+                          <td><img src={`https://waterpark.onrender.com/${ride.RideImage}`} alt={ride.RideName} style={{ width: '50px', height: '50px' }} /></td>
                           <td>{ride.RideName}</td>
                           <td>{ride.Rating}</td>
                         </tr>)

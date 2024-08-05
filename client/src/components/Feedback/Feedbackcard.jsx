@@ -8,7 +8,7 @@ const Feedbackcard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost:4500/ShowRideFeedBack')
+    axios.get('https://waterpark.onrender.com/ShowRideFeedBack')
       .then(result => setFeedback(result.data))
       .catch(error => console.error('Error fetching feedback:', error));
   }, []);
@@ -42,7 +42,7 @@ const Feedbackcard = () => {
                       </div>
                       <div className="card-image">
                         {item.Image && (
-                          <img src={`http://localhost:4500/${item.Image}`} alt="Feedback" />
+                          <img src={`https://waterpark.onrender.com/${item.Image}`} alt="Feedback" />
                         )}
                       </div>
                     </div>

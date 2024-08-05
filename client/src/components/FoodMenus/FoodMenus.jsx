@@ -30,7 +30,7 @@ const FoodMenus = () => {
         formData.append('Price', Price);
         formData.append('FoodImage', FoodImage);
 
-        axios.post('http://localhost:4500/AddFoodMenu', formData, {
+        axios.post('https://waterpark.onrender.com/AddFoodMenu', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -38,7 +38,7 @@ const FoodMenus = () => {
             .then(result => {
                 console.log(result);
                 // Reload the rides after submission
-                axios.get('http://localhost:4500/ShowFoodMenu')
+                axios.get('https://waterpark.onrender.com/ShowFoodMenu')
                     .then(result => setFoodMenus(result.data))
                     .catch(err => console.log(err));
                 
@@ -47,7 +47,7 @@ const FoodMenus = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowFoodMenu')
+        axios.get('https://waterpark.onrender.com/ShowFoodMenu')
             .then(result => setFoodMenus(result.data))
             .catch(err => console.log(err));
     }, []);
@@ -68,12 +68,12 @@ const FoodMenus = () => {
         formData.append('FoodName', FoodName);
         formData.append('Price', Price);
         
-        axios.put(`http://localhost:4500/EditFoodMenu/${selectedFood._id}`, formData)
+        axios.put(`https://waterpark.onrender.com/EditFoodMenu/${selectedFood._id}`, formData)
             .then(result => {
                 console.log(result);
                 handleClose();
                 // Reload the rides after editing
-                axios.get('http://localhost:4500/ShowFoodMenu')
+                axios.get('https://waterpark.onrender.com/ShowFoodMenu')
                     .then(result => setFoodMenus(result.data))
                     .catch(err => console.log(err));
             })
@@ -82,7 +82,7 @@ const FoodMenus = () => {
 
     const handleDelete = (foodId) => {
         try {
-            axios.delete(`http://localhost:4500/FoodMenuDelete/${foodId}`);
+            axios.delete(`https://waterpark.onrender.com/FoodMenuDelete/${foodId}`);
             setFoodMenus(prevFoodMenus => prevFoodMenus.filter(foodmenu => foodmenu._id !== foodId));
 
         } catch (error) {
@@ -121,7 +121,7 @@ const FoodMenus = () => {
                                             {FoodMenus.map((foodmenu, index) => (
                                                 <tr key={foodmenu._id}>
                                                     <td>{index + 1}</td>
-                                                    <td><img src={`http://localhost:4500/${foodmenu.FoodImage}`} alt={foodmenu.FoodName} style={{ width: '100px', height: '100px' }} /></td>
+                                                    <td><img src={`https://waterpark.onrender.com/${foodmenu.FoodImage}`} alt={foodmenu.FoodName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>{foodmenu.FoodName}</td>
                                                     <td>{foodmenu.Price}</td>
                                                     <td>

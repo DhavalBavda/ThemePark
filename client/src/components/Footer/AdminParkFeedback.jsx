@@ -17,14 +17,14 @@ const AdminParkFeedback = () => {
     const [ParkFeedback, setParkFeedback] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowFeedBack')
+        axios.get('https://waterpark.onrender.com/ShowFeedBack')
             .then(result => setParkFeedback(result.data))
             .catch(err => console.log(err))
     },[]);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4500/DeleteFeedBack/${id}`)
-            .then(axios.get('http://localhost:4500/ShowFeedBack')
+        axios.delete(`https://waterpark.onrender.com/DeleteFeedBack/${id}`)
+            .then(axios.get('https://waterpark.onrender.com/ShowFeedBack')
                 .then(result => setParkFeedback(result.data))
                 .catch(err => console.log(err)))
             .catch(err => console.log(err))

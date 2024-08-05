@@ -16,14 +16,14 @@ const AdminRideFeeback = () => {
     const [RideFeedbacks, setRideFeedbacks] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowRideFeedBack')
+        axios.get('https://waterpark.onrender.com/ShowRideFeedBack')
             .then(result => setRideFeedbacks(result.data))
             .catch(err => console.log(err));
     },[]);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4500/DeleteRideFeedback/${id}`)
-            .then(axios.get('http://localhost:4500/ShowRideFeedBack')
+        axios.delete(`https://waterpark.onrender.com/DeleteRideFeedback/${id}`)
+            .then(axios.get('https://waterpark.onrender.com/ShowRideFeedBack')
                 .then(result => setRideFeedbacks(result.data))
                 .catch(err => console.log(err)))
             .catch(err => console.log(err))
@@ -64,7 +64,7 @@ const AdminRideFeeback = () => {
                                                     <td>{feedbacks.Email}</td>
                                                     <td>{feedbacks.Rating}</td>
                                                     <td>{feedbacks.Comment}</td>
-                                                    <td><img src={`http://localhost:4500/${feedbacks.Image}`} alt={feedbacks.UserName} style={{ width: '100px', height: '100px' }} /></td>
+                                                    <td><img src={`https://waterpark.onrender.com/${feedbacks.Image}`} alt={feedbacks.UserName} style={{ width: '100px', height: '100px' }} /></td>
                                                     <td>
                                                         <Button style={{ width: "fit-content" }}
                                                             onClick={() => handleDelete(feedbacks._id)}

@@ -21,7 +21,7 @@ const Footer = () => {
         formData.append("FeedBack", FeedBack);
 
         try {
-            await axios.post("http://localhost:4500/AddFeedBack", formData, {
+            await axios.post("https://waterpark.onrender.com/AddFeedBack", formData, {
                 headers: {
                     "Content-Type": "multipart/from-data",
                 }

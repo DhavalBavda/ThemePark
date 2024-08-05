@@ -36,7 +36,7 @@ const Menu = () => {
     const [FoodData, setFoodData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4500/ShowFoodMenu')
+        axios.get('https://waterpark.onrender.com/ShowFoodMenu')
             .then(result => setFoodData(result.data))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -58,7 +58,7 @@ const Menu = () => {
                                 {FoodData.map((foodmenu, index) => (
                                     <div className="col-lg-6 wow bounceInUp" data-wow-delay="0.1s" key={index}>
                                         <div className="menu-item d-flex align-items-center">
-                                            {foodmenu.FoodImage && <img style={{height:"150px",width:"150px"}} className="flex-shrink-0 img-fluid rounded-circle" src={`http://localhost:4500/${foodmenu.FoodImage}`} alt={foodmenu.FoodName} />}
+                                            {foodmenu.FoodImage && <img style={{height:"150px",width:"150px"}} className="flex-shrink-0 img-fluid rounded-circle" src={`https://waterpark.onrender.com/${foodmenu.FoodImage}`} alt={foodmenu.FoodName} />}
                                             <div className="w-100 d-flex flex-column text-start ps-4">
                                                 <div className="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
                                                     <h4>{foodmenu.FoodName}</h4>

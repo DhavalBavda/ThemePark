@@ -22,7 +22,7 @@ const CancellationPage = () => {
     const handleCancelTicket = async (ticketId) => {
         try {
             setSelectedTicketId(ticketId);
-            const response = await fetch(`http://localhost:4500/TicketCancelation/${selectedTicketId}`, {
+            const response = await fetch(`https://waterpark.onrender.com/TicketCancelation/${selectedTicketId}`, {
                 method: 'PUT',
             });
             if (response.ok) {
@@ -40,7 +40,7 @@ const CancellationPage = () => {
         try {
             // Assuming OTP verification logic here
             setShowOTPModal(false);
-            const response = await fetch(`http://localhost:4500/ShowTickets`, {
+            const response = await fetch(`https://waterpark.onrender.com/ShowTickets`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
