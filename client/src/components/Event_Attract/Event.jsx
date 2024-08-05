@@ -28,7 +28,7 @@ const Event = ({ showNavbar = true }) => {
   const [events, setEvents] = useState({ previous: [], upcoming: [] });
 
   useEffect(() => {
-    axios.get('http://localhost:4500/ShowEvents')
+    axios.get('https://waterpark.onrender.com/ShowEvents')
       .then(result => {
         const previousEvents = result.data.filter(event => event.Completed === 'Yes');
         const upcomingEvents = result.data.filter(event => event.Completed === 'No');
