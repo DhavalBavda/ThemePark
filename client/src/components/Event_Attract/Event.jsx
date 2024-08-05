@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const EventItem = ({ src, details, onClick }) => (
   <div className="col-md-6 col-lg-3">
     <div className="event-img position-relative">
-      <img className="img-fluid rounded w-100" src={src} alt={details.EventName} />
+      <img style={{height:"200px",width:"150px"}} className="img-fluid rounded w-100" src={src} alt={details.EventName} />
       <div className="event-overlay d-flex flex-column p-4">
         <h4 className="me-auto">{details.EventName}</h4>
       </div>
