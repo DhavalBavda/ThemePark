@@ -3,6 +3,9 @@ import Navbar1 from '../Navbar/Navbar'
 import WOW from 'wow.js';
 import dhavalimage from '../../assets/images/dhavalimage.jpg'
 import harshimage from '../../assets/images/harshimage.jpg'
+import aagimage from '../../assets/images/aagimage.png'
+import laximage from '../../assets/images/laximage.png'
+import rutimage from '../../assets/images/rutimage.png'
 
 
 const Contact = ({ showNavbar = true }) => {
@@ -35,19 +38,19 @@ const Contact = ({ showNavbar = true }) => {
     {
       name: "Aagam Shah",
       position: "Frontend Developer",
-      imgSrc: (''),
+      imgSrc: aagimage,
       delay: "0.5s",
     },
     {
       name: "Laxit Khanpara",
       position: "Backend Developer",
-      imgSrc: (''),
+      imgSrc: laximage,
       delay: "0.7s",
     },
     {
       name: "Rutvik Padhara",
       position: "ML Expert",
-      imgSrc: (''),
+      imgSrc: rutimage,
       delay: "0.7s",
     },
   ];
@@ -116,7 +119,7 @@ const Contact = ({ showNavbar = true }) => {
             {teamMembers.map((member, index) => (
               <div key={index} className={`col-lg-2 col-md-3 col-sm-4 wow bounceInUp d-inline-block`} data-wow-delay={member.delay}>
                 <div className="team-item rounded">
-                  <img className="img-fluid rounded-top" src={member.imgSrc} alt={member.name} />
+                  <img className="img-fluid rounded-top" style={{height:"250px", width:"300px"}} src={member.imgSrc} alt={member.name} />
                   <div className="team-content text-center py-3 bg-dark rounded-bottom">
                     <h4 className="text-primary">{member.name}</h4>
                     <p className="text-white mb-0">{member.position}</p>
